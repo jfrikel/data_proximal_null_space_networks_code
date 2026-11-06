@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Pixelwise-constant line integrals with an exact algebraic transpose.
 
 Images use x increasing along columns, y increasing along rows (plot origin=lower).

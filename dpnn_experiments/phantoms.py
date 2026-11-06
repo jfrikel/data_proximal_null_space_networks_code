@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Continuous ellipse objects, pixel area means and independent analytic sinograms."""
 
 import hashlib

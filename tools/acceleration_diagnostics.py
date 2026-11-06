@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Worker functions for logged fixed-filter and row-preconditioned comparisons."""
 import json
 import math

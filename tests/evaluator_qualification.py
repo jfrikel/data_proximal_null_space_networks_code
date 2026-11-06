@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Archived solver, projection and standalone evaluator qualification."""
 import argparse,copy,json
 from pathlib import Path

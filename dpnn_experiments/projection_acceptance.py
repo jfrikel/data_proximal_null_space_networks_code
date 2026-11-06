@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Reusable Float64 projection acceptance; exact reference only on small fixtures."""
 import torch
 from dpnn_experiments.provenance import write_json

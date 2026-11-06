@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Archived logger, crash-window, checkpoint/resume and solver qualification."""
 import argparse
 import copy

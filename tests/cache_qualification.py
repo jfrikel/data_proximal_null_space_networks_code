@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Manifested real small-CT cache/evaluator and periodic-retention integration tests."""
 import argparse,copy,json
 from pathlib import Path

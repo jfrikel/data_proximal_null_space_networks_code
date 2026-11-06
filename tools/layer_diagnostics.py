@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Archived fixed-factor NSN/scalar-DP integration and derivative diagnostics."""
 import argparse
 import copy

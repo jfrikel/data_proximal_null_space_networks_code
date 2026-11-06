@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """CPU-only epoch-extension, checkpoint selection, and four-worker replay tests."""
 import argparse
 import copy

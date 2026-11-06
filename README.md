@@ -1,8 +1,12 @@
 # Data-proximal null-space networks for inverse problems
 
-Companion code and experimental documentation for the paper by Simon Göppel, Jürgen Frikel, and Markus Haltmeier. [Paper sources](https://github.com/jfrikel/data_proximal_null_space_networks).
+Research code accompanying **Data-proximal null-space networks for inverse problems** by **Simon Göppel, Jürgen Frikel, and Markus Haltmeier**. [Paper sources](https://github.com/jfrikel/data_proximal_null_space_networks).
 
-Data-proximal networks extend null-space networks by explicitly controlling the **additional change in predicted data** relative to an initial reconstruction. The synthetic limited-angle CT study compares RES, NSN, DP1 and DP2 with Tikhonov and TV initializations: 2,500 training, 500 validation and 500 test objects, two training seeds, and 60 epochs per model.
+The paper introduces data-proximal networks as an extension of null-space networks. Learned corrections explicitly control the additional change in predicted data relative to an initial reconstruction. The theoretical analysis establishes regularization and data-proximity guarantees under the stated assumptions; numerical experiments illustrate reconstruction quality and the implemented data-change control.
+
+This repository provides the implementation and experimental documentation for the paper's synthetic limited-angle computed tomography study. Its scientific purpose is to make the numerical methods inspectable and support reproduction of the reported experiments and results. It includes synthetic ellipse generation, the discrete Radon operator and numerical projection layers, Tikhonov and TV initializations, network training and checkpoint evaluation, and scripts that regenerate tables and figures from the included scientific export.
+
+The study compares an unconstrained residual network (RES), a null-space network (NSN), and two data-proximal variants (DP1 and DP2), using both initializations. It uses 2,500 training, 500 validation and 500 test objects, two training seeds, and 60 epochs per model. Evaluations cover MSE, PSNR, SSIM, additional data change, reconstruction residuals and computational cost. The artifact requirements for rendering results, running inference and training are distinguished below.
 
 Both DP variants substantially improve mean reconstruction quality over NSN for both initializations. Tikhonov-initialized DP1 approaches RES quality. DP2 offers no quality advantage over DP1 in this experiment and requires approximately twice the optimization time and trainable parameters.
 
@@ -49,4 +53,12 @@ The checkout contains enough exported data to reproduce the paper tables and fig
 
 The recorded study used a 30-epoch phase followed by continuation to 60 epochs. `configs/paper/` documents the completed study; the executable historical starting profile is separate under `configs/study/`. Reorganized source files do not replace the original source snapshots for resuming historical runs.
 
-Cite the accompanying paper and record the exact code commit used. No repository-wide license has yet been specified; the provenance of the U-Net implementation remains to be clarified.
+Please cite **Simon Göppel, Jürgen Frikel, and Markus Haltmeier, “Data-proximal null-space networks for inverse problems”**, and record the exact code commit used.
+
+## License
+
+The program code in this repository is licensed under the **GNU General Public License, version 3 only (SPDX: GPL-3.0-only)**. See [LICENSE](LICENSE) for the full terms. This covers the Python implementation, scripts, tests and tools. The scientific purpose stated above is not a restriction on uses permitted by the license.
+
+[Third-party notices](THIRD_PARTY_NOTICES.md) identify the U-Net reference implementation, observed adaptations and separately installed dependencies. Upstream notices remain applicable. The code license does not relicense external libraries, the accompanying paper, datasets, generated result files or model weights; no separate reuse license for those non-code artifacts is granted here.
+
+The software is provided without warranty to the extent permitted by applicable law. Historical checkpoint source snapshots remain distinct from this release, as explained in the reproducibility guide.

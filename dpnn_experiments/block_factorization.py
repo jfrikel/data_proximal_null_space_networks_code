@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Two-block row-space factorization, avoiding a single oversized SVD.
 
 Uses every nonzero measurement row. The cutoff is applied per residual block,

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Object-paired descriptive statistics and BCa intervals for a mean effect."""
 from statistics import NormalDist
 import numpy as np

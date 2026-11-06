@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Archived recovery, exact replay and corruption rejection on small Radon data."""
 import argparse,copy,json,shutil,signal,subprocess,sys,time
 from pathlib import Path

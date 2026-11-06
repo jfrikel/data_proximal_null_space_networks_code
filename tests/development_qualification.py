@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Archived CPU qualification of detached development orchestration and inherited best weights."""
 import argparse
 import copy

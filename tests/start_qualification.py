@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Small Radon end-to-end qualification of immutable TV/Tikhonov start caches."""
 import argparse,copy,json
 from dataclasses import asdict

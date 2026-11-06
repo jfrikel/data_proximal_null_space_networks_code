@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Immutable start datasets for training: regularized inverse or isotropic TV.
 
 This prepares reconstruction inputs only, never selects parameters from target

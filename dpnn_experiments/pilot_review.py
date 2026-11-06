@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Review existing pilot archives without inference, selection, or test-image access."""
 import argparse
 import base64

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Supervised, fully archived factorization diagnostics for a fixed Radon matrix.
 
 Large factors stay in the canonical server archive. The parent records resource

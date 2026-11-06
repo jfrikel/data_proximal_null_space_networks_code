@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Regularized inverse and isotropic TV in whitened image/data coordinates.
 
 q=h*x, h=2/N. TV(x)=h*sum sqrt((Dx)^2+(Dy)^2)=sum |Dq|.

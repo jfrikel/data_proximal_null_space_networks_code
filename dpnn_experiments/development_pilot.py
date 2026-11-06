@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Sequential development study; stage processes isolate CUDA memory and archives."""
 import argparse
 import copy

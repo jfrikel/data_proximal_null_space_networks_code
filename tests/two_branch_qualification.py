@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Archived independent two-branch projection/gradient and actual U-Net checks."""
 import argparse,copy,json
 from pathlib import Path

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: GPL-3.0-only
 """Explicit preparation, validation, freeze, test, report; no phase autorun."""
 import argparse
 import json

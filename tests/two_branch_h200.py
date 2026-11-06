@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Fixed-basis two-U-Net acceptance: proximity, independent VJP and directions."""
 import argparse,copy,json,os,time
 from pathlib import Path

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Periodic storage reduction and off-interval recovery, with complete archives."""
 import argparse,copy,json
 from pathlib import Path

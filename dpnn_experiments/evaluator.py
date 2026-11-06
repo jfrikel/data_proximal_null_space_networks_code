@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Standalone frozen validation/test evaluator with certified start-solver stops.
 
 Does not select models or update parameters. Beta overrides are evaluation-only.

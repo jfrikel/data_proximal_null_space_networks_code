@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Versioned single-noise study preparation. No numerical work at prepare time."""
 import copy
 import os

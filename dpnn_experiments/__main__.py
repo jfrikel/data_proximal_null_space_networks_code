@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Run with python -m dpnn_experiments {check,prepare,verify}."""
 
 import argparse

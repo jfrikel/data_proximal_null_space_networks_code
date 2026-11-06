@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Float64 NSN/scalar-DP layers using fixed, provenance-bound row-space factors.
 
 Images are batch-first: (B,n), (B,H,W), or (B,1,H,W), with H*W=n.

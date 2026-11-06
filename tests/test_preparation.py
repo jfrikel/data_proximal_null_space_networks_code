@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Scientific and archive checks; invoke through the logged 'check' command."""
 
 import json

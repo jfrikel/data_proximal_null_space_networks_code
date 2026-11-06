@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Fixed-operator inversion in Euclidean (whitened) coordinates.
 
 For the Radon geometry use M=sqrt(w_Y/w_X)*A, x~=sqrt(w_X)*x,

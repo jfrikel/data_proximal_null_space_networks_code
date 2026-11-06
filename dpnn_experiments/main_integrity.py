@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Fail-closed bindings for main-study approvals and validation selections."""
 import copy
 import json

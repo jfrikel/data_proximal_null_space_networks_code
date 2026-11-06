@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Independent analytic ellipse data and checked Tikhonov starts for a pilot."""
 import argparse
 import copy

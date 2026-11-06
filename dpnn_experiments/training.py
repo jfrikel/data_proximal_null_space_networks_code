@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Single-device Float64 training/evaluation with complete artifacts and resume.
 
 Supported profile: fixed cached noise, no augmentation, synchronous batches,

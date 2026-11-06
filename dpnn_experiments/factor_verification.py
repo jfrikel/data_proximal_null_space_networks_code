@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Full-matrix residual checks and application benchmark of archived factors."""
 import time
 import numpy as np

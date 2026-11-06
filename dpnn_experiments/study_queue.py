@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Exclusive device slots and a durable DAG queue. Never chains study phases."""
 import argparse
 import copy

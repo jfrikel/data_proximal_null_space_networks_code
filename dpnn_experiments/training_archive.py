@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Durable training segments, immutable manifests and linked atomic checkpoints.
 
 Every evaluated validation state has a preserved weight file; training steps

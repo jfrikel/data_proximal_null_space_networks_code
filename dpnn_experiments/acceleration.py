@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Fixed Chebyshev filters and left row scaling in whitened coordinates."""
 import math
 import numpy as np

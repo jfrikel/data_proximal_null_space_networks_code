@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Single-writer input preparation recovery without changing solver settings."""
 import copy
 from pathlib import Path

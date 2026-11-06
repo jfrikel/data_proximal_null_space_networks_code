@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Strict consumption of hash-bound start_preparation datasets; no solver fallback."""
 import json
 import numpy as np

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Logged CUDA checks of an archived Radon matrix, without training or inversion.
 
 Run only on an allocated GPU or a server permitting direct GPU use. There is no

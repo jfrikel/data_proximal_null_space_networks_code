@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """End-to-end fixed-TV, independent-U-Net, periodic-checkpoint rehearsal."""
 import argparse,copy,gc,json
 from pathlib import Path

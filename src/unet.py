@@ -1,4 +1,6 @@
-# models/unet.py
+# SPDX-License-Identifier: GPL-3.0-only
+# U-Net source correspondence and local adaptations: see THIRD_PARTY_NOTICES.md.
+# Licensing/attribution notice added 2026-11-06; model computation unchanged.
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

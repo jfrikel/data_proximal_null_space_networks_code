@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Reuse only qualified objects from hash-bound, closed preparation archives."""
 import json
 from pathlib import Path

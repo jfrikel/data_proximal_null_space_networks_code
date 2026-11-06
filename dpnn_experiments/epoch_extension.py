@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Explicit, hash-bound continuation of a completed epoch budget.
 
 This is not ordinary resume: only epoch budget and the early-stopping switch

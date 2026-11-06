@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Fully archived SVD/gradient references and 256-square projection diagnostics."""
 
 import argparse

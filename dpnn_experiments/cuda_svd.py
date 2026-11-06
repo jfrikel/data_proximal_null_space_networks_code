@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Minimal Float64 binding to the documented cuSOLVER 64-bit Xgesvd API.
 
 The input is a tall column-major CUDA tensor and is overwritten. No autograd

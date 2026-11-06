@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Durable, self-contained archives for the new preparation and diagnostic runs."""
 
 import contextlib

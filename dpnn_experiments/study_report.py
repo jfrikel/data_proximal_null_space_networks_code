@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """CPU-only complete-case accounting, paired analysis and portable SVG/HTML output."""
 import csv
 import html

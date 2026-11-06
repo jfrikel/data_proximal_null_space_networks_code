@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Archived external-cache continuation checks, including real checkpoint resume."""
 import argparse
 import copy

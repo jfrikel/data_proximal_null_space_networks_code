@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Reproduce paper tables/figures from the public scientific export (no inference)."""
 from pathlib import Path
 import csv,gzip,lzma,json,hashlib,sys,collections,os

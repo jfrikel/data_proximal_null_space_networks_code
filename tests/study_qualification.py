@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Small CPU fixtures for study v2. Never reads scientific main test objects."""
 import argparse
 import copy

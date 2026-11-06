@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Small archived H200 test of TV continuation with actual U-Nets and checkpoint resume."""
 import argparse
 import copy
