@@ -12,6 +12,7 @@ Both DP variants substantially improve mean reconstruction quality over NSN for 
 
 ## Start here
 
+- [Getting started and training with your own data](GETTING_STARTED.md): installation profiles, working CPU checks and data/operator contracts.
 - [Experimental setup](supplement/experiment.md): data, discretization, networks and training.
 - [Results](supplement/results.md): quality, data proximity and computational cost.
 - [Reproducibility and local path configuration](supplement/reproducibility.md): commands, artifact requirements and checks.

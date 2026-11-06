@@ -33,7 +33,7 @@ NSN changes predicted data only at numerical precision. Data proximity does not 
 
 For Tikhonov, NSN reduces mean null-space MSE from 4.78e-4 to 2.44e-5 but retains complementary MSE near 7.35e-4; DP1 reduces the latter to 1.17e-5. With TV, complementary MSE falls from approximately 2.96e-4 to 9.49e-5 under DP1. These components may contain both propagated noise and baseline bias; they do not directly measure continuous wavefront sets.
 
-The main paper example is test object 000002, selected for spatial detail rather than best method performance. Additional figures should include the second seed, SSIM-selected reconstructions and an explicitly retrospective difficult case. Use common display windows and keep the selection rule visible. The export contains Float64 arrays and their bindings in `data/examples/index.json`; the displayed subset is not the full test dataset.
+The main paper example is test object 000002, selected for spatial detail rather than best method performance. The report generator also provides seed/checkpoint comparisons and selected diagnostic reconstructions. Additional image selections should retain explicit selection rules and common display windows. The export contains Float64 arrays and their bindings in `data/examples/index.json`; the displayed subset is not the full test dataset.
 
 ## Computational cost and optional statistics
 

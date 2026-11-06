@@ -1,5 +1,7 @@
 # Implementation map
 
+See [Getting started](../GETTING_STARTED.md) for dependency profiles and the own-data contract. The paper renderer, single-device trainer and four-H200 study controller have different prerequisites.
+
 ## Scientific workflow
 
 | Stage | Main module / entry point |
@@ -26,20 +28,20 @@ Numerical tests are separate from the scientific implementation. Some qualificat
 
 | File | Purpose |
 |---|---|
-| [dpnn_experiments/__init__.py](../dpnn_experiments/__init__.py) | Independent experiment preparation; legacy training entry points are unchanged. |
+| [dpnn_experiments/__init__.py](../dpnn_experiments/__init__.py) | Package marker for the experiment implementation. |
 | [dpnn_experiments/__main__.py](../dpnn_experiments/__main__.py) | Run with python -m dpnn_experiments {check,prepare,verify}. |
 | [dpnn_experiments/acceleration.py](../dpnn_experiments/acceleration.py) | Fixed Chebyshev filters and left row scaling in whitened coordinates. |
 | [dpnn_experiments/block_factorization.py](../dpnn_experiments/block_factorization.py) | Two-block row-space factorization, avoiding a single oversized SVD. |
 | [dpnn_experiments/cached_starts.py](../dpnn_experiments/cached_starts.py) | Strict consumption of hash-bound start_preparation datasets; no solver fallback. |
-| [dpnn_experiments/cuda_svd.py](../dpnn_experiments/cuda_svd.py) | Minimal Float64 binding to the documented cuSOLVER 64-bit Xgesvd API. |
+| [dpnn_experiments/cuda_svd.py](../dpnn_experiments/cuda_svd.py) | Float64 cuSOLVER bindings for Xgesvd and Xsyevd, with configurable library discovery. |
 | [dpnn_experiments/development_pilot.py](../dpnn_experiments/development_pilot.py) | Sequential development study; stage processes isolate CUDA memory and archives. |
 | [dpnn_experiments/epoch_extension.py](../dpnn_experiments/epoch_extension.py) | Explicit, hash-bound continuation of a completed epoch budget. |
-| [dpnn_experiments/evaluator.py](../dpnn_experiments/evaluator.py) | Standalone frozen validation/test evaluator with certified start-solver stops. |
+| [dpnn_experiments/evaluator.py](../dpnn_experiments/evaluator.py) | Frozen validation/test evaluation with numerical start-solver acceptance checks. |
 | [dpnn_experiments/factor_verification.py](../dpnn_experiments/factor_verification.py) | Full-matrix residual checks and application benchmark of archived factors. |
 | [dpnn_experiments/gpu_benchmark.py](../dpnn_experiments/gpu_benchmark.py) | Logged CUDA checks of an archived Radon matrix, without training or inversion. |
 | [dpnn_experiments/main_inputs.py](../dpnn_experiments/main_inputs.py) | Single-writer input preparation recovery without changing solver settings. |
 | [dpnn_experiments/main_integrity.py](../dpnn_experiments/main_integrity.py) | Fail-closed bindings for main-study approvals and validation selections. |
-| [dpnn_experiments/network_layers.py](../dpnn_experiments/network_layers.py) | Float64 NSN/scalar-DP layers using fixed, provenance-bound row-space factors. |
+| [dpnn_experiments/network_layers.py](../dpnn_experiments/network_layers.py) | Float64 NSN, shared-correction DP1 and independent-branch DP2 layers with fixed, hash-bound row-space factors. |
 | [dpnn_experiments/operators.py](../dpnn_experiments/operators.py) | Pixelwise-constant line integrals with an exact algebraic transpose. |
 | [dpnn_experiments/paired_statistics.py](../dpnn_experiments/paired_statistics.py) | Object-paired descriptive statistics and BCa intervals for a mean effect. |
 | [dpnn_experiments/phantoms.py](../dpnn_experiments/phantoms.py) | Continuous ellipse objects, pixel area means and independent analytic sinograms. |
@@ -54,7 +56,7 @@ Numerical tests are separate from the scientific implementation. Some qualificat
 | [dpnn_experiments/start_recovery.py](../dpnn_experiments/start_recovery.py) | Reuse only qualified objects from hash-bound, closed preparation archives. |
 | [dpnn_experiments/study_plan.py](../dpnn_experiments/study_plan.py) | Versioned single-noise study preparation. No numerical work at prepare time. |
 | [dpnn_experiments/study_queue.py](../dpnn_experiments/study_queue.py) | Exclusive device slots and a durable DAG queue. Never chains study phases. |
-| [dpnn_experiments/study_report.py](../dpnn_experiments/study_report.py) | CPU-only complete-case accounting, paired analysis and portable SVG/HTML output. |
+| [dpnn_experiments/study_report.py](../dpnn_experiments/study_report.py) | Complete-case accounting and paired statistics with SVG/HTML and Pillow image output; reconstruction panels also require PyTorch. |
 | [dpnn_experiments/training.py](../dpnn_experiments/training.py) | Single-device Float64 training/evaluation with complete artifacts and resume. |
 | [dpnn_experiments/training_archive.py](../dpnn_experiments/training_archive.py) | Durable training segments, immutable manifests and linked atomic checkpoints. |
 
@@ -63,7 +65,7 @@ Numerical tests are separate from the scientific implementation. Some qualificat
 | File | Purpose |
 |---|---|
 | [src/__init__.py](../src/__init__.py) | Package initialization. |
-| [src/unet.py](../src/unet.py) | Defines `DoubleConv`, `Down`, `Up`, `OutConv`, `UNet`. |
+| [src/unet.py](../src/unet.py) | Single-channel study U-Net built from DoubleConv/Down/Up/OutConv; upstream correspondence and GPL terms are documented in THIRD_PARTY_NOTICES.md. |
 
 ### scripts
 

@@ -1,0 +1,7 @@
+# Python 3.12; direct dependencies for training, evaluation, reports and CPU checks.
+# Select/install the appropriate PyTorch CPU/CUDA wheel first; see GETTING_STARTED.md.
+# This is not a complete lock of transitive packages, NVIDIA libraries or drivers.
+-r requirements-report.txt
+torch==2.7.0
+scipy==1.11.4
+Pillow==13.0.0

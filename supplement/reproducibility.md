@@ -1,5 +1,7 @@
 # Reproducibility and local configuration
 
+For installation, CPU training checks and adapting your own data, start with [Getting started](../GETTING_STARTED.md).
+
 ## Rebuild the paper tables and figures
 
 Follow the report installation commands in the [README](../README.md), then run:
@@ -58,7 +60,7 @@ The original study ran for 30 epochs and continued to 60 with optimizer, schedul
 
 The public Git history starts with the cleaned release snapshot. Historical experiment archives bind checkpoints to their exact original source snapshot, independently of this new Git history. The reorganization changes source paths and hashes; resuming such an archive requires its original snapshot. Do not edit archived hashes or disable verification to make an old checkpoint accept a new source tree. A separately verified inference adapter is needed to use those historical artifacts through a redesigned public entry point.
 
-The recorded compute environment used NumPy 1.26.4, PyTorch 2.7.0, SciPy 1.11.4 and a CUDA 12.8 PyTorch build. Computation used Float64 on one H200 per run, deterministic settings and disabled TF32; four GPUs supported concurrent jobs. The controller enforces the qualified four-H200 resource setup. These are documented experimental constraints, not private hostnames. `requirements-experiments.txt` covers NumPy preparation only, and `requirements-report.txt` covers report generation; neither installs a full GPU training environment.
+The recorded compute environment used NumPy 1.26.4, PyTorch 2.7.0, SciPy 1.11.4 and a CUDA 12.8 PyTorch build. Computation used Float64 on one H200 per run, deterministic settings and disabled TF32; four GPUs supported concurrent jobs. The controller enforces the qualified four-H200 resource setup. These are documented experimental constraints, not private hostnames. `requirements-experiments.txt` covers NumPy preparation only, and `requirements-report.txt` covers report generation; neither installs the training dependencies. `requirements-training.txt` adds PyTorch, SciPy and Pillow; select the appropriate PyTorch wheel as explained in the getting-started guide. NVIDIA drivers, native runtime discovery and bound study artifacts remain separate requirements.
 
 ## Small numerical checks
 
