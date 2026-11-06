@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "purpose": "A20.7 fixed block projection NSN and scalar-DP integration, proximity and input/parameter gradient diagnostics; no training",
+  "mode": "large",
+  "dataset": {
+    "split": "operator_development",
+    "split_ids": {
+      "operator_development": [
+        "unit_gaussian_physical",
+        "unit_circle_physical",
+        "zero_image",
+        "three_times_gaussian_physical"
+      ]
+    },
+    "training": "not applicable; no optimizer, no dataset model selection",
+    "probes": {
+      "path": "runs/20261027T210815Z_56abc9f39b16/inputs.npz",
+      "sha256": "96099dd91c3aa0e0ef6d83a1b20c71501774f8004b8dce3a70814a36551e4e90"
+    }
+  },
+  "geometry": {
+    "size": 256,
+    "angles": 120,
+    "detectors": 363,
+    "angle_min_deg": -60.0,
+    "angle_max_deg": 60.0,
+    "half_width": 1.4142135623730951
+  },
+  "randomness": {
+    "seed": 20261027,
+    "generator": "NumPy PCG64; all inputs saved; seed+7 for measurement perturbations; Torch initialization seed recorded; complete checkpoints saved before evaluation; seed+3 for large directional probes"
+  },
+  "model_evaluation": {
+    "applicable": true,
+    "state": "random initialized diagnostic checkpoints, not trained",
+    "small_model": "SmoothCorrection: 9x9 affine map followed by tanh",
+    "large_models": [
+      "PointwiseCorrection 0.2*tanh(z)",
+      "src.unet.UNet(1,1,bilinear=True)"
+    ],
+    "checkpoint_manifest": "evaluated_checkpoints in manifest, recorded before first forward",
+    "optimizer": "none"
+  },
+  "computation": {
+    "device": "cuda:0",
+    "dtype": "float64",
+    "cpu_threads": 4,
+    "deterministic_algorithms": true,
+    "tf32": false,
+    "cublas_workspace_config": ":4096:8",
+    "timeout_seconds": 900,
+    "resource_sample_seconds": 10,
+    "proximity_atol": 1e-10,
+    "directional_epsilons": [
+      0.001,
+      0.0003,
+      0.0001
+    ],
+    "directional_atol": 1e-08,
+    "smooth_directional_rtol": 2e-05,
+    "relu_directional_rtol": 0.005,
+    "timing_repetitions": 3,
+    "beta_policy": "per-sample, shared U=V; beta0 has NSN derivative including at zero; positive kink uses unclipped branch",
+    "gradcheck": {
+      "eps": 1e-06,
+      "atol": 2e-07,
+      "rtol": 2e-05
+    },
+    "coordinates": "physical pixel values; weighted measurement norm",
+    "unet_directional_epsilons": [
+      0.0001,
+      1e-05,
+      1e-06
+    ],
+    "unet_gradient_domain": "Finite differences on Gaussian input; analytic layer-VJP check on Gaussian and piecewise-constant circle; positive MaxPool ties recorded"
+  },
+  "factors": {
+    "factor_run": "runs/20261027T213808Z_810bb2a69026",
+    "basis_sha256": "eaa7f0d11f7a5ce1bfe505cefa8944b0b518d35b6bced80b8dccead29d004bc6",
+    "operator_sha256": "e84e791dbdbcf0cb9ae4c8e25041f3d79f01b9073fd511a4af5c0cd8496fdc19",
+    "verification_run": "runs/20261027T214920Z_c1087696eac1",
+    "verification_summary_sha256": "be982fcbf772b8e5de6390fe306981efc6b0e9dea525779c784be08ad3f0c4af"
+  }
+}

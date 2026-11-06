@@ -1,0 +1,33 @@
+# Local machine files
+.DS_Store
+.idea/
+
+# Local credentials
+.env
+.env.*
+!.env.example
+
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Generated experiment artifacts; manifests are mirrored to private notes.
+/runs/
+
+# Locally regenerated figures and report environments
+/results/generated/
+.report-venv/
+/results/**/*.aux
+/results/**/*.log
+/results/**/*.fls
+/results/**/*.fdb_latexmk
+/results/**/*.out
+/results/**/*.toc
+
+# Machine-specific configuration and external datasets/weights
+/local/
+/artifacts/

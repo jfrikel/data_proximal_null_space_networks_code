@@ -1,0 +1,19 @@
+\begingroup\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Method & MSE $[10^{-4}]$ & PSNR [dB] & SSIM & $d/\delta$ & $r/\delta$ \\ \midrule
+\multicolumn{6}{@{}l}{\textit{Tikhonov initialization}} \\
+BASE & $12.125\pm12.236$ & $30.63\pm3.50$ & $0.5322\pm0.1555$ & 0.000 & 0.746 \\
+RES & $0.362\pm0.444$ & $46.70\pm4.56$ & $0.9896\pm0.0074$ & 0.699 & 1.031 \\
+NSN & $7.590\pm8.487$ & $32.95\pm3.91$ & $0.5422\pm0.1649$ & $3.37\times10^{-14}$ & 0.746 \\
+DP1 & $0.369\pm0.437$ & $46.54\pm4.49$ & $0.9891\pm0.0077$ & 0.694 & 1.030 \\
+DP2 & $0.443\pm0.488$ & $45.46\pm4.14$ & $0.9523\pm0.0379$ & 1.000 & 1.252 \\
+\midrule
+\multicolumn{6}{@{}l}{\textit{TV initialization}} \\
+BASE & $5.492\pm4.298$ & $33.29\pm2.23$ & $0.8697\pm0.0480$ & 0.000 & 2.184 \\
+RES & $1.441\pm1.134$ & $39.37\pm2.90$ & $0.9646\pm0.0174$ & 1.738 & 1.309 \\
+NSN & $3.916\pm2.175$ & $34.51\pm1.85$ & $0.8184\pm0.0611$ & $1.69\times10^{-14}$ & 2.184 \\
+DP1 & $1.754\pm1.183$ & $38.23\pm2.38$ & $0.9266\pm0.0359$ & 0.897 & 1.692 \\
+DP2 & $1.902\pm1.294$ & $37.88\pm2.35$ & $0.8939\pm0.0395$ & 1.000 & 1.716 \\
+\bottomrule
+\end{tabular}\endgroup

@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "study_id": "dpnn-development-256-20261029-v1",
+  "training_template": "configs/study/pilot_training_template.json",
+  "data_template": "configs/study/pilot_data_256.json",
+  "counts": {
+    "train": 1024,
+    "validation": 128,
+    "test": 16
+  },
+  "methods": [
+    "RES",
+    "NSN",
+    "DP",
+    "DP_TWO"
+  ],
+  "device": "cuda:0",
+  "cpu_threads": 4,
+  "operator_root": "${DPNN_ARTIFACT_ROOT}/artifact-002/reference",
+  "operator_sha256": "e84e791dbdbcf0cb9ae4c8e25041f3d79f01b9073fd511a4af5c0cd8496fdc19",
+  "epochs": 50,
+  "batch_size": 2,
+  "patience": 10,
+  "min_delta": 0.0,
+  "learning_rate": 0.0001,
+  "scheduler": {
+    "step_size": 10,
+    "gamma": 0.5
+  },
+  "checkpoint_every_steps": 1000,
+  "relative_noise_norm": 0.05,
+  "data_seeds": {
+    "seed": 20261029,
+    "geometry_seed": 102901,
+    "noise_seed": 102902
+  },
+  "training_seeds": {
+    "seed": 20261029,
+    "model_seed": 20261029,
+    "sampler_seed": 771029,
+    "python_seed": 991029,
+    "numpy_seed": 881029
+  },
+  "starts": {
+    "tikhonov": {
+      "kind": "tikhonov",
+      "alpha": 0.01,
+      "rtol": 1e-08,
+      "atol": 1e-10,
+      "max_iterations": 500
+    },
+    "tv": {
+      "kind": "tv",
+      "alpha": 0.001,
+      "rtol": 1e-05,
+      "atol": 1e-09,
+      "max_iterations": 100000,
+      "check_every": 50,
+      "step_safety": 0.99
+    }
+  },
+  "evaluation_beta_multipliers": [
+    0.0,
+    1.0
+  ],
+  "evaluation_tolerances": {
+    "atol": 1e-12,
+    "rtol": 1e-10
+  },
+  "diagnostic_objects": 8,
+  "minimum_free_gib": 500
+}

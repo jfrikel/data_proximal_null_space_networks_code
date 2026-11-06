@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "study_id": "dpnn-technical-pilot-256-v1",
+  "purpose": "Prepared small synthetic pilot; complete per-step weights and validation provenance",
+  "mode": "train",
+  "dataset": {
+    "reference": null,
+    "used_ids": null,
+    "normalization": "none_physical_intensity",
+    "augmentation": "none",
+    "loader": {
+      "num_workers": 0,
+      "shuffle": true,
+      "drop_last": false,
+      "pin_memory": false,
+      "prefetch": 0
+    }
+  },
+  "geometry": {
+    "size": 256,
+    "angles": 120,
+    "detectors": 363,
+    "angle_min_deg": -60.0,
+    "angle_max_deg": 60.0,
+    "half_width": 1.4142135623730951
+  },
+  "randomness": {
+    "seed": 20261028,
+    "model_seed": 20261028,
+    "sampler_seed": 771028,
+    "python_seed": 991028,
+    "numpy_seed": 881028,
+    "generator": "Independent model, sampler, Python and NumPy streams; stored RNG states; cached geometry/noise"
+  },
+  "computation": {
+    "device": "cuda:0",
+    "dtype": "float64",
+    "cpu_threads": 4,
+    "deterministic_algorithms": true,
+    "tf32": false,
+    "cublas_workspace_config": ":4096:8"
+  },
+  "model": {
+    "architecture": "unet",
+    "method": "DP",
+    "in_channels": 1,
+    "out_channels": 1,
+    "bilinear": true,
+    "width": null,
+    "dropout": 0.0,
+    "initialization": "torch_default_seeded"
+  },
+  "optimizer": {
+    "name": "Adam",
+    "lr": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "amsgrad": false,
+    "foreach": false,
+    "fused": false,
+    "maximize": false,
+    "capturable": false,
+    "differentiable": false
+  },
+  "scheduler": {
+    "name": "StepLR",
+    "step_size": 1,
+    "gamma": 0.9,
+    "last_epoch": -1
+  },
+  "training": {
+    "applicable": true,
+    "epochs": 5,
+    "batch_size": 2,
+    "loss": "mean_pixel_MSE",
+    "gradient_accumulation": 1,
+    "gradient_clip_norm": 1.0,
+    "mixed_precision": false
+  },
+  "selection": {
+    "split": "validation",
+    "metric": "mse",
+    "direction": "min",
+    "patience": 3,
+    "min_delta": 0.0
+  },
+  "logging": {
+    "checkpoint_every_steps": 1000,
+    "weights_every_step": false,
+    "save_predictions": true,
+    "mirror_every_checkpoint": true
+  },
+  "metrics": {
+    "data_range": 1.0,
+    "ssim_window": 11,
+    "ssim_sigma": 1.5,
+    "ssim_k1": 0.01,
+    "ssim_k2": 0.03,
+    "ssim_covariance": "population",
+    "ssim_padding": "valid",
+    "proximity_atol": 1e-10,
+    "aggregation": "per_object_mean_median_population_std_min_max_no_CI"
+  },
+  "execution": {
+    "resume": null,
+    "stop_after_step": null,
+    "injected_io_failure_step": null
+  },
+  "projection": {
+    "kind": "block",
+    "factor_run": "${DPNN_ARTIFACT_ROOT}/artifact-002",
+    "basis_sha256": "eaa7f0d11f7a5ce1bfe505cefa8944b0b518d35b6bced80b8dccead29d004bc6",
+    "operator_sha256": "e84e791dbdbcf0cb9ae4c8e25041f3d79f01b9073fd511a4af5c0cd8496fdc19",
+    "verification_run": "${DPNN_ARTIFACT_ROOT}/artifact-003",
+    "verification_summary_sha256": "be982fcbf772b8e5de6390fe306981efc6b0e9dea525779c784be08ad3f0c4af"
+  }
+}

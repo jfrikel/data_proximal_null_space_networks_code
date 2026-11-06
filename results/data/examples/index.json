@@ -1,0 +1,1280 @@
+{
+  "predeclared_ids": [
+    "dpnn-main-256-v1/test/000000",
+    "dpnn-main-256-v1/test/000001",
+    "dpnn-main-256-v1/test/000002",
+    "dpnn-main-256-v1/test/000003",
+    "dpnn-main-256-v1/test/000004",
+    "dpnn-main-256-v1/test/000005",
+    "dpnn-main-256-v1/test/000006",
+    "dpnn-main-256-v1/test/000007"
+  ],
+  "display_ids": [
+    "dpnn-main-256-v1/test/000000",
+    "dpnn-main-256-v1/test/000001",
+    "dpnn-main-256-v1/test/000002"
+  ],
+  "display_rule": "First three prespecified diagnosis IDs in their frozen order, no metric selection",
+  "difficult": [
+    {
+      "start": "tikhonov",
+      "id": "dpnn-main-256-v1/test/000490",
+      "rule": "Largest DP1 MSE, seed 0, best_mse; post-hoc difficult example"
+    },
+    {
+      "start": "tv",
+      "id": "dpnn-main-256-v1/test/000490",
+      "rule": "Largest DP1 MSE, seed 0, best_mse; post-hoc difficult example"
+    }
+  ],
+  "predictions": [
+    {
+      "id": "dpnn-main-256-v1/test/000001",
+      "start_kind": "tikhonov",
+      "method": "DP_TWO",
+      "seed_index": 0,
+      "selection": "best_mse",
+      "mse": 2.1364175441010085e-05,
+      "ssim": 0.964125257974695,
+      "psnr": 46.703138642944694,
+      "weights_sha256": "343d4066127423e04152c5664ff0a4468e62fd26eb601db23d1ad7eff2d28323",
+      "file": "data/examples/prediction_50581233f71722c4.npz",
+      "target_file": "data/examples/target_000001.npz",
+      "start_file": "data/examples/start_tikhonov_000001.npz",
+      "archive_prediction": {
+        "bytes": 4950946,
+        "path": "artifact:fd0010071d2f1697",
+        "sha256": "50581233f71722c4cc5802581aac9c60cc372a9fa14cca8d675eee339bdba6fe"
+      },
+      "checkpoint_epoch": 57
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000002",
+      "start_kind": "tikhonov",
+      "method": "DP_TWO",
+      "seed_index": 0,
+      "selection": "best_mse",
+      "mse": 2.2933895804265305e-05,
+      "ssim": 0.9698196999878781,
+      "psnr": 46.39522164956837,
+      "weights_sha256": "343d4066127423e04152c5664ff0a4468e62fd26eb601db23d1ad7eff2d28323",
+      "file": "data/examples/prediction_57d8aaf3fa58c1c4.npz",
+      "target_file": "data/examples/target_000002.npz",
+      "start_file": "data/examples/start_tikhonov_000002.npz",
+      "archive_prediction": {
+        "bytes": 4949708,
+        "path": "artifact:32c30dfdef158038",
+        "sha256": "57d8aaf3fa58c1c479e51e0b7b00c82c589fe6ee02815cc00afefdabfa369369"
+      },
+      "checkpoint_epoch": 57
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000490",
+      "start_kind": "tikhonov",
+      "method": "DP_TWO",
+      "seed_index": 0,
+      "selection": "best_mse",
+      "mse": 0.000574540437301696,
+      "ssim": 0.8426821103202244,
+      "psnr": 32.40679399388296,
+      "weights_sha256": "343d4066127423e04152c5664ff0a4468e62fd26eb601db23d1ad7eff2d28323",
+      "file": "data/examples/prediction_1ebfda8c1bbdd9ea.npz",
+      "target_file": "data/examples/target_000490.npz",
+      "start_file": "data/examples/start_tikhonov_000490.npz",
+      "archive_prediction": {
+        "bytes": 1003652,
+        "path": "artifact:5778281d790e9e66",
+        "sha256": "1ebfda8c1bbdd9ea050ea475795af82449d762f9feb59e148faf144c28845d16"
+      },
+      "checkpoint_epoch": 57
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tikhonov",
+      "method": "DP_TWO",
+      "seed_index": 0,
+      "selection": "best_ssim",
+      "mse": 1.9821718687393362e-05,
+      "ssim": 0.9663099196607554,
+      "psnr": 47.028586917230825,
+      "weights_sha256": "65f931890b7fa6f2167b71d4a141384ce8e8e055e2def68e9ed41752a5c6d211",
+      "file": "data/examples/prediction_ba959fb5e71e08e1.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tikhonov_000000.npz",
+      "archive_prediction": {
+        "bytes": 4954052,
+        "path": "artifact:426e58db01f29b73",
+        "sha256": "ba959fb5e71e08e11f5ef07a5b67ab0df93e4541864d20c714a27d3e77f06fd0"
+      },
+      "checkpoint_epoch": 58
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tikhonov",
+      "method": "DP_TWO",
+      "seed_index": 1,
+      "selection": "best_mse",
+      "mse": 1.7738079169150624e-05,
+      "ssim": 0.9593321670230002,
+      "psnr": 47.51093411077258,
+      "weights_sha256": "823b4da57cb7f4847d592fbe26c923513d4b6f9731f5f025007e64d71e125b3d",
+      "file": "data/examples/prediction_1ed372afca64f11b.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tikhonov_000000.npz",
+      "archive_prediction": {
+        "bytes": 4958688,
+        "path": "artifact:9b7f1b360285eb43",
+        "sha256": "1ed372afca64f11b8cad1b70bee556f111979c579aad2fba293fddb344f54713"
+      },
+      "checkpoint_epoch": 57
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tikhonov",
+      "method": "DP_TWO",
+      "seed_index": 1,
+      "selection": "best_ssim",
+      "mse": 1.7738079169150624e-05,
+      "ssim": 0.9593321670230002,
+      "psnr": 47.51093411077258,
+      "weights_sha256": "823b4da57cb7f4847d592fbe26c923513d4b6f9731f5f025007e64d71e125b3d",
+      "file": "data/examples/prediction_1ed372afca64f11b.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tikhonov_000000.npz",
+      "archive_prediction": {
+        "bytes": 4958688,
+        "path": "artifact:9b7f1b360285eb43",
+        "sha256": "1ed372afca64f11b8cad1b70bee556f111979c579aad2fba293fddb344f54713"
+      },
+      "checkpoint_epoch": 57
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tv",
+      "method": "DP_TWO",
+      "seed_index": 0,
+      "selection": "best_mse",
+      "mse": 0.00011142215163536498,
+      "ssim": 0.8990191325065917,
+      "psnr": 39.53028459282215,
+      "weights_sha256": "78f0cd528ad0e42c9e3861d56aae6d05161998190edbc19942d0f34900193fb6",
+      "file": "data/examples/prediction_71e06c7464e656e2.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tv_000000.npz",
+      "archive_prediction": {
+        "bytes": 4931483,
+        "path": "artifact:0401c6f0b1c1d3a9",
+        "sha256": "71e06c7464e656e25524fdca5b47cd7228c5ca28ecf84a5ec39ed5a20ce26277"
+      },
+      "checkpoint_epoch": 31
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000001",
+      "start_kind": "tv",
+      "method": "DP_TWO",
+      "seed_index": 0,
+      "selection": "best_mse",
+      "mse": 0.00012251495877403762,
+      "ssim": 0.9283290078198125,
+      "psnr": 39.118108817778136,
+      "weights_sha256": "78f0cd528ad0e42c9e3861d56aae6d05161998190edbc19942d0f34900193fb6",
+      "file": "data/examples/prediction_956d5817605b08d0.npz",
+      "target_file": "data/examples/target_000001.npz",
+      "start_file": "data/examples/start_tv_000001.npz",
+      "archive_prediction": {
+        "bytes": 4924101,
+        "path": "artifact:2093d133dcbacdb2",
+        "sha256": "956d5817605b08d05ca6b484161b0ce4357f219dbd65ec369cb48732abc83b14"
+      },
+      "checkpoint_epoch": 31
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000002",
+      "start_kind": "tv",
+      "method": "DP_TWO",
+      "seed_index": 0,
+      "selection": "best_mse",
+      "mse": 0.0002064413837290643,
+      "ssim": 0.8706127919786242,
+      "psnr": 36.85203238616409,
+      "weights_sha256": "78f0cd528ad0e42c9e3861d56aae6d05161998190edbc19942d0f34900193fb6",
+      "file": "data/examples/prediction_722339a220d91630.npz",
+      "target_file": "data/examples/target_000002.npz",
+      "start_file": "data/examples/start_tv_000002.npz",
+      "archive_prediction": {
+        "bytes": 4931345,
+        "path": "artifact:8f8100f925dfaa47",
+        "sha256": "722339a220d91630e9a3488549f55b20c7fba287d58cb0e48f05d48325e7cb2f"
+      },
+      "checkpoint_epoch": 31
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000490",
+      "start_kind": "tv",
+      "method": "DP_TWO",
+      "seed_index": 0,
+      "selection": "best_mse",
+      "mse": 0.0017708402053891862,
+      "ssim": 0.7015859785777735,
+      "psnr": 27.518206263021536,
+      "weights_sha256": "78f0cd528ad0e42c9e3861d56aae6d05161998190edbc19942d0f34900193fb6",
+      "file": "data/examples/prediction_d3aefa0f9701a0d6.npz",
+      "target_file": "data/examples/target_000490.npz",
+      "start_file": "data/examples/start_tv_000490.npz",
+      "archive_prediction": {
+        "bytes": 966882,
+        "path": "artifact:297b20b01273e133",
+        "sha256": "d3aefa0f9701a0d6a4393920dcd956ab7bb2288ad19ced99ec51c6cf6226104f"
+      },
+      "checkpoint_epoch": 31
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tv",
+      "method": "DP_TWO",
+      "seed_index": 0,
+      "selection": "best_ssim",
+      "mse": 0.00011142215163536498,
+      "ssim": 0.8990191325065917,
+      "psnr": 39.53028459282215,
+      "weights_sha256": "78f0cd528ad0e42c9e3861d56aae6d05161998190edbc19942d0f34900193fb6",
+      "file": "data/examples/prediction_71e06c7464e656e2.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tv_000000.npz",
+      "archive_prediction": {
+        "bytes": 4931483,
+        "path": "artifact:0401c6f0b1c1d3a9",
+        "sha256": "71e06c7464e656e25524fdca5b47cd7228c5ca28ecf84a5ec39ed5a20ce26277"
+      },
+      "checkpoint_epoch": 31
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000001",
+      "start_kind": "tv",
+      "method": "DP_TWO",
+      "seed_index": 0,
+      "selection": "best_ssim",
+      "mse": 0.00012251495877403762,
+      "ssim": 0.9283290078198125,
+      "psnr": 39.118108817778136,
+      "weights_sha256": "78f0cd528ad0e42c9e3861d56aae6d05161998190edbc19942d0f34900193fb6",
+      "file": "data/examples/prediction_956d5817605b08d0.npz",
+      "target_file": "data/examples/target_000001.npz",
+      "start_file": "data/examples/start_tv_000001.npz",
+      "archive_prediction": {
+        "bytes": 4924101,
+        "path": "artifact:2093d133dcbacdb2",
+        "sha256": "956d5817605b08d05ca6b484161b0ce4357f219dbd65ec369cb48732abc83b14"
+      },
+      "checkpoint_epoch": 31
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000002",
+      "start_kind": "tv",
+      "method": "DP_TWO",
+      "seed_index": 0,
+      "selection": "best_ssim",
+      "mse": 0.0002064413837290643,
+      "ssim": 0.8706127919786242,
+      "psnr": 36.85203238616409,
+      "weights_sha256": "78f0cd528ad0e42c9e3861d56aae6d05161998190edbc19942d0f34900193fb6",
+      "file": "data/examples/prediction_722339a220d91630.npz",
+      "target_file": "data/examples/target_000002.npz",
+      "start_file": "data/examples/start_tv_000002.npz",
+      "archive_prediction": {
+        "bytes": 4931345,
+        "path": "artifact:8f8100f925dfaa47",
+        "sha256": "722339a220d91630e9a3488549f55b20c7fba287d58cb0e48f05d48325e7cb2f"
+      },
+      "checkpoint_epoch": 31
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tv",
+      "method": "DP_TWO",
+      "seed_index": 1,
+      "selection": "best_mse",
+      "mse": 8.905051653318864e-05,
+      "ssim": 0.9130004258003397,
+      "psnr": 40.50363557089419,
+      "weights_sha256": "634814c8ec2500c7b4e394aba68826dea598fc32b4e19c5bed6139a2b88b7f2c",
+      "file": "data/examples/prediction_4d9f965585b5d9ca.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tv_000000.npz",
+      "archive_prediction": {
+        "bytes": 4938869,
+        "path": "artifact:7014415da2a1b2dc",
+        "sha256": "4d9f965585b5d9cab03edf449c4caee4553fbfad74dff806273db1d70984dd3f"
+      },
+      "checkpoint_epoch": 34
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tv",
+      "method": "DP_TWO",
+      "seed_index": 1,
+      "selection": "best_ssim",
+      "mse": 0.00014459018707224105,
+      "ssim": 0.9046288550760057,
+      "psnr": 38.39861180381658,
+      "weights_sha256": "6a3ffbf99a2b09f0ef77951f4ed5ab2b198bf9da916ad5ab58a0215af85418be",
+      "file": "data/examples/prediction_f12e6df6c8d94835.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tv_000000.npz",
+      "archive_prediction": {
+        "bytes": 4936173,
+        "path": "artifact:952cc6494f634c72",
+        "sha256": "f12e6df6c8d94835e2a647d65236c85f45a9144d92f232d08d67b35e6b254e7d"
+      },
+      "checkpoint_epoch": 16
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tikhonov",
+      "method": "DP",
+      "seed_index": 0,
+      "selection": "best_mse",
+      "mse": 1.668366405241414e-05,
+      "ssim": 0.9826642660225362,
+      "psnr": 47.777085638305024,
+      "weights_sha256": "7178a669c00d426af181243ca10b93b79085dcf7e58155efcd9f55339b020cff",
+      "file": "data/examples/prediction_6558ddded4590b03.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tikhonov_000000.npz",
+      "archive_prediction": {
+        "bytes": 4490629,
+        "path": "artifact:e48cb6d3bd508494",
+        "sha256": "6558ddded4590b039c59270d2da21e91d6c73d1f25cdc93bafde5e2dd3cc93c2"
+      },
+      "checkpoint_epoch": 59
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000001",
+      "start_kind": "tikhonov",
+      "method": "DP",
+      "seed_index": 0,
+      "selection": "best_mse",
+      "mse": 1.14192349231046e-05,
+      "ssim": 0.9969200789926247,
+      "psnr": 49.42362992395292,
+      "weights_sha256": "7178a669c00d426af181243ca10b93b79085dcf7e58155efcd9f55339b020cff",
+      "file": "data/examples/prediction_4aa2f1bc52bb18c1.npz",
+      "target_file": "data/examples/target_000001.npz",
+      "start_file": "data/examples/start_tikhonov_000001.npz",
+      "archive_prediction": {
+        "bytes": 4492071,
+        "path": "artifact:ab35c43e800d52cd",
+        "sha256": "4aa2f1bc52bb18c17c49c1de08801b9af28605ce98ba45c840efd2c25ec84884"
+      },
+      "checkpoint_epoch": 59
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000002",
+      "start_kind": "tikhonov",
+      "method": "DP",
+      "seed_index": 0,
+      "selection": "best_mse",
+      "mse": 2.1658658037563765e-05,
+      "ssim": 0.9869971460402069,
+      "psnr": 46.64368455602474,
+      "weights_sha256": "7178a669c00d426af181243ca10b93b79085dcf7e58155efcd9f55339b020cff",
+      "file": "data/examples/prediction_19e7b36c368661b3.npz",
+      "target_file": "data/examples/target_000002.npz",
+      "start_file": "data/examples/start_tikhonov_000002.npz",
+      "archive_prediction": {
+        "bytes": 4486375,
+        "path": "artifact:4db936dfce77a9e7",
+        "sha256": "19e7b36c368661b3f82fba53a92c4fadb5f978ad06d413fbe1b4b15737d67c50"
+      },
+      "checkpoint_epoch": 59
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000490",
+      "start_kind": "tikhonov",
+      "method": "DP",
+      "seed_index": 0,
+      "selection": "best_mse",
+      "mse": 0.0004541165815907542,
+      "ssim": 0.9541973204735803,
+      "psnr": 33.428326400019394,
+      "weights_sha256": "7178a669c00d426af181243ca10b93b79085dcf7e58155efcd9f55339b020cff",
+      "file": "data/examples/prediction_f292c7711bd44dfb.npz",
+      "target_file": "data/examples/target_000490.npz",
+      "start_file": "data/examples/start_tikhonov_000490.npz",
+      "archive_prediction": {
+        "bytes": 995657,
+        "path": "artifact:66e185a1c21aca20",
+        "sha256": "f292c7711bd44dfb657ce069ae955e2d22996159f172bc9de3001b48c20c651e"
+      },
+      "checkpoint_epoch": 59
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tikhonov",
+      "method": "DP",
+      "seed_index": 0,
+      "selection": "best_ssim",
+      "mse": 1.668366405241414e-05,
+      "ssim": 0.9826642660225362,
+      "psnr": 47.777085638305024,
+      "weights_sha256": "7178a669c00d426af181243ca10b93b79085dcf7e58155efcd9f55339b020cff",
+      "file": "data/examples/prediction_6558ddded4590b03.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tikhonov_000000.npz",
+      "archive_prediction": {
+        "bytes": 4490629,
+        "path": "artifact:e48cb6d3bd508494",
+        "sha256": "6558ddded4590b039c59270d2da21e91d6c73d1f25cdc93bafde5e2dd3cc93c2"
+      },
+      "checkpoint_epoch": 59
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000001",
+      "start_kind": "tikhonov",
+      "method": "DP",
+      "seed_index": 0,
+      "selection": "best_ssim",
+      "mse": 1.14192349231046e-05,
+      "ssim": 0.9969200789926247,
+      "psnr": 49.42362992395292,
+      "weights_sha256": "7178a669c00d426af181243ca10b93b79085dcf7e58155efcd9f55339b020cff",
+      "file": "data/examples/prediction_4aa2f1bc52bb18c1.npz",
+      "target_file": "data/examples/target_000001.npz",
+      "start_file": "data/examples/start_tikhonov_000001.npz",
+      "archive_prediction": {
+        "bytes": 4492071,
+        "path": "artifact:ab35c43e800d52cd",
+        "sha256": "4aa2f1bc52bb18c17c49c1de08801b9af28605ce98ba45c840efd2c25ec84884"
+      },
+      "checkpoint_epoch": 59
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000002",
+      "start_kind": "tikhonov",
+      "method": "DP",
+      "seed_index": 0,
+      "selection": "best_ssim",
+      "mse": 2.1658658037563765e-05,
+      "ssim": 0.9869971460402069,
+      "psnr": 46.64368455602474,
+      "weights_sha256": "7178a669c00d426af181243ca10b93b79085dcf7e58155efcd9f55339b020cff",
+      "file": "data/examples/prediction_19e7b36c368661b3.npz",
+      "target_file": "data/examples/target_000002.npz",
+      "start_file": "data/examples/start_tikhonov_000002.npz",
+      "archive_prediction": {
+        "bytes": 4486375,
+        "path": "artifact:4db936dfce77a9e7",
+        "sha256": "19e7b36c368661b3f82fba53a92c4fadb5f978ad06d413fbe1b4b15737d67c50"
+      },
+      "checkpoint_epoch": 59
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tikhonov",
+      "method": "DP",
+      "seed_index": 1,
+      "selection": "best_mse",
+      "mse": 1.8712056278224702e-05,
+      "ssim": 0.9814186282551853,
+      "psnr": 47.2787848501647,
+      "weights_sha256": "92f2d81cd97a8e2fdd71ecbb2d679e55443d41b6b45e6f2c4e7e6db1395e2131",
+      "file": "data/examples/prediction_ec53aa28a2b58b68.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tikhonov_000000.npz",
+      "archive_prediction": {
+        "bytes": 4490718,
+        "path": "artifact:e22cacc3c011a0cb",
+        "sha256": "ec53aa28a2b58b68b8c76fc306619bcdb128d809e9fedf315053e91e0fa13148"
+      },
+      "checkpoint_epoch": 52
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tikhonov",
+      "method": "DP",
+      "seed_index": 1,
+      "selection": "best_ssim",
+      "mse": 1.9352957418507485e-05,
+      "ssim": 0.9800586441213864,
+      "psnr": 47.13252658944991,
+      "weights_sha256": "a120ac1cf9884315d5ea3498bac9e8bce52e2f664e3d8a7414e0ae13e2a1f72c",
+      "file": "data/examples/prediction_b597cad364abfa31.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tikhonov_000000.npz",
+      "archive_prediction": {
+        "bytes": 4490723,
+        "path": "artifact:cd6b32384695fbb6",
+        "sha256": "b597cad364abfa318dd20f01935032c81f99a4a8bb342de8a2c8fa36bb25c4af"
+      },
+      "checkpoint_epoch": 58
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000001",
+      "start_kind": "tv",
+      "method": "DP",
+      "seed_index": 0,
+      "selection": "best_mse",
+      "mse": 0.00010531433836980021,
+      "ssim": 0.9540103404177488,
+      "psnr": 39.77512496326749,
+      "weights_sha256": "5cfad444c4f7fbec279352a7bb8815f783ba4ccf2573ec98c23ce712da0bef3b",
+      "file": "data/examples/prediction_9669f9062e105ebe.npz",
+      "target_file": "data/examples/target_000001.npz",
+      "start_file": "data/examples/start_tv_000001.npz",
+      "archive_prediction": {
+        "bytes": 4441598,
+        "path": "artifact:3c83377960f993f6",
+        "sha256": "9669f9062e105ebe3e94e27fbff97c9f091b5567bbabe0206577a6491a9d7cda"
+      },
+      "checkpoint_epoch": 31
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000002",
+      "start_kind": "tv",
+      "method": "DP",
+      "seed_index": 0,
+      "selection": "best_mse",
+      "mse": 0.00020227392065745787,
+      "ssim": 0.8879687760804994,
+      "psnr": 36.940601075636934,
+      "weights_sha256": "5cfad444c4f7fbec279352a7bb8815f783ba4ccf2573ec98c23ce712da0bef3b",
+      "file": "data/examples/prediction_f6352f904b2eb124.npz",
+      "target_file": "data/examples/target_000002.npz",
+      "start_file": "data/examples/start_tv_000002.npz",
+      "archive_prediction": {
+        "bytes": 4452139,
+        "path": "artifact:4d725d0c771bc929",
+        "sha256": "f6352f904b2eb124a35f92dccd54000391beba274c0a56c07e87c68ab5ebd836"
+      },
+      "checkpoint_epoch": 31
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000490",
+      "start_kind": "tv",
+      "method": "DP",
+      "seed_index": 0,
+      "selection": "best_mse",
+      "mse": 0.0015832456155240372,
+      "ssim": 0.7541402833849309,
+      "psnr": 28.004517059890084,
+      "weights_sha256": "5cfad444c4f7fbec279352a7bb8815f783ba4ccf2573ec98c23ce712da0bef3b",
+      "file": "data/examples/prediction_3131e8c8a671194a.npz",
+      "target_file": "data/examples/target_000490.npz",
+      "start_file": "data/examples/start_tv_000490.npz",
+      "archive_prediction": {
+        "bytes": 965973,
+        "path": "artifact:ba2ffd4b513a2dc7",
+        "sha256": "3131e8c8a671194a5018652e661b62870beead4564b8e1c1fdd3dadf4d7de764"
+      },
+      "checkpoint_epoch": 31
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tv",
+      "method": "DP",
+      "seed_index": 0,
+      "selection": "best_ssim",
+      "mse": 0.00011142553398217884,
+      "ssim": 0.9165698860411472,
+      "psnr": 39.530152759767375,
+      "weights_sha256": "96bb682db93bf2c839cc01d4d18a89691966134eabb6cbc61f0080cc3a0fc39f",
+      "file": "data/examples/prediction_0d4805ac7833f065.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tv_000000.npz",
+      "archive_prediction": {
+        "bytes": 4449610,
+        "path": "artifact:d32f3809705d5958",
+        "sha256": "0d4805ac7833f0652a123212306c3ec704464ab5aff3ca5731c859b14a81bd86"
+      },
+      "checkpoint_epoch": 27
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tv",
+      "method": "DP",
+      "seed_index": 1,
+      "selection": "best_mse",
+      "mse": 9.666567496433503e-05,
+      "ssim": 0.9104014015434676,
+      "psnr": 40.1472771226615,
+      "weights_sha256": "7d471d8c91ebe76840f2643d108648179446ab2379da4eac45ccd45ab5a44043",
+      "file": "data/examples/prediction_fb584f02c4ea0b37.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tv_000000.npz",
+      "archive_prediction": {
+        "bytes": 4450363,
+        "path": "artifact:98aa9ce55638c43c",
+        "sha256": "fb584f02c4ea0b3705a364e83d58f856bcd6f91e6dc7a8011610a61f25f8a693"
+      },
+      "checkpoint_epoch": 36
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tv",
+      "method": "DP",
+      "seed_index": 1,
+      "selection": "best_ssim",
+      "mse": 0.00010072983420846029,
+      "ssim": 0.9152109459843744,
+      "psnr": 39.96841880855155,
+      "weights_sha256": "b3d8564a7141c1db5dcb20c9f397f3fa18e2f9dbc99c21b123f37a7e6e08fbc5",
+      "file": "data/examples/prediction_9e92317fc3478f0e.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tv_000000.npz",
+      "archive_prediction": {
+        "bytes": 4449848,
+        "path": "artifact:1d0d65235572fce8",
+        "sha256": "9e92317fc3478f0e4a3a4058b7304c78c01c461813056e0de04fba45ae5496f5"
+      },
+      "checkpoint_epoch": 31
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000001",
+      "start_kind": "tikhonov",
+      "method": "NSN",
+      "seed_index": 0,
+      "selection": "best_mse",
+      "mse": 0.0005929389418566973,
+      "ssim": 0.5141719827030162,
+      "psnr": 32.26990025994887,
+      "weights_sha256": "b4032b15e86a88e4b985f05c5c60cb5583d8dc6a4a40ace8557e46ebbec4918f",
+      "file": "data/examples/prediction_595035defc31228d.npz",
+      "target_file": "data/examples/target_000001.npz",
+      "start_file": "data/examples/start_tikhonov_000001.npz",
+      "archive_prediction": {
+        "bytes": 4275551,
+        "path": "artifact:6d3287d89b87d4e2",
+        "sha256": "595035defc31228d455800de122a767a86f726dbc815505f7faf28ef107618b9"
+      },
+      "checkpoint_epoch": 48
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000002",
+      "start_kind": "tikhonov",
+      "method": "NSN",
+      "seed_index": 0,
+      "selection": "best_mse",
+      "mse": 0.0003394612697930228,
+      "ssim": 0.642733314323898,
+      "psnr": 34.69209768584299,
+      "weights_sha256": "b4032b15e86a88e4b985f05c5c60cb5583d8dc6a4a40ace8557e46ebbec4918f",
+      "file": "data/examples/prediction_403a249e75dceb56.npz",
+      "target_file": "data/examples/target_000002.npz",
+      "start_file": "data/examples/start_tikhonov_000002.npz",
+      "archive_prediction": {
+        "bytes": 4265460,
+        "path": "artifact:82da06d80957ad97",
+        "sha256": "403a249e75dceb56d455b5335b1207b2c12dcc9051be8ff251ecec9967b1ad04"
+      },
+      "checkpoint_epoch": 48
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000490",
+      "start_kind": "tikhonov",
+      "method": "NSN",
+      "seed_index": 0,
+      "selection": "best_mse",
+      "mse": 0.003126338010227485,
+      "ssim": 0.21930034586414135,
+      "psnr": 25.04964069170073,
+      "weights_sha256": "b4032b15e86a88e4b985f05c5c60cb5583d8dc6a4a40ace8557e46ebbec4918f",
+      "file": "data/examples/prediction_6734fe244307735a.npz",
+      "target_file": "data/examples/target_000490.npz",
+      "start_file": "data/examples/start_tikhonov_000490.npz",
+      "archive_prediction": {
+        "bytes": 1006330,
+        "path": "artifact:5c6552da23610b99",
+        "sha256": "6734fe244307735a65c82608ba856ada7849d0d251e2176b582fb4427826061f"
+      },
+      "checkpoint_epoch": 48
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tikhonov",
+      "method": "NSN",
+      "seed_index": 0,
+      "selection": "best_ssim",
+      "mse": 0.000724028135161565,
+      "ssim": 0.4604514061662917,
+      "psnr": 31.40244557134341,
+      "weights_sha256": "38d8f0bdc612797b403b40f06d13ee52ff95197c7eec54bf9fe899c345902efe",
+      "file": "data/examples/prediction_c8645fbed8747a83.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tikhonov_000000.npz",
+      "archive_prediction": {
+        "bytes": 4279152,
+        "path": "artifact:882bb73942edee9c",
+        "sha256": "c8645fbed8747a836423070d00e902fcf596a626a6b34246ea902169f82e8840"
+      },
+      "checkpoint_epoch": 8
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tikhonov",
+      "method": "NSN",
+      "seed_index": 1,
+      "selection": "best_mse",
+      "mse": 0.0007011224763428025,
+      "ssim": 0.45607784751492647,
+      "psnr": 31.542061102020632,
+      "weights_sha256": "63685b4d33479814ecd4d988f171adb9bfb613f770ed798019c7f9da3456b33d",
+      "file": "data/examples/prediction_036778ffffbd2b82.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tikhonov_000000.npz",
+      "archive_prediction": {
+        "bytes": 4279245,
+        "path": "artifact:ca547f4efc68a8de",
+        "sha256": "036778ffffbd2b82b3f0ccc2ffbcc6d9bb82b9c206c3ee60aec5e63282534c45"
+      },
+      "checkpoint_epoch": 47
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tikhonov",
+      "method": "NSN",
+      "seed_index": 1,
+      "selection": "best_ssim",
+      "mse": 0.0007003606949899659,
+      "ssim": 0.45775898189370373,
+      "psnr": 31.546782349871524,
+      "weights_sha256": "979f3df9da99df93e648ec74bd596cedd19c98a6e09a75b2317d6fe39c9bcbc2",
+      "file": "data/examples/prediction_f27d721ffe1c0a35.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tikhonov_000000.npz",
+      "archive_prediction": {
+        "bytes": 4281581,
+        "path": "artifact:269b50f1f4337676",
+        "sha256": "f27d721ffe1c0a35ed31b547a6f1da27373614123d71f2150c526a27f50e9c97"
+      },
+      "checkpoint_epoch": 25
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000001",
+      "start_kind": "tv",
+      "method": "NSN",
+      "seed_index": 0,
+      "selection": "best_mse",
+      "mse": 0.00029832281689120524,
+      "ssim": 0.8488228631404456,
+      "psnr": 35.2531352883376,
+      "weights_sha256": "b90fb9889d905bdf09cd4e9aa6aee730f8e99546165fecab998f69db60c3181b",
+      "file": "data/examples/prediction_8020f1c10e770d18.npz",
+      "target_file": "data/examples/target_000001.npz",
+      "start_file": "data/examples/start_tv_000001.npz",
+      "archive_prediction": {
+        "bytes": 4242021,
+        "path": "artifact:7872daaf4928d23c",
+        "sha256": "8020f1c10e770d180f42604d8b3f45ad68c2961c0d7eb71c3e126e54aa8fc2e7"
+      },
+      "checkpoint_epoch": 31
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000002",
+      "start_kind": "tv",
+      "method": "NSN",
+      "seed_index": 0,
+      "selection": "best_mse",
+      "mse": 0.0004234517307275818,
+      "ssim": 0.7607321637903623,
+      "psnr": 33.73196087749808,
+      "weights_sha256": "b90fb9889d905bdf09cd4e9aa6aee730f8e99546165fecab998f69db60c3181b",
+      "file": "data/examples/prediction_0545fedb93428dca.npz",
+      "target_file": "data/examples/target_000002.npz",
+      "start_file": "data/examples/start_tv_000002.npz",
+      "archive_prediction": {
+        "bytes": 4249831,
+        "path": "artifact:ce0ef8581ae72045",
+        "sha256": "0545fedb93428dca1cc012a1bfb907e5dc74858128bb099eaf9e80b111bc26bf"
+      },
+      "checkpoint_epoch": 31
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000490",
+      "start_kind": "tv",
+      "method": "NSN",
+      "seed_index": 0,
+      "selection": "best_mse",
+      "mse": 0.0028679227433645905,
+      "ssim": 0.44248622729158826,
+      "psnr": 25.42432551952062,
+      "weights_sha256": "b90fb9889d905bdf09cd4e9aa6aee730f8e99546165fecab998f69db60c3181b",
+      "file": "data/examples/prediction_fdd06b68b456c29c.npz",
+      "target_file": "data/examples/target_000490.npz",
+      "start_file": "data/examples/start_tv_000490.npz",
+      "archive_prediction": {
+        "bytes": 965798,
+        "path": "artifact:826ed03ad1b89817",
+        "sha256": "fdd06b68b456c29c01cfab104914c20c5af9d3a8fe0c19c9a57edbaabea20370"
+      },
+      "checkpoint_epoch": 31
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tv",
+      "method": "NSN",
+      "seed_index": 0,
+      "selection": "best_ssim",
+      "mse": 0.0004095664241963973,
+      "ssim": 0.8030074950248618,
+      "psnr": 33.87675653555451,
+      "weights_sha256": "278774d69c155ba731c3e81e8cb4cad7e8456031a4aa4a930ec717642e2a8616",
+      "file": "data/examples/prediction_7e3525931bdec09d.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tv_000000.npz",
+      "archive_prediction": {
+        "bytes": 4213796,
+        "path": "artifact:2bce6f0e005e4779",
+        "sha256": "7e3525931bdec09dbd2013564ca0a742e67f993bf1d72b48d8808bb2df34d2de"
+      },
+      "checkpoint_epoch": 1
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tv",
+      "method": "NSN",
+      "seed_index": 1,
+      "selection": "best_mse",
+      "mse": 0.0002820648845144741,
+      "ssim": 0.7903489434515304,
+      "psnr": 35.496509776902634,
+      "weights_sha256": "d9f954e981f4081a250628857b0cbb40c129727e86f890c0a2eca13ba4c59466",
+      "file": "data/examples/prediction_f7e22e9142f150db.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tv_000000.npz",
+      "archive_prediction": {
+        "bytes": 4253973,
+        "path": "artifact:c3f668df775d96fb",
+        "sha256": "f7e22e9142f150db2c110936518da7d33df97d591995d6e17d2f9e10b93afb89"
+      },
+      "checkpoint_epoch": 31
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tv",
+      "method": "NSN",
+      "seed_index": 1,
+      "selection": "best_ssim",
+      "mse": 0.0004155918139041924,
+      "ssim": 0.8114090918640685,
+      "psnr": 33.81333015521143,
+      "weights_sha256": "c901a1b38973d75965bb0d2ad1c45521729a545de52ace7e2e7e1ec81ade7233",
+      "file": "data/examples/prediction_08738af288775037.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tv_000000.npz",
+      "archive_prediction": {
+        "bytes": 4243259,
+        "path": "artifact:3e9c3c5f2a7bc486",
+        "sha256": "08738af2887750371953a1bed151e0051aca4882caf5ca023cdb56271f901075"
+      },
+      "checkpoint_epoch": 1
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000001",
+      "start_kind": "tikhonov",
+      "method": "RES",
+      "seed_index": 0,
+      "selection": "best_mse",
+      "mse": 1.2150792808857986e-05,
+      "ssim": 0.9963831037188822,
+      "psnr": 49.153953845118245,
+      "weights_sha256": "6b6a9150cb563bcca565b6198c40bf1872964ef4d052dd9347d6fe9cf8563aeb",
+      "file": "data/examples/prediction_e39e98ea248dcebb.npz",
+      "target_file": "data/examples/target_000001.npz",
+      "start_file": "data/examples/start_tikhonov_000001.npz",
+      "archive_prediction": {
+        "bytes": 4491636,
+        "path": "artifact:231a8cb16f4a0f13",
+        "sha256": "e39e98ea248dcebbdd94ffbabc327989b0df14e26d083321306eb636cabff0d8"
+      },
+      "checkpoint_epoch": 59
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000002",
+      "start_kind": "tikhonov",
+      "method": "RES",
+      "seed_index": 0,
+      "selection": "best_mse",
+      "mse": 1.5896303071758924e-05,
+      "ssim": 0.9917535272721549,
+      "psnr": 47.98703865756206,
+      "weights_sha256": "6b6a9150cb563bcca565b6198c40bf1872964ef4d052dd9347d6fe9cf8563aeb",
+      "file": "data/examples/prediction_6c94db56946c84fc.npz",
+      "target_file": "data/examples/target_000002.npz",
+      "start_file": "data/examples/start_tikhonov_000002.npz",
+      "archive_prediction": {
+        "bytes": 4486491,
+        "path": "artifact:1a1917bf72d390fd",
+        "sha256": "6c94db56946c84fc5660e75a7b148423e6aa7d017bacb5696a176289877e2e35"
+      },
+      "checkpoint_epoch": 59
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000490",
+      "start_kind": "tikhonov",
+      "method": "RES",
+      "seed_index": 0,
+      "selection": "best_mse",
+      "mse": 0.0005078025361404259,
+      "ssim": 0.9638005688094496,
+      "psnr": 32.94305134440946,
+      "weights_sha256": "6b6a9150cb563bcca565b6198c40bf1872964ef4d052dd9347d6fe9cf8563aeb",
+      "file": "data/examples/prediction_2d962980b5af0298.npz",
+      "target_file": "data/examples/target_000490.npz",
+      "start_file": "data/examples/start_tikhonov_000490.npz",
+      "archive_prediction": {
+        "bytes": 995911,
+        "path": "artifact:23576d95dfcdb05a",
+        "sha256": "2d962980b5af02980a89aa302658106d3e589c62ecc074e338c4d4dbc80e143a"
+      },
+      "checkpoint_epoch": 59
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tikhonov",
+      "method": "RES",
+      "seed_index": 0,
+      "selection": "best_ssim",
+      "mse": 1.529032567971002e-05,
+      "ssim": 0.9823637097960254,
+      "psnr": 48.15583264136758,
+      "weights_sha256": "c283efc4ab36b5f58f6af839c390398c9d603438738e5388cb9fb6d7821a56ba",
+      "file": "data/examples/prediction_6b4f4893436fc6ce.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tikhonov_000000.npz",
+      "archive_prediction": {
+        "bytes": 4491055,
+        "path": "artifact:6c444ffae6006f36",
+        "sha256": "6b4f4893436fc6cec64d06ce2d664b6b8c1803cd66ffe7be7e5970e746d8889e"
+      },
+      "checkpoint_epoch": 58
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tikhonov",
+      "method": "RES",
+      "seed_index": 1,
+      "selection": "best_mse",
+      "mse": 1.3652561902178562e-05,
+      "ssim": 0.9849697027237345,
+      "psnr": 48.647858456502384,
+      "weights_sha256": "bec941331f5933f1052d9ac636da46e41120169f89aef042b4456dbd71903608",
+      "file": "data/examples/prediction_4bc4dd27392508ce.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tikhonov_000000.npz",
+      "archive_prediction": {
+        "bytes": 4491105,
+        "path": "artifact:f7d0136332ace96d",
+        "sha256": "4bc4dd27392508ce38142067463f4cd8cba40341c4b11f993af9655ea8ba55f5"
+      },
+      "checkpoint_epoch": 51
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tikhonov",
+      "method": "RES",
+      "seed_index": 1,
+      "selection": "best_ssim",
+      "mse": 1.4239362563247461e-05,
+      "ssim": 0.9839860102904208,
+      "psnr": 48.4650945181296,
+      "weights_sha256": "da635820f65a8b4bde5af0cfa4ee5909dd82b0546a31ca3ed34a4d22017ee035",
+      "file": "data/examples/prediction_b37c613d6843ee2a.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tikhonov_000000.npz",
+      "archive_prediction": {
+        "bytes": 4490973,
+        "path": "artifact:6fcc2a526146a2eb",
+        "sha256": "b37c613d6843ee2a861f4386a1888ad3ec8bcf888fe1754168ee4ab5af5b8b2c"
+      },
+      "checkpoint_epoch": 58
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000001",
+      "start_kind": "tv",
+      "method": "RES",
+      "seed_index": 0,
+      "selection": "best_mse",
+      "mse": 8.367062969405516e-05,
+      "ssim": 0.9782568933497405,
+      "psnr": 40.77426962559353,
+      "weights_sha256": "637d43bc034ca67b3a925ea5abdc5d6f3f55fa8db5824813e0be73203df439cb",
+      "file": "data/examples/prediction_ec3dec0a66724056.npz",
+      "target_file": "data/examples/target_000001.npz",
+      "start_file": "data/examples/start_tv_000001.npz",
+      "archive_prediction": {
+        "bytes": 4428963,
+        "path": "artifact:c8c7be5c64d64561",
+        "sha256": "ec3dec0a6672405693e02ccbedfc886321646e9424b7367cc2f288e3eaaf02c2"
+      },
+      "checkpoint_epoch": 31
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000002",
+      "start_kind": "tv",
+      "method": "RES",
+      "seed_index": 0,
+      "selection": "best_mse",
+      "mse": 0.0001600385448640229,
+      "ssim": 0.9531832278465974,
+      "psnr": 37.95775406058338,
+      "weights_sha256": "637d43bc034ca67b3a925ea5abdc5d6f3f55fa8db5824813e0be73203df439cb",
+      "file": "data/examples/prediction_bfdfe9cd7f7c69cc.npz",
+      "target_file": "data/examples/target_000002.npz",
+      "start_file": "data/examples/start_tv_000002.npz",
+      "archive_prediction": {
+        "bytes": 4432404,
+        "path": "artifact:461f399c1dfaaa7a",
+        "sha256": "bfdfe9cd7f7c69cc4fdc3e99837ffee0802cd8fdf5a1d582ec5611893976a63c"
+      },
+      "checkpoint_epoch": 31
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000490",
+      "start_kind": "tv",
+      "method": "RES",
+      "seed_index": 0,
+      "selection": "best_mse",
+      "mse": 0.0012223478546180414,
+      "ssim": 0.9056323394942829,
+      "psnr": 29.128051853838002,
+      "weights_sha256": "637d43bc034ca67b3a925ea5abdc5d6f3f55fa8db5824813e0be73203df439cb",
+      "file": "data/examples/prediction_3a1158984f323ae0.npz",
+      "target_file": "data/examples/target_000490.npz",
+      "start_file": "data/examples/start_tv_000490.npz",
+      "archive_prediction": {
+        "bytes": 956562,
+        "path": "artifact:962a38fbae6c4285",
+        "sha256": "3a1158984f323ae0ab027011416da341a09fa8a79792ea1c952de8b28f144cb2"
+      },
+      "checkpoint_epoch": 31
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tv",
+      "method": "RES",
+      "seed_index": 0,
+      "selection": "best_ssim",
+      "mse": 6.622696055529496e-05,
+      "ssim": 0.9522260419975553,
+      "psnr": 41.78965176167872,
+      "weights_sha256": "8357a62295290cc133de037a6848692c476fe0d34c702b87da613da31348591a",
+      "file": "data/examples/prediction_a000fdf31165b99b.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tv_000000.npz",
+      "archive_prediction": {
+        "bytes": 4443283,
+        "path": "artifact:dc0863e0b2f6f66c",
+        "sha256": "a000fdf31165b99b2ff9ed835f7b0d9047c23f1a22ffa70267888e56150e9df7"
+      },
+      "checkpoint_epoch": 42
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tv",
+      "method": "RES",
+      "seed_index": 1,
+      "selection": "best_mse",
+      "mse": 5.923933243517946e-05,
+      "ssim": 0.9536086032472992,
+      "psnr": 42.27389844164189,
+      "weights_sha256": "5f36778ad607a7a9515b7c7fe34d24ff9869cf74c667f1ecc04153502a6fb7c0",
+      "file": "data/examples/prediction_cc043c50851abe38.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tv_000000.npz",
+      "archive_prediction": {
+        "bytes": 4441889,
+        "path": "artifact:1fe02f21d2fcad81",
+        "sha256": "cc043c50851abe38ec9ea42c5fa9237ee1284ba7fdc9974449e0a3653adfd437"
+      },
+      "checkpoint_epoch": 41
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tv",
+      "method": "RES",
+      "seed_index": 1,
+      "selection": "best_ssim",
+      "mse": 5.837865521264151e-05,
+      "ssim": 0.9530777815304466,
+      "psnr": 42.337459134668094,
+      "weights_sha256": "5648f1ebec8674e02c5f1cf4f757fb68736273f4a07546c0cb3f67699c0ecd81",
+      "file": "data/examples/prediction_6efce64298733bb4.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tv_000000.npz",
+      "archive_prediction": {
+        "bytes": 4440967,
+        "path": "artifact:0a6b40a8907bc2d7",
+        "sha256": "6efce64298733bb4c349c9f365b183d69768eb6aa532e1af4f863349c1547bcd"
+      },
+      "checkpoint_epoch": 38
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tikhonov",
+      "method": "BASE",
+      "seed_index": null,
+      "selection": null,
+      "mse": 0.0012404081758712808,
+      "ssim": 0.45859264561914764,
+      "psnr": 29.064353798709575,
+      "weights_sha256": null,
+      "file": "data/examples/prediction_8e367b0d9a94d77c.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tikhonov_000000.npz",
+      "archive_prediction": {
+        "bytes": 2685289,
+        "path": "artifact:83e316d316fde5f0",
+        "sha256": "8e367b0d9a94d77ccd6a1bda501c7bcd800689695a25cfdcd6f76eebb6190c65"
+      },
+      "checkpoint_epoch": null
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000001",
+      "start_kind": "tikhonov",
+      "method": "BASE",
+      "seed_index": null,
+      "selection": null,
+      "mse": 0.0007625178361106717,
+      "ssim": 0.49243205393575984,
+      "psnr": 31.17749993248262,
+      "weights_sha256": null,
+      "file": "data/examples/prediction_c6e64b1cf90e72eb.npz",
+      "target_file": "data/examples/target_000001.npz",
+      "start_file": "data/examples/start_tikhonov_000001.npz",
+      "archive_prediction": {
+        "bytes": 2684996,
+        "path": "artifact:4c75c29f969e12cd",
+        "sha256": "c6e64b1cf90e72eba3c567f4c3345efd704cfddc105a0af7267b45dee7172300"
+      },
+      "checkpoint_epoch": null
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000002",
+      "start_kind": "tikhonov",
+      "method": "BASE",
+      "seed_index": null,
+      "selection": null,
+      "mse": 0.0005804815667840716,
+      "ssim": 0.6313750077113041,
+      "psnr": 32.36211566745505,
+      "weights_sha256": null,
+      "file": "data/examples/prediction_de88f6a992e8ab62.npz",
+      "target_file": "data/examples/target_000002.npz",
+      "start_file": "data/examples/start_tikhonov_000002.npz",
+      "archive_prediction": {
+        "bytes": 2680639,
+        "path": "artifact:59f1825ba9a6c2df",
+        "sha256": "de88f6a992e8ab628b54c2e0295a7b45b85e8c0ec53fe0a0feff20b67bfc7475"
+      },
+      "checkpoint_epoch": null
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000490",
+      "start_kind": "tikhonov",
+      "method": "BASE",
+      "seed_index": null,
+      "selection": null,
+      "mse": 0.0068149744440429766,
+      "ssim": 0.2722754148778756,
+      "psnr": 21.66535768417998,
+      "weights_sha256": null,
+      "file": "data/examples/prediction_10db084f0aeb3079.npz",
+      "target_file": "data/examples/target_000490.npz",
+      "start_file": "data/examples/start_tikhonov_000490.npz",
+      "archive_prediction": {
+        "bytes": 1005928,
+        "path": "artifact:a49ff70650331f71",
+        "sha256": "10db084f0aeb30797ac1b2504a3223f5cc46b4332966cb75329477d0a6c67ccd"
+      },
+      "checkpoint_epoch": null
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000000",
+      "start_kind": "tv",
+      "method": "BASE",
+      "seed_index": null,
+      "selection": null,
+      "mse": 0.0004765777933884446,
+      "ssim": 0.816800707180485,
+      "psnr": 33.21866197897132,
+      "weights_sha256": null,
+      "file": "data/examples/prediction_887884f58d423156.npz",
+      "target_file": "data/examples/target_000000.npz",
+      "start_file": "data/examples/start_tv_000000.npz",
+      "archive_prediction": {
+        "bytes": 2599252,
+        "path": "artifact:88f6e278e11daf87",
+        "sha256": "887884f58d423156e8ca96e3fbc787b60234a0742302f84df5225361ba0e9b7d"
+      },
+      "checkpoint_epoch": null
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000001",
+      "start_kind": "tv",
+      "method": "BASE",
+      "seed_index": null,
+      "selection": null,
+      "mse": 0.0003031883284673806,
+      "ssim": 0.864884680775223,
+      "psnr": 35.18287521311015,
+      "weights_sha256": null,
+      "file": "data/examples/prediction_70ebee1c7ea3d361.npz",
+      "target_file": "data/examples/target_000001.npz",
+      "start_file": "data/examples/start_tv_000001.npz",
+      "archive_prediction": {
+        "bytes": 2587908,
+        "path": "artifact:49e88cde7270f136",
+        "sha256": "70ebee1c7ea3d36132d701a9be027efb98769568452f00dc126688422258a5f8"
+      },
+      "checkpoint_epoch": null
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000002",
+      "start_kind": "tv",
+      "method": "BASE",
+      "seed_index": null,
+      "selection": null,
+      "mse": 0.0004985008260126428,
+      "ssim": 0.8422589697411703,
+      "psnr": 33.02334117728583,
+      "weights_sha256": null,
+      "file": "data/examples/prediction_ad25a0adc8ce8ff9.npz",
+      "target_file": "data/examples/target_000002.npz",
+      "start_file": "data/examples/start_tv_000002.npz",
+      "archive_prediction": {
+        "bytes": 2607364,
+        "path": "artifact:6091b577f32331ef",
+        "sha256": "ad25a0adc8ce8ff957d16dab6fe9f566e21023794426769916727f84514be7d8"
+      },
+      "checkpoint_epoch": null
+    },
+    {
+      "id": "dpnn-main-256-v1/test/000490",
+      "start_kind": "tv",
+      "method": "BASE",
+      "seed_index": null,
+      "selection": null,
+      "mse": 0.005584935707133802,
+      "ssim": 0.6808901632593163,
+      "psnr": 22.529818220466233,
+      "weights_sha256": null,
+      "file": "data/examples/prediction_08a6c5ca4f509ebc.npz",
+      "target_file": "data/examples/target_000490.npz",
+      "start_file": "data/examples/start_tv_000490.npz",
+      "archive_prediction": {
+        "bytes": 927394,
+        "path": "artifact:3137a21849f7b328",
+        "sha256": "08a6c5ca4f509ebc6a71329b09a73ddeb0b899846786aad0a19094e126e0e06f"
+      },
+      "checkpoint_epoch": null
+    }
+  ],
+  "measurements": [],
+  "zoom": [
+    64,
+    192,
+    64,
+    192
+  ],
+  "public_subset": "Only arrays used by the paper renderer are included; predeclared IDs record the original diagnostic selection."
+}

@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "mode": "large",
+  "purpose": "A20.11: 256-square sparse LSQR and fixed Landweber projection/gradient diagnostics",
+  "dataset": {
+    "split": "operator_development",
+    "split_ids": {
+      "operator_development": [
+        "unit_gaussian",
+        "unit_circle"
+      ]
+    },
+    "probe_names": [
+      "unit_gaussian",
+      "unit_circle"
+    ],
+    "generator": "PCG64 Gaussian vector followed by recorded directional-derivative probes; all inputs saved",
+    "circle": {
+      "center": [
+        0.0,
+        0.0
+      ],
+      "axes": [
+        0.6,
+        0.6
+      ],
+      "rotation_deg": 0.0,
+      "amplitude": 1.0
+    },
+    "pixel_quadrature": 4,
+    "normalization": "Each whitened input vector is normalized to Euclidean norm one"
+  },
+  "geometry": {
+    "size": 256,
+    "angles": 120,
+    "detectors": 363,
+    "angle_min_deg": -60.0,
+    "angle_max_deg": 60.0,
+    "half_width": 1.4142135623730951
+  },
+  "randomness": {
+    "seed": 20261027,
+    "numpy_generator": "PCG64",
+    "torch_manual_seed": 20261027
+  },
+  "computation": {
+    "device": "cuda:0",
+    "dtype": "float64",
+    "cublas_workspace_config": ":4096:8",
+    "coordinates": "whitened Euclidean; M=sqrt(wY/wX)*A",
+    "landweber_iterations": [
+      16,
+      64,
+      256,
+      1024,
+      4096
+    ],
+    "gradient_iterations": [
+      64,
+      1024
+    ],
+    "inverse_gradient_iterations": 256,
+    "directional_epsilon": 1e-05,
+    "beta_fractions": [
+      0.0,
+      0.01,
+      2.0
+    ],
+    "checkpoints": [
+      0,
+      16,
+      64,
+      256,
+      1024,
+      4096,
+      8192
+    ],
+    "lsqr": {
+      "max_iterations": 8192,
+      "normal_rtol": 1e-10,
+      "data_rtol": 1e-08,
+      "check_interval": 25,
+      "roundoff_factor": 32.0,
+      "condition_limit": 10000000000.0
+    },
+    "solver_contract": "zero start; no damping or preconditioning; true residual stopping; adaptive LSQR rejects autograd",
+    "landweber_contract": "fixed K and omega=0.95/(norm_1(M)*norm_inf(M)); backward is finite-polynomial adjoint",
+    "deterministic_algorithms": true,
+    "tf32": false,
+    "training": "not applicable; no model or optimizer"
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "purpose": "H200 general rehearsal: fixed TV cache, DP_TWO, periodic archival and resume, development subset only",
+  "dataset": {
+    "reference": {
+      "path": "${DPNN_ARTIFACT_ROOT}/artifact-017",
+      "bytes": 7167,
+      "sha256": "81e2f2b2a13e4f03bba9732ab65af5b4fd081646b782438c4a6cea37ba555988"
+    }
+  },
+  "geometry": {
+    "angle_max_deg": 60.0,
+    "angle_min_deg": -60.0,
+    "angles": 12,
+    "detectors": 13,
+    "half_width": 1.4142135623730951,
+    "size": 8
+  },
+  "randomness": {
+    "seed": 3601
+  },
+  "computation": {
+    "device": "cpu",
+    "dtype": "float64",
+    "cpu_threads": 4
+  },
+  "operator_root": "${DPNN_ARTIFACT_ROOT}/artifact-004",
+  "start": {
+    "kind": "tv",
+    "alpha": 0.001,
+    "rtol": 1e-05,
+    "atol": 1e-09,
+    "max_iterations": 100000,
+    "check_every": 50,
+    "step_safety": 0.99
+  },
+  "subset_counts": {
+    "train": 2,
+    "validation": 1,
+    "test": 0
+  },
+  "training_config": {
+    "schema_version": 1,
+    "study_id": "dpnn-logger-qualification-v1",
+    "purpose": "Archived technical training/validation/resume fixture, not a CT study",
+    "mode": "train",
+    "dataset": {
+      "reference": null,
+      "used_ids": null,
+      "normalization": "none_physical_intensity",
+      "augmentation": "none",
+      "loader": {
+        "num_workers": 0,
+        "shuffle": true,
+        "drop_last": false,
+        "pin_memory": false,
+        "prefetch": 0
+      }
+    },
+    "geometry": {
+      "angle_max_deg": 60.0,
+      "angle_min_deg": -60.0,
+      "angles": 12,
+      "detectors": 13,
+      "half_width": 1.4142135623730951,
+      "size": 8
+    },
+    "randomness": {
+      "seed": 20261028,
+      "model_seed": 20261028,
+      "sampler_seed": 771028,
+      "python_seed": 991028,
+      "numpy_seed": 881028,
+      "generator": "Independent model, sampler, Python and NumPy streams; stored RNG states; cached geometry/noise"
+    },
+    "computation": {
+      "device": "cpu",
+      "dtype": "float64",
+      "cpu_threads": 4,
+      "deterministic_algorithms": true,
+      "tf32": false,
+      "cublas_workspace_config": ":4096:8"
+    },
+    "model": {
+      "architecture": "tiny_dropout",
+      "method": "DP_TWO",
+      "in_channels": 1,
+      "out_channels": 1,
+      "bilinear": true,
+      "width": 4,
+      "dropout": 0.0,
+      "initialization": "torch_default_seeded"
+    },
+    "optimizer": {
+      "name": "Adam",
+      "lr": 0.0001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.0,
+      "amsgrad": false,
+      "foreach": false,
+      "fused": false,
+      "maximize": false,
+      "capturable": false,
+      "differentiable": false
+    },
+    "scheduler": {
+      "name": "StepLR",
+      "step_size": 1,
+      "gamma": 0.9,
+      "last_epoch": -1
+    },
+    "training": {
+      "applicable": true,
+      "epochs": 3,
+      "batch_size": 2,
+      "loss": "mean_pixel_MSE",
+      "gradient_accumulation": 1,
+      "gradient_clip_norm": 1.0,
+      "mixed_precision": false
+    },
+    "selection": {
+      "split": "validation",
+      "metric": "mse",
+      "direction": "min",
+      "patience": 3,
+      "min_delta": 0.0
+    },
+    "logging": {
+      "checkpoint_every_steps": 2,
+      "weights_every_step": false,
+      "save_predictions": true,
+      "mirror_every_checkpoint": true
+    },
+    "metrics": {
+      "data_range": 1.0,
+      "ssim_window": 7,
+      "ssim_sigma": 1.5,
+      "ssim_k1": 0.01,
+      "ssim_k2": 0.03,
+      "ssim_covariance": "population",
+      "ssim_padding": "valid",
+      "proximity_atol": 1e-10,
+      "aggregation": "per_object_mean_median_population_std_min_max_no_CI"
+    },
+    "execution": {
+      "resume": null,
+      "stop_after_step": null,
+      "injected_io_failure_step": null
+    },
+    "projection": {
+      "kind": "fixture",
+      "reference": {
+        "path": "${DPNN_ARTIFACT_ROOT}/artifact-018",
+        "bytes": 36659,
+        "sha256": "79f48e934050686f9236be89bcc0da6ae1ab5b62521fa8fce81c729b827f8ce6"
+      }
+    }
+  },
+  "resume_tolerance": 1e-12,
+  "evaluation_tolerance": 1e-10
+}

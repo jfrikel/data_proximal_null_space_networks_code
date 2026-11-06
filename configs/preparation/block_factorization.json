@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "purpose": "A20.11 256-square factorization feasibility, accuracy, application cost and fixed-factor gradients",
+  "mode": "block_factorization",
+  "dataset": {
+    "split": "operator_development",
+    "split_ids": {
+      "operator_development": [
+        "unit_gaussian",
+        "unit_circle",
+        "radon_32_reference"
+      ]
+    },
+    "probe_names": [
+      "unit_gaussian",
+      "unit_circle"
+    ],
+    "probes": "runs/20261027T210815Z_56abc9f39b16/inputs.npz",
+    "small_reference": "runs/20261027T210316Z_985ccfe6df5c/radon_32/reference.npz",
+    "training": "not applicable"
+  },
+  "geometry": {
+    "size": 256,
+    "angles": 120,
+    "detectors": 363,
+    "angle_min_deg": -60.0,
+    "angle_max_deg": 60.0,
+    "half_width": 1.4142135623730951
+  },
+  "randomness": {
+    "seed": 20261027,
+    "generator": "NumPy PCG64; primary probes reused byte-identically; diagnostics seed+1 and seed+2"
+  },
+  "computation": {
+    "device": "cuda:0",
+    "dtype": "float64",
+    "cublas_workspace_config": ":4096:8",
+    "deterministic_algorithms": true,
+    "tf32": false,
+    "svd_rtol": 1e-12,
+    "cutoffs": [
+      0.0001,
+      1e-06,
+      1e-08,
+      1e-10,
+      1e-12
+    ],
+    "gradient_cutoff": 1e-08,
+    "directional_epsilon": 1e-05,
+    "beta_fractions": [
+      0.0,
+      0.01,
+      2.0
+    ],
+    "timing_repetitions": 5,
+    "minimum_free_gpu_GiB": 110,
+    "minimum_free_disk_GiB": 150,
+    "timeout_seconds": 1200,
+    "resource_sample_seconds": 10,
+    "svd_driver": "Xgesvd",
+    "svd_full_matrices": false,
+    "gram_method": "eigh on M M.T; square of relative sigma cutoff",
+    "factor_storage": "Complete Float64 NPY factors retained on server; source/config/inputs/results/hash archive",
+    "cpu_threads": 4,
+    "row_blocks": 2,
+    "block_svd_rtol": 1e-12
+  }
+}

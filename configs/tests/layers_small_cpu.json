@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "purpose": "A20.7 fixed block projection NSN and scalar-DP integration, proximity and input/parameter gradient diagnostics; no training",
+  "mode": "small",
+  "dataset": {
+    "split": "operator_development",
+    "split_ids": {
+      "operator_development": [
+        "controlled_rank4_batch_0",
+        "controlled_rank4_batch_1",
+        "controlled_rank4_batch_2",
+        "origin",
+        "zero_operator",
+        "full_column_rank",
+        "clipping_kink"
+      ]
+    },
+    "training": "not applicable; no optimizer, no dataset model selection"
+  },
+  "geometry": {
+    "reference_matrix_shape": [
+      6,
+      9
+    ],
+    "singular_values": [
+      2.0,
+      1.0,
+      0.4,
+      0.1
+    ],
+    "image_weight": 0.04,
+    "data_weight": 0.13
+  },
+  "randomness": {
+    "seed": 20261027,
+    "generator": "NumPy PCG64; all inputs saved; seed+7 for measurement perturbations; Torch initialization seed recorded; complete checkpoints saved before evaluation"
+  },
+  "model_evaluation": {
+    "applicable": true,
+    "state": "random initialized diagnostic checkpoints, not trained",
+    "small_model": "SmoothCorrection: 9x9 affine map followed by tanh",
+    "large_models": [
+      "PointwiseCorrection 0.2*tanh(z)",
+      "src.unet.UNet(1,1,bilinear=True)"
+    ],
+    "checkpoint_manifest": "evaluated_checkpoints in manifest, recorded before first forward",
+    "optimizer": "none"
+  },
+  "computation": {
+    "device": "cpu",
+    "dtype": "float64",
+    "cpu_threads": 4,
+    "deterministic_algorithms": true,
+    "tf32": false,
+    "cublas_workspace_config": ":4096:8",
+    "timeout_seconds": 180,
+    "resource_sample_seconds": 10,
+    "proximity_atol": 1e-10,
+    "directional_epsilons": [
+      0.001,
+      0.0003,
+      0.0001
+    ],
+    "directional_atol": 1e-08,
+    "smooth_directional_rtol": 2e-05,
+    "relu_directional_rtol": 0.005,
+    "timing_repetitions": 3,
+    "beta_policy": "per-sample, shared U=V; beta0 has NSN derivative including at zero; positive kink uses unclipped branch",
+    "gradcheck": {
+      "eps": 1e-06,
+      "atol": 2e-07,
+      "rtol": 2e-05
+    },
+    "coordinates": "physical pixel values; weighted measurement norm"
+  }
+}

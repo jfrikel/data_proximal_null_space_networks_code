@@ -1,0 +1,1944 @@
+{
+  "code_commit": "f72097d25312a9a1ba9aeb55219570d66425f710",
+  "profile": {
+    "beta_multipliers": [
+      1.0
+    ],
+    "counts": {
+      "test": 500,
+      "train": 2500,
+      "validation": 500
+    },
+    "data_seeds": {
+      "geometry_seed": 110101,
+      "noise_seed": 110102,
+      "seed": 20261101
+    },
+    "early_stopping_enabled": false,
+    "epoch_extension": true,
+    "epochs": 60,
+    "exercise_stop_resume": false,
+    "kind": "main",
+    "pilot_plan": "configs/study/development_pilot_256.json",
+    "schema_version": 2,
+    "study_id": "dpnn-main-256-v1-epochs60",
+    "training_seed_sets": [
+      {
+        "model_seed": 20261101,
+        "numpy_seed": 881101,
+        "python_seed": 991101,
+        "sampler_seed": 771101,
+        "seed": 20261101
+      },
+      {
+        "model_seed": 20261102,
+        "numpy_seed": 881102,
+        "python_seed": 991102,
+        "sampler_seed": 771102,
+        "seed": 20261102
+      }
+    ],
+    "tv_max_iterations": 200000
+  },
+  "generator": {
+    "axis_ratio_range": [
+      0.2,
+      1.0
+    ],
+    "count_max": 12,
+    "count_min": 3,
+    "dirichlet_alpha": 1.0,
+    "major_axis_range": [
+      0.06,
+      0.6
+    ],
+    "max_rejection_attempts": 10000,
+    "support_radius": 0.9,
+    "total_amplitude_range": [
+      0.6,
+      1.0
+    ]
+  },
+  "geometry": {
+    "angle_max_deg": 60.0,
+    "angle_min_deg": -60.0,
+    "angles": 120,
+    "detectors": 363,
+    "half_width": 1.4142135623730951,
+    "size": 256
+  },
+  "tikhonov": {
+    "alpha": 0.01,
+    "atol": 1e-10,
+    "kind": "tikhonov",
+    "max_iterations": 500,
+    "rtol": 1e-08
+  },
+  "tv": {
+    "alpha": 0.001,
+    "atol": 1e-09,
+    "check_every": 50,
+    "kind": "tv",
+    "max_iterations": 200000,
+    "rtol": 1e-05,
+    "step_safety": 0.99
+  },
+  "runs": [
+    {
+      "method": "DP_TWO",
+      "start": "tikhonov",
+      "seed_index": 0,
+      "run_id": "20261104T211934Z_491c411e51d6",
+      "configuration": {
+        "model": {
+          "architecture": "unet",
+          "bilinear": true,
+          "dropout": 0.0,
+          "in_channels": 1,
+          "initialization": "torch_default_seeded",
+          "method": "DP_TWO",
+          "out_channels": 1,
+          "width": null
+        },
+        "optimizer": {
+          "amsgrad": false,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "capturable": false,
+          "differentiable": false,
+          "eps": 1e-08,
+          "foreach": false,
+          "fused": false,
+          "lr": 0.0001,
+          "maximize": false,
+          "name": "Adam",
+          "weight_decay": 0.0
+        },
+        "scheduler": {
+          "gamma": 0.5,
+          "last_epoch": -1,
+          "name": "StepLR",
+          "step_size": 10
+        },
+        "training": {
+          "applicable": true,
+          "batch_size": 2,
+          "epochs": 60,
+          "gradient_accumulation": 1,
+          "gradient_clip_norm": 1.0,
+          "loss": "mean_pixel_MSE",
+          "mixed_precision": false
+        },
+        "computation": {
+          "cpu_threads": 4,
+          "cublas_workspace_config": ":4096:8",
+          "deterministic_algorithms": true,
+          "device": "cuda:0",
+          "dtype": "float64",
+          "tf32": false
+        },
+        "checkpoint_selection": {
+          "aggregation": "per_object_arithmetic_mean",
+          "checkpoints": {
+            "mse": "min",
+            "ssim": "max"
+          },
+          "early_stopping": "disabled_fixed_epoch_budget",
+          "legacy_best_alias": "mse",
+          "min_delta_scope": "early_stopping_only",
+          "split": "validation",
+          "ties": "retain_first"
+        }
+      },
+      "environment_packages": {
+        "SciPy": "1.11.4",
+        "numpy": "1.26.4",
+        "torch": "2.7.0"
+      },
+      "position": {
+        "bad_epochs": 3,
+        "best": {
+          "epoch": 56,
+          "mse": 3.939784697227871e-05,
+          "ssim": 0.9609168003310303,
+          "step": 71250,
+          "weights": {
+            "bytes": 276070635,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-033",
+            "sha256": "343d4066127423e04152c5664ff0a4468e62fd26eb601db23d1ad7eff2d28323"
+          }
+        },
+        "best_mse": {
+          "epoch": 56,
+          "mse": 3.939784697227871e-05,
+          "ssim": 0.9609168003310303,
+          "step": 71250,
+          "weights": {
+            "bytes": 276070635,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-033",
+            "sha256": "343d4066127423e04152c5664ff0a4468e62fd26eb601db23d1ad7eff2d28323"
+          }
+        },
+        "best_ssim": {
+          "epoch": 57,
+          "mse": 3.966774163708123e-05,
+          "ssim": 0.9614280345977456,
+          "step": 72500,
+          "weights": {
+            "bytes": 276070635,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-034",
+            "sha256": "65f931890b7fa6f2167b71d4a141384ce8e8e055e2def68e9ed41752a5c6d211"
+          }
+        },
+        "cursor": 0,
+        "early_stopping_reference": 3.939784697227871e-05,
+        "epoch": 60,
+        "order": null,
+        "phase": "done",
+        "step": 75000
+      }
+    },
+    {
+      "method": "DP_TWO",
+      "start": "tikhonov",
+      "seed_index": 1,
+      "run_id": "20261104T211934Z_a0c42a1b02b0",
+      "configuration": {
+        "model": {
+          "architecture": "unet",
+          "bilinear": true,
+          "dropout": 0.0,
+          "in_channels": 1,
+          "initialization": "torch_default_seeded",
+          "method": "DP_TWO",
+          "out_channels": 1,
+          "width": null
+        },
+        "optimizer": {
+          "amsgrad": false,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "capturable": false,
+          "differentiable": false,
+          "eps": 1e-08,
+          "foreach": false,
+          "fused": false,
+          "lr": 0.0001,
+          "maximize": false,
+          "name": "Adam",
+          "weight_decay": 0.0
+        },
+        "scheduler": {
+          "gamma": 0.5,
+          "last_epoch": -1,
+          "name": "StepLR",
+          "step_size": 10
+        },
+        "training": {
+          "applicable": true,
+          "batch_size": 2,
+          "epochs": 60,
+          "gradient_accumulation": 1,
+          "gradient_clip_norm": 1.0,
+          "loss": "mean_pixel_MSE",
+          "mixed_precision": false
+        },
+        "computation": {
+          "cpu_threads": 4,
+          "cublas_workspace_config": ":4096:8",
+          "deterministic_algorithms": true,
+          "device": "cuda:0",
+          "dtype": "float64",
+          "tf32": false
+        },
+        "checkpoint_selection": {
+          "aggregation": "per_object_arithmetic_mean",
+          "checkpoints": {
+            "mse": "min",
+            "ssim": "max"
+          },
+          "early_stopping": "disabled_fixed_epoch_budget",
+          "legacy_best_alias": "mse",
+          "min_delta_scope": "early_stopping_only",
+          "split": "validation",
+          "ties": "retain_first"
+        }
+      },
+      "environment_packages": {
+        "SciPy": "1.11.4",
+        "numpy": "1.26.4",
+        "torch": "2.7.0"
+      },
+      "position": {
+        "bad_epochs": 3,
+        "best": {
+          "epoch": 56,
+          "mse": 4.01785921914045e-05,
+          "ssim": 0.9501604133916633,
+          "step": 71250,
+          "weights": {
+            "bytes": 276070635,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-035",
+            "sha256": "823b4da57cb7f4847d592fbe26c923513d4b6f9731f5f025007e64d71e125b3d"
+          }
+        },
+        "best_mse": {
+          "epoch": 56,
+          "mse": 4.01785921914045e-05,
+          "ssim": 0.9501604133916633,
+          "step": 71250,
+          "weights": {
+            "bytes": 276070635,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-035",
+            "sha256": "823b4da57cb7f4847d592fbe26c923513d4b6f9731f5f025007e64d71e125b3d"
+          }
+        },
+        "best_ssim": {
+          "epoch": 56,
+          "mse": 4.01785921914045e-05,
+          "ssim": 0.9501604133916633,
+          "step": 71250,
+          "weights": {
+            "bytes": 276070635,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-035",
+            "sha256": "823b4da57cb7f4847d592fbe26c923513d4b6f9731f5f025007e64d71e125b3d"
+          }
+        },
+        "cursor": 0,
+        "early_stopping_reference": 4.01785921914045e-05,
+        "epoch": 60,
+        "order": null,
+        "phase": "done",
+        "step": 75000
+      }
+    },
+    {
+      "method": "DP_TWO",
+      "start": "tv",
+      "seed_index": 0,
+      "run_id": "20261104T211935Z_057f5559badc",
+      "configuration": {
+        "model": {
+          "architecture": "unet",
+          "bilinear": true,
+          "dropout": 0.0,
+          "in_channels": 1,
+          "initialization": "torch_default_seeded",
+          "method": "DP_TWO",
+          "out_channels": 1,
+          "width": null
+        },
+        "optimizer": {
+          "amsgrad": false,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "capturable": false,
+          "differentiable": false,
+          "eps": 1e-08,
+          "foreach": false,
+          "fused": false,
+          "lr": 0.0001,
+          "maximize": false,
+          "name": "Adam",
+          "weight_decay": 0.0
+        },
+        "scheduler": {
+          "gamma": 0.5,
+          "last_epoch": -1,
+          "name": "StepLR",
+          "step_size": 10
+        },
+        "training": {
+          "applicable": true,
+          "batch_size": 2,
+          "epochs": 60,
+          "gradient_accumulation": 1,
+          "gradient_clip_norm": 1.0,
+          "loss": "mean_pixel_MSE",
+          "mixed_precision": false
+        },
+        "computation": {
+          "cpu_threads": 4,
+          "cublas_workspace_config": ":4096:8",
+          "deterministic_algorithms": true,
+          "device": "cuda:0",
+          "dtype": "float64",
+          "tf32": false
+        },
+        "checkpoint_selection": {
+          "aggregation": "per_object_arithmetic_mean",
+          "checkpoints": {
+            "mse": "min",
+            "ssim": "max"
+          },
+          "early_stopping": "disabled_fixed_epoch_budget",
+          "legacy_best_alias": "mse",
+          "min_delta_scope": "early_stopping_only",
+          "split": "validation",
+          "ties": "retain_first"
+        }
+      },
+      "environment_packages": {
+        "SciPy": "1.11.4",
+        "numpy": "1.26.4",
+        "torch": "2.7.0"
+      },
+      "position": {
+        "bad_epochs": 29,
+        "best": {
+          "epoch": 30,
+          "mse": 0.00018138214660552682,
+          "ssim": 0.8978277437809234,
+          "step": 38750,
+          "weights": {
+            "bytes": 276070635,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-019",
+            "sha256": "78f0cd528ad0e42c9e3861d56aae6d05161998190edbc19942d0f34900193fb6"
+          }
+        },
+        "best_mse": {
+          "epoch": 30,
+          "mse": 0.00018138214660552682,
+          "ssim": 0.8978277437809234,
+          "step": 38750,
+          "weights": {
+            "bytes": 276070635,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-019",
+            "sha256": "78f0cd528ad0e42c9e3861d56aae6d05161998190edbc19942d0f34900193fb6"
+          }
+        },
+        "best_ssim": {
+          "epoch": 30,
+          "mse": 0.00018138214660552682,
+          "ssim": 0.8978277437809234,
+          "step": 38750,
+          "weights": {
+            "bytes": 276070635,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-019",
+            "sha256": "78f0cd528ad0e42c9e3861d56aae6d05161998190edbc19942d0f34900193fb6"
+          }
+        },
+        "cursor": 0,
+        "early_stopping_reference": 0.00018138214660552682,
+        "epoch": 60,
+        "order": null,
+        "phase": "done",
+        "step": 75000
+      }
+    },
+    {
+      "method": "DP_TWO",
+      "start": "tv",
+      "seed_index": 1,
+      "run_id": "20261104T211936Z_331afebd1eea",
+      "configuration": {
+        "model": {
+          "architecture": "unet",
+          "bilinear": true,
+          "dropout": 0.0,
+          "in_channels": 1,
+          "initialization": "torch_default_seeded",
+          "method": "DP_TWO",
+          "out_channels": 1,
+          "width": null
+        },
+        "optimizer": {
+          "amsgrad": false,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "capturable": false,
+          "differentiable": false,
+          "eps": 1e-08,
+          "foreach": false,
+          "fused": false,
+          "lr": 0.0001,
+          "maximize": false,
+          "name": "Adam",
+          "weight_decay": 0.0
+        },
+        "scheduler": {
+          "gamma": 0.5,
+          "last_epoch": -1,
+          "name": "StepLR",
+          "step_size": 10
+        },
+        "training": {
+          "applicable": true,
+          "batch_size": 2,
+          "epochs": 60,
+          "gradient_accumulation": 1,
+          "gradient_clip_norm": 1.0,
+          "loss": "mean_pixel_MSE",
+          "mixed_precision": false
+        },
+        "computation": {
+          "cpu_threads": 4,
+          "cublas_workspace_config": ":4096:8",
+          "deterministic_algorithms": true,
+          "device": "cuda:0",
+          "dtype": "float64",
+          "tf32": false
+        },
+        "checkpoint_selection": {
+          "aggregation": "per_object_arithmetic_mean",
+          "checkpoints": {
+            "mse": "min",
+            "ssim": "max"
+          },
+          "early_stopping": "disabled_fixed_epoch_budget",
+          "legacy_best_alias": "mse",
+          "min_delta_scope": "early_stopping_only",
+          "split": "validation",
+          "ties": "retain_first"
+        }
+      },
+      "environment_packages": {
+        "SciPy": "1.11.4",
+        "numpy": "1.26.4",
+        "torch": "2.7.0"
+      },
+      "position": {
+        "bad_epochs": 26,
+        "best": {
+          "epoch": 33,
+          "mse": 0.00017866328479595507,
+          "ssim": 0.8886751736176957,
+          "step": 42500,
+          "weights": {
+            "bytes": 276070635,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-020",
+            "sha256": "634814c8ec2500c7b4e394aba68826dea598fc32b4e19c5bed6139a2b88b7f2c"
+          }
+        },
+        "best_mse": {
+          "epoch": 33,
+          "mse": 0.00017866328479595507,
+          "ssim": 0.8886751736176957,
+          "step": 42500,
+          "weights": {
+            "bytes": 276070635,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-020",
+            "sha256": "634814c8ec2500c7b4e394aba68826dea598fc32b4e19c5bed6139a2b88b7f2c"
+          }
+        },
+        "best_ssim": {
+          "epoch": 15,
+          "mse": 0.00019698747981440812,
+          "ssim": 0.9000760596882627,
+          "step": 20000,
+          "weights": {
+            "bytes": 276070635,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-021",
+            "sha256": "6a3ffbf99a2b09f0ef77951f4ed5ab2b198bf9da916ad5ab58a0215af85418be"
+          }
+        },
+        "cursor": 0,
+        "early_stopping_reference": 0.00017866328479595507,
+        "epoch": 60,
+        "order": null,
+        "phase": "done",
+        "step": 75000
+      }
+    },
+    {
+      "method": "DP",
+      "start": "tikhonov",
+      "seed_index": 0,
+      "run_id": "20261105T003332Z_5e4b0c3536f2",
+      "configuration": {
+        "model": {
+          "architecture": "unet",
+          "bilinear": true,
+          "dropout": 0.0,
+          "in_channels": 1,
+          "initialization": "torch_default_seeded",
+          "method": "DP",
+          "out_channels": 1,
+          "width": null
+        },
+        "optimizer": {
+          "amsgrad": false,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "capturable": false,
+          "differentiable": false,
+          "eps": 1e-08,
+          "foreach": false,
+          "fused": false,
+          "lr": 0.0001,
+          "maximize": false,
+          "name": "Adam",
+          "weight_decay": 0.0
+        },
+        "scheduler": {
+          "gamma": 0.5,
+          "last_epoch": -1,
+          "name": "StepLR",
+          "step_size": 10
+        },
+        "training": {
+          "applicable": true,
+          "batch_size": 2,
+          "epochs": 60,
+          "gradient_accumulation": 1,
+          "gradient_clip_norm": 1.0,
+          "loss": "mean_pixel_MSE",
+          "mixed_precision": false
+        },
+        "computation": {
+          "cpu_threads": 4,
+          "cublas_workspace_config": ":4096:8",
+          "deterministic_algorithms": true,
+          "device": "cuda:0",
+          "dtype": "float64",
+          "tf32": false
+        },
+        "checkpoint_selection": {
+          "aggregation": "per_object_arithmetic_mean",
+          "checkpoints": {
+            "mse": "min",
+            "ssim": "max"
+          },
+          "early_stopping": "disabled_fixed_epoch_budget",
+          "legacy_best_alias": "mse",
+          "min_delta_scope": "early_stopping_only",
+          "split": "validation",
+          "ties": "retain_first"
+        }
+      },
+      "environment_packages": {
+        "SciPy": "1.11.4",
+        "numpy": "1.26.4",
+        "torch": "2.7.0"
+      },
+      "position": {
+        "bad_epochs": 1,
+        "best": {
+          "epoch": 58,
+          "mse": 3.2419353514339176e-05,
+          "ssim": 0.9896443646791943,
+          "step": 73750,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-022",
+            "sha256": "7178a669c00d426af181243ca10b93b79085dcf7e58155efcd9f55339b020cff"
+          }
+        },
+        "best_mse": {
+          "epoch": 58,
+          "mse": 3.2419353514339176e-05,
+          "ssim": 0.9896443646791943,
+          "step": 73750,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-022",
+            "sha256": "7178a669c00d426af181243ca10b93b79085dcf7e58155efcd9f55339b020cff"
+          }
+        },
+        "best_ssim": {
+          "epoch": 58,
+          "mse": 3.2419353514339176e-05,
+          "ssim": 0.9896443646791943,
+          "step": 73750,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-022",
+            "sha256": "7178a669c00d426af181243ca10b93b79085dcf7e58155efcd9f55339b020cff"
+          }
+        },
+        "cursor": 0,
+        "early_stopping_reference": 3.2419353514339176e-05,
+        "epoch": 60,
+        "order": null,
+        "phase": "done",
+        "step": 75000
+      }
+    },
+    {
+      "method": "DP",
+      "start": "tikhonov",
+      "seed_index": 1,
+      "run_id": "20261105T003340Z_4e578d16f27c",
+      "configuration": {
+        "model": {
+          "architecture": "unet",
+          "bilinear": true,
+          "dropout": 0.0,
+          "in_channels": 1,
+          "initialization": "torch_default_seeded",
+          "method": "DP",
+          "out_channels": 1,
+          "width": null
+        },
+        "optimizer": {
+          "amsgrad": false,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "capturable": false,
+          "differentiable": false,
+          "eps": 1e-08,
+          "foreach": false,
+          "fused": false,
+          "lr": 0.0001,
+          "maximize": false,
+          "name": "Adam",
+          "weight_decay": 0.0
+        },
+        "scheduler": {
+          "gamma": 0.5,
+          "last_epoch": -1,
+          "name": "StepLR",
+          "step_size": 10
+        },
+        "training": {
+          "applicable": true,
+          "batch_size": 2,
+          "epochs": 60,
+          "gradient_accumulation": 1,
+          "gradient_clip_norm": 1.0,
+          "loss": "mean_pixel_MSE",
+          "mixed_precision": false
+        },
+        "computation": {
+          "cpu_threads": 4,
+          "cublas_workspace_config": ":4096:8",
+          "deterministic_algorithms": true,
+          "device": "cuda:0",
+          "dtype": "float64",
+          "tf32": false
+        },
+        "checkpoint_selection": {
+          "aggregation": "per_object_arithmetic_mean",
+          "checkpoints": {
+            "mse": "min",
+            "ssim": "max"
+          },
+          "early_stopping": "disabled_fixed_epoch_budget",
+          "legacy_best_alias": "mse",
+          "min_delta_scope": "early_stopping_only",
+          "split": "validation",
+          "ties": "retain_first"
+        }
+      },
+      "environment_packages": {
+        "SciPy": "1.11.4",
+        "numpy": "1.26.4",
+        "torch": "2.7.0"
+      },
+      "position": {
+        "bad_epochs": 8,
+        "best": {
+          "epoch": 51,
+          "mse": 3.375183372812651e-05,
+          "ssim": 0.9895923653398007,
+          "step": 65000,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-023",
+            "sha256": "92f2d81cd97a8e2fdd71ecbb2d679e55443d41b6b45e6f2c4e7e6db1395e2131"
+          }
+        },
+        "best_mse": {
+          "epoch": 51,
+          "mse": 3.375183372812651e-05,
+          "ssim": 0.9895923653398007,
+          "step": 65000,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-023",
+            "sha256": "92f2d81cd97a8e2fdd71ecbb2d679e55443d41b6b45e6f2c4e7e6db1395e2131"
+          }
+        },
+        "best_ssim": {
+          "epoch": 57,
+          "mse": 3.3812120530796e-05,
+          "ssim": 0.9897037661861803,
+          "step": 72500,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-024",
+            "sha256": "a120ac1cf9884315d5ea3498bac9e8bce52e2f664e3d8a7414e0ae13e2a1f72c"
+          }
+        },
+        "cursor": 0,
+        "early_stopping_reference": 3.375183372812651e-05,
+        "epoch": 60,
+        "order": null,
+        "phase": "done",
+        "step": 75000
+      }
+    },
+    {
+      "method": "DP",
+      "start": "tv",
+      "seed_index": 0,
+      "run_id": "20261105T003352Z_9adf9920e66f",
+      "configuration": {
+        "model": {
+          "architecture": "unet",
+          "bilinear": true,
+          "dropout": 0.0,
+          "in_channels": 1,
+          "initialization": "torch_default_seeded",
+          "method": "DP",
+          "out_channels": 1,
+          "width": null
+        },
+        "optimizer": {
+          "amsgrad": false,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "capturable": false,
+          "differentiable": false,
+          "eps": 1e-08,
+          "foreach": false,
+          "fused": false,
+          "lr": 0.0001,
+          "maximize": false,
+          "name": "Adam",
+          "weight_decay": 0.0
+        },
+        "scheduler": {
+          "gamma": 0.5,
+          "last_epoch": -1,
+          "name": "StepLR",
+          "step_size": 10
+        },
+        "training": {
+          "applicable": true,
+          "batch_size": 2,
+          "epochs": 60,
+          "gradient_accumulation": 1,
+          "gradient_clip_norm": 1.0,
+          "loss": "mean_pixel_MSE",
+          "mixed_precision": false
+        },
+        "computation": {
+          "cpu_threads": 4,
+          "cublas_workspace_config": ":4096:8",
+          "deterministic_algorithms": true,
+          "device": "cuda:0",
+          "dtype": "float64",
+          "tf32": false
+        },
+        "checkpoint_selection": {
+          "aggregation": "per_object_arithmetic_mean",
+          "checkpoints": {
+            "mse": "min",
+            "ssim": "max"
+          },
+          "early_stopping": "disabled_fixed_epoch_budget",
+          "legacy_best_alias": "mse",
+          "min_delta_scope": "early_stopping_only",
+          "split": "validation",
+          "ties": "retain_first"
+        }
+      },
+      "environment_packages": {
+        "SciPy": "1.11.4",
+        "numpy": "1.26.4",
+        "torch": "2.7.0"
+      },
+      "position": {
+        "bad_epochs": 29,
+        "best": {
+          "epoch": 30,
+          "mse": 0.00016909296231549647,
+          "ssim": 0.9225443215539846,
+          "step": 38750,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-005",
+            "sha256": "5cfad444c4f7fbec279352a7bb8815f783ba4ccf2573ec98c23ce712da0bef3b"
+          }
+        },
+        "best_mse": {
+          "epoch": 30,
+          "mse": 0.00016909296231549647,
+          "ssim": 0.9225443215539846,
+          "step": 38750,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-005",
+            "sha256": "5cfad444c4f7fbec279352a7bb8815f783ba4ccf2573ec98c23ce712da0bef3b"
+          }
+        },
+        "best_ssim": {
+          "epoch": 26,
+          "mse": 0.00017463784742283972,
+          "ssim": 0.9245235362579415,
+          "step": 33750,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-006",
+            "sha256": "96bb682db93bf2c839cc01d4d18a89691966134eabb6cbc61f0080cc3a0fc39f"
+          }
+        },
+        "cursor": 0,
+        "early_stopping_reference": 0.00016909296231549647,
+        "epoch": 60,
+        "order": null,
+        "phase": "done",
+        "step": 75000
+      }
+    },
+    {
+      "method": "DP",
+      "start": "tv",
+      "seed_index": 1,
+      "run_id": "20261105T003405Z_ab8a671feeb2",
+      "configuration": {
+        "model": {
+          "architecture": "unet",
+          "bilinear": true,
+          "dropout": 0.0,
+          "in_channels": 1,
+          "initialization": "torch_default_seeded",
+          "method": "DP",
+          "out_channels": 1,
+          "width": null
+        },
+        "optimizer": {
+          "amsgrad": false,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "capturable": false,
+          "differentiable": false,
+          "eps": 1e-08,
+          "foreach": false,
+          "fused": false,
+          "lr": 0.0001,
+          "maximize": false,
+          "name": "Adam",
+          "weight_decay": 0.0
+        },
+        "scheduler": {
+          "gamma": 0.5,
+          "last_epoch": -1,
+          "name": "StepLR",
+          "step_size": 10
+        },
+        "training": {
+          "applicable": true,
+          "batch_size": 2,
+          "epochs": 60,
+          "gradient_accumulation": 1,
+          "gradient_clip_norm": 1.0,
+          "loss": "mean_pixel_MSE",
+          "mixed_precision": false
+        },
+        "computation": {
+          "cpu_threads": 4,
+          "cublas_workspace_config": ":4096:8",
+          "deterministic_algorithms": true,
+          "device": "cuda:0",
+          "dtype": "float64",
+          "tf32": false
+        },
+        "checkpoint_selection": {
+          "aggregation": "per_object_arithmetic_mean",
+          "checkpoints": {
+            "mse": "min",
+            "ssim": "max"
+          },
+          "early_stopping": "disabled_fixed_epoch_budget",
+          "legacy_best_alias": "mse",
+          "min_delta_scope": "early_stopping_only",
+          "split": "validation",
+          "ties": "retain_first"
+        }
+      },
+      "environment_packages": {
+        "SciPy": "1.11.4",
+        "numpy": "1.26.4",
+        "torch": "2.7.0"
+      },
+      "position": {
+        "bad_epochs": 24,
+        "best": {
+          "epoch": 35,
+          "mse": 0.0001706127892062172,
+          "ssim": 0.9229489623368543,
+          "step": 45000,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-007",
+            "sha256": "7d471d8c91ebe76840f2643d108648179446ab2379da4eac45ccd45ab5a44043"
+          }
+        },
+        "best_mse": {
+          "epoch": 35,
+          "mse": 0.0001706127892062172,
+          "ssim": 0.9229489623368543,
+          "step": 45000,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-007",
+            "sha256": "7d471d8c91ebe76840f2643d108648179446ab2379da4eac45ccd45ab5a44043"
+          }
+        },
+        "best_ssim": {
+          "epoch": 30,
+          "mse": 0.00017182178241322945,
+          "ssim": 0.9248536908443409,
+          "step": 38750,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-008",
+            "sha256": "b3d8564a7141c1db5dcb20c9f397f3fa18e2f9dbc99c21b123f37a7e6e08fbc5"
+          }
+        },
+        "cursor": 0,
+        "early_stopping_reference": 0.0001706127892062172,
+        "epoch": 60,
+        "order": null,
+        "phase": "done",
+        "step": 75000
+      }
+    },
+    {
+      "method": "NSN",
+      "start": "tikhonov",
+      "seed_index": 0,
+      "run_id": "20261105T022031Z_dcbf39c9091b",
+      "configuration": {
+        "model": {
+          "architecture": "unet",
+          "bilinear": true,
+          "dropout": 0.0,
+          "in_channels": 1,
+          "initialization": "torch_default_seeded",
+          "method": "NSN",
+          "out_channels": 1,
+          "width": null
+        },
+        "optimizer": {
+          "amsgrad": false,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "capturable": false,
+          "differentiable": false,
+          "eps": 1e-08,
+          "foreach": false,
+          "fused": false,
+          "lr": 0.0001,
+          "maximize": false,
+          "name": "Adam",
+          "weight_decay": 0.0
+        },
+        "scheduler": {
+          "gamma": 0.5,
+          "last_epoch": -1,
+          "name": "StepLR",
+          "step_size": 10
+        },
+        "training": {
+          "applicable": true,
+          "batch_size": 2,
+          "epochs": 60,
+          "gradient_accumulation": 1,
+          "gradient_clip_norm": 1.0,
+          "loss": "mean_pixel_MSE",
+          "mixed_precision": false
+        },
+        "computation": {
+          "cpu_threads": 4,
+          "cublas_workspace_config": ":4096:8",
+          "deterministic_algorithms": true,
+          "device": "cuda:0",
+          "dtype": "float64",
+          "tf32": false
+        },
+        "checkpoint_selection": {
+          "aggregation": "per_object_arithmetic_mean",
+          "checkpoints": {
+            "mse": "min",
+            "ssim": "max"
+          },
+          "early_stopping": "disabled_fixed_epoch_budget",
+          "legacy_best_alias": "mse",
+          "min_delta_scope": "early_stopping_only",
+          "split": "validation",
+          "ties": "retain_first"
+        }
+      },
+      "environment_packages": {
+        "SciPy": "1.11.4",
+        "numpy": "1.26.4",
+        "torch": "2.7.0"
+      },
+      "position": {
+        "bad_epochs": 12,
+        "best": {
+          "epoch": 47,
+          "mse": 0.000701090702917825,
+          "ssim": 0.5568222967988552,
+          "step": 60000,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-025",
+            "sha256": "b4032b15e86a88e4b985f05c5c60cb5583d8dc6a4a40ace8557e46ebbec4918f"
+          }
+        },
+        "best_mse": {
+          "epoch": 47,
+          "mse": 0.000701090702917825,
+          "ssim": 0.5568222967988552,
+          "step": 60000,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-025",
+            "sha256": "b4032b15e86a88e4b985f05c5c60cb5583d8dc6a4a40ace8557e46ebbec4918f"
+          }
+        },
+        "best_ssim": {
+          "epoch": 7,
+          "mse": 0.0007330792131616139,
+          "ssim": 0.5590829886941997,
+          "step": 10000,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-026",
+            "sha256": "38d8f0bdc612797b403b40f06d13ee52ff95197c7eec54bf9fe899c345902efe"
+          }
+        },
+        "cursor": 0,
+        "early_stopping_reference": 0.000701090702917825,
+        "epoch": 60,
+        "order": null,
+        "phase": "done",
+        "step": 75000
+      }
+    },
+    {
+      "method": "NSN",
+      "start": "tikhonov",
+      "seed_index": 1,
+      "run_id": "20261105T022038Z_2eeb58f3fb49",
+      "configuration": {
+        "model": {
+          "architecture": "unet",
+          "bilinear": true,
+          "dropout": 0.0,
+          "in_channels": 1,
+          "initialization": "torch_default_seeded",
+          "method": "NSN",
+          "out_channels": 1,
+          "width": null
+        },
+        "optimizer": {
+          "amsgrad": false,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "capturable": false,
+          "differentiable": false,
+          "eps": 1e-08,
+          "foreach": false,
+          "fused": false,
+          "lr": 0.0001,
+          "maximize": false,
+          "name": "Adam",
+          "weight_decay": 0.0
+        },
+        "scheduler": {
+          "gamma": 0.5,
+          "last_epoch": -1,
+          "name": "StepLR",
+          "step_size": 10
+        },
+        "training": {
+          "applicable": true,
+          "batch_size": 2,
+          "epochs": 60,
+          "gradient_accumulation": 1,
+          "gradient_clip_norm": 1.0,
+          "loss": "mean_pixel_MSE",
+          "mixed_precision": false
+        },
+        "computation": {
+          "cpu_threads": 4,
+          "cublas_workspace_config": ":4096:8",
+          "deterministic_algorithms": true,
+          "device": "cuda:0",
+          "dtype": "float64",
+          "tf32": false
+        },
+        "checkpoint_selection": {
+          "aggregation": "per_object_arithmetic_mean",
+          "checkpoints": {
+            "mse": "min",
+            "ssim": "max"
+          },
+          "early_stopping": "disabled_fixed_epoch_budget",
+          "legacy_best_alias": "mse",
+          "min_delta_scope": "early_stopping_only",
+          "split": "validation",
+          "ties": "retain_first"
+        }
+      },
+      "environment_packages": {
+        "SciPy": "1.11.4",
+        "numpy": "1.26.4",
+        "torch": "2.7.0"
+      },
+      "position": {
+        "bad_epochs": 13,
+        "best": {
+          "epoch": 46,
+          "mse": 0.0006990747098645644,
+          "ssim": 0.5570359007946574,
+          "step": 58750,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-027",
+            "sha256": "63685b4d33479814ecd4d988f171adb9bfb613f770ed798019c7f9da3456b33d"
+          }
+        },
+        "best_mse": {
+          "epoch": 46,
+          "mse": 0.0006990747098645644,
+          "ssim": 0.5570359007946574,
+          "step": 58750,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-027",
+            "sha256": "63685b4d33479814ecd4d988f171adb9bfb613f770ed798019c7f9da3456b33d"
+          }
+        },
+        "best_ssim": {
+          "epoch": 24,
+          "mse": 0.0007006517584734202,
+          "ssim": 0.5579415208524713,
+          "step": 31250,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-028",
+            "sha256": "979f3df9da99df93e648ec74bd596cedd19c98a6e09a75b2317d6fe39c9bcbc2"
+          }
+        },
+        "cursor": 0,
+        "early_stopping_reference": 0.0006990747098645644,
+        "epoch": 60,
+        "order": null,
+        "phase": "done",
+        "step": 75000
+      }
+    },
+    {
+      "method": "NSN",
+      "start": "tv",
+      "seed_index": 0,
+      "run_id": "20261105T022053Z_c49c50d05610",
+      "configuration": {
+        "model": {
+          "architecture": "unet",
+          "bilinear": true,
+          "dropout": 0.0,
+          "in_channels": 1,
+          "initialization": "torch_default_seeded",
+          "method": "NSN",
+          "out_channels": 1,
+          "width": null
+        },
+        "optimizer": {
+          "amsgrad": false,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "capturable": false,
+          "differentiable": false,
+          "eps": 1e-08,
+          "foreach": false,
+          "fused": false,
+          "lr": 0.0001,
+          "maximize": false,
+          "name": "Adam",
+          "weight_decay": 0.0
+        },
+        "scheduler": {
+          "gamma": 0.5,
+          "last_epoch": -1,
+          "name": "StepLR",
+          "step_size": 10
+        },
+        "training": {
+          "applicable": true,
+          "batch_size": 2,
+          "epochs": 60,
+          "gradient_accumulation": 1,
+          "gradient_clip_norm": 1.0,
+          "loss": "mean_pixel_MSE",
+          "mixed_precision": false
+        },
+        "computation": {
+          "cpu_threads": 4,
+          "cublas_workspace_config": ":4096:8",
+          "deterministic_algorithms": true,
+          "device": "cuda:0",
+          "dtype": "float64",
+          "tf32": false
+        },
+        "checkpoint_selection": {
+          "aggregation": "per_object_arithmetic_mean",
+          "checkpoints": {
+            "mse": "min",
+            "ssim": "max"
+          },
+          "early_stopping": "disabled_fixed_epoch_budget",
+          "legacy_best_alias": "mse",
+          "min_delta_scope": "early_stopping_only",
+          "split": "validation",
+          "ties": "retain_first"
+        }
+      },
+      "environment_packages": {
+        "SciPy": "1.11.4",
+        "numpy": "1.26.4",
+        "torch": "2.7.0"
+      },
+      "position": {
+        "bad_epochs": 29,
+        "best": {
+          "epoch": 30,
+          "mse": 0.0003798875622365756,
+          "ssim": 0.8189814111663009,
+          "step": 38750,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-009",
+            "sha256": "b90fb9889d905bdf09cd4e9aa6aee730f8e99546165fecab998f69db60c3181b"
+          }
+        },
+        "best_mse": {
+          "epoch": 30,
+          "mse": 0.0003798875622365756,
+          "ssim": 0.8189814111663009,
+          "step": 38750,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-009",
+            "sha256": "b90fb9889d905bdf09cd4e9aa6aee730f8e99546165fecab998f69db60c3181b"
+          }
+        },
+        "best_ssim": {
+          "epoch": 0,
+          "mse": 0.00048793166018439623,
+          "ssim": 0.8498250609609054,
+          "step": 1250,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-010",
+            "sha256": "278774d69c155ba731c3e81e8cb4cad7e8456031a4aa4a930ec717642e2a8616"
+          }
+        },
+        "cursor": 0,
+        "early_stopping_reference": 0.0003798875622365756,
+        "epoch": 60,
+        "order": null,
+        "phase": "done",
+        "step": 75000
+      }
+    },
+    {
+      "method": "NSN",
+      "start": "tv",
+      "seed_index": 1,
+      "run_id": "20261105T022122Z_6485e8630ccd",
+      "configuration": {
+        "model": {
+          "architecture": "unet",
+          "bilinear": true,
+          "dropout": 0.0,
+          "in_channels": 1,
+          "initialization": "torch_default_seeded",
+          "method": "NSN",
+          "out_channels": 1,
+          "width": null
+        },
+        "optimizer": {
+          "amsgrad": false,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "capturable": false,
+          "differentiable": false,
+          "eps": 1e-08,
+          "foreach": false,
+          "fused": false,
+          "lr": 0.0001,
+          "maximize": false,
+          "name": "Adam",
+          "weight_decay": 0.0
+        },
+        "scheduler": {
+          "gamma": 0.5,
+          "last_epoch": -1,
+          "name": "StepLR",
+          "step_size": 10
+        },
+        "training": {
+          "applicable": true,
+          "batch_size": 2,
+          "epochs": 60,
+          "gradient_accumulation": 1,
+          "gradient_clip_norm": 1.0,
+          "loss": "mean_pixel_MSE",
+          "mixed_precision": false
+        },
+        "computation": {
+          "cpu_threads": 4,
+          "cublas_workspace_config": ":4096:8",
+          "deterministic_algorithms": true,
+          "device": "cuda:0",
+          "dtype": "float64",
+          "tf32": false
+        },
+        "checkpoint_selection": {
+          "aggregation": "per_object_arithmetic_mean",
+          "checkpoints": {
+            "mse": "min",
+            "ssim": "max"
+          },
+          "early_stopping": "disabled_fixed_epoch_budget",
+          "legacy_best_alias": "mse",
+          "min_delta_scope": "early_stopping_only",
+          "split": "validation",
+          "ties": "retain_first"
+        }
+      },
+      "environment_packages": {
+        "SciPy": "1.11.4",
+        "numpy": "1.26.4",
+        "torch": "2.7.0"
+      },
+      "position": {
+        "bad_epochs": 29,
+        "best": {
+          "epoch": 30,
+          "mse": 0.00037937831336032644,
+          "ssim": 0.8123165974842284,
+          "step": 38750,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-011",
+            "sha256": "d9f954e981f4081a250628857b0cbb40c129727e86f890c0a2eca13ba4c59466"
+          }
+        },
+        "best_mse": {
+          "epoch": 30,
+          "mse": 0.00037937831336032644,
+          "ssim": 0.8123165974842284,
+          "step": 38750,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-011",
+            "sha256": "d9f954e981f4081a250628857b0cbb40c129727e86f890c0a2eca13ba4c59466"
+          }
+        },
+        "best_ssim": {
+          "epoch": 0,
+          "mse": 0.0004897841228102883,
+          "ssim": 0.8445964047074543,
+          "step": 1250,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-012",
+            "sha256": "c901a1b38973d75965bb0d2ad1c45521729a545de52ace7e2e7e1ec81ade7233"
+          }
+        },
+        "cursor": 0,
+        "early_stopping_reference": 0.00037937831336032644,
+        "epoch": 60,
+        "order": null,
+        "phase": "done",
+        "step": 75000
+      }
+    },
+    {
+      "method": "RES",
+      "start": "tikhonov",
+      "seed_index": 0,
+      "run_id": "20261105T035831Z_eec6a77eefec",
+      "configuration": {
+        "model": {
+          "architecture": "unet",
+          "bilinear": true,
+          "dropout": 0.0,
+          "in_channels": 1,
+          "initialization": "torch_default_seeded",
+          "method": "RES",
+          "out_channels": 1,
+          "width": null
+        },
+        "optimizer": {
+          "amsgrad": false,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "capturable": false,
+          "differentiable": false,
+          "eps": 1e-08,
+          "foreach": false,
+          "fused": false,
+          "lr": 0.0001,
+          "maximize": false,
+          "name": "Adam",
+          "weight_decay": 0.0
+        },
+        "scheduler": {
+          "gamma": 0.5,
+          "last_epoch": -1,
+          "name": "StepLR",
+          "step_size": 10
+        },
+        "training": {
+          "applicable": true,
+          "batch_size": 2,
+          "epochs": 60,
+          "gradient_accumulation": 1,
+          "gradient_clip_norm": 1.0,
+          "loss": "mean_pixel_MSE",
+          "mixed_precision": false
+        },
+        "computation": {
+          "cpu_threads": 4,
+          "cublas_workspace_config": ":4096:8",
+          "deterministic_algorithms": true,
+          "device": "cuda:0",
+          "dtype": "float64",
+          "tf32": false
+        },
+        "checkpoint_selection": {
+          "aggregation": "per_object_arithmetic_mean",
+          "checkpoints": {
+            "mse": "min",
+            "ssim": "max"
+          },
+          "early_stopping": "disabled_fixed_epoch_budget",
+          "legacy_best_alias": "mse",
+          "min_delta_scope": "early_stopping_only",
+          "split": "validation",
+          "ties": "retain_first"
+        }
+      },
+      "environment_packages": {
+        "SciPy": "1.11.4",
+        "numpy": "1.26.4",
+        "torch": "2.7.0"
+      },
+      "position": {
+        "bad_epochs": 1,
+        "best": {
+          "epoch": 58,
+          "mse": 3.3715792045620515e-05,
+          "ssim": 0.9898723687465595,
+          "step": 73750,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-029",
+            "sha256": "6b6a9150cb563bcca565b6198c40bf1872964ef4d052dd9347d6fe9cf8563aeb"
+          }
+        },
+        "best_mse": {
+          "epoch": 58,
+          "mse": 3.3715792045620515e-05,
+          "ssim": 0.9898723687465595,
+          "step": 73750,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-029",
+            "sha256": "6b6a9150cb563bcca565b6198c40bf1872964ef4d052dd9347d6fe9cf8563aeb"
+          }
+        },
+        "best_ssim": {
+          "epoch": 57,
+          "mse": 3.397004405210746e-05,
+          "ssim": 0.9899099682513065,
+          "step": 72500,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-030",
+            "sha256": "c283efc4ab36b5f58f6af839c390398c9d603438738e5388cb9fb6d7821a56ba"
+          }
+        },
+        "cursor": 0,
+        "early_stopping_reference": 3.3715792045620515e-05,
+        "epoch": 60,
+        "order": null,
+        "phase": "done",
+        "step": 75000
+      }
+    },
+    {
+      "method": "RES",
+      "start": "tikhonov",
+      "seed_index": 1,
+      "run_id": "20261105T035841Z_4c2e74f50da8",
+      "configuration": {
+        "model": {
+          "architecture": "unet",
+          "bilinear": true,
+          "dropout": 0.0,
+          "in_channels": 1,
+          "initialization": "torch_default_seeded",
+          "method": "RES",
+          "out_channels": 1,
+          "width": null
+        },
+        "optimizer": {
+          "amsgrad": false,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "capturable": false,
+          "differentiable": false,
+          "eps": 1e-08,
+          "foreach": false,
+          "fused": false,
+          "lr": 0.0001,
+          "maximize": false,
+          "name": "Adam",
+          "weight_decay": 0.0
+        },
+        "scheduler": {
+          "gamma": 0.5,
+          "last_epoch": -1,
+          "name": "StepLR",
+          "step_size": 10
+        },
+        "training": {
+          "applicable": true,
+          "batch_size": 2,
+          "epochs": 60,
+          "gradient_accumulation": 1,
+          "gradient_clip_norm": 1.0,
+          "loss": "mean_pixel_MSE",
+          "mixed_precision": false
+        },
+        "computation": {
+          "cpu_threads": 4,
+          "cublas_workspace_config": ":4096:8",
+          "deterministic_algorithms": true,
+          "device": "cuda:0",
+          "dtype": "float64",
+          "tf32": false
+        },
+        "checkpoint_selection": {
+          "aggregation": "per_object_arithmetic_mean",
+          "checkpoints": {
+            "mse": "min",
+            "ssim": "max"
+          },
+          "early_stopping": "disabled_fixed_epoch_budget",
+          "legacy_best_alias": "mse",
+          "min_delta_scope": "early_stopping_only",
+          "split": "validation",
+          "ties": "retain_first"
+        }
+      },
+      "environment_packages": {
+        "SciPy": "1.11.4",
+        "numpy": "1.26.4",
+        "torch": "2.7.0"
+      },
+      "position": {
+        "bad_epochs": 9,
+        "best": {
+          "epoch": 50,
+          "mse": 3.225722719848483e-05,
+          "ssim": 0.9902409826577332,
+          "step": 63750,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-031",
+            "sha256": "bec941331f5933f1052d9ac636da46e41120169f89aef042b4456dbd71903608"
+          }
+        },
+        "best_mse": {
+          "epoch": 50,
+          "mse": 3.225722719848483e-05,
+          "ssim": 0.9902409826577332,
+          "step": 63750,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-031",
+            "sha256": "bec941331f5933f1052d9ac636da46e41120169f89aef042b4456dbd71903608"
+          }
+        },
+        "best_ssim": {
+          "epoch": 57,
+          "mse": 3.239510513465235e-05,
+          "ssim": 0.9903322843104434,
+          "step": 72500,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-032",
+            "sha256": "da635820f65a8b4bde5af0cfa4ee5909dd82b0546a31ca3ed34a4d22017ee035"
+          }
+        },
+        "cursor": 0,
+        "early_stopping_reference": 3.225722719848483e-05,
+        "epoch": 60,
+        "order": null,
+        "phase": "done",
+        "step": 75000
+      }
+    },
+    {
+      "method": "RES",
+      "start": "tv",
+      "seed_index": 0,
+      "run_id": "20261105T035841Z_d2865641335e",
+      "configuration": {
+        "model": {
+          "architecture": "unet",
+          "bilinear": true,
+          "dropout": 0.0,
+          "in_channels": 1,
+          "initialization": "torch_default_seeded",
+          "method": "RES",
+          "out_channels": 1,
+          "width": null
+        },
+        "optimizer": {
+          "amsgrad": false,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "capturable": false,
+          "differentiable": false,
+          "eps": 1e-08,
+          "foreach": false,
+          "fused": false,
+          "lr": 0.0001,
+          "maximize": false,
+          "name": "Adam",
+          "weight_decay": 0.0
+        },
+        "scheduler": {
+          "gamma": 0.5,
+          "last_epoch": -1,
+          "name": "StepLR",
+          "step_size": 10
+        },
+        "training": {
+          "applicable": true,
+          "batch_size": 2,
+          "epochs": 60,
+          "gradient_accumulation": 1,
+          "gradient_clip_norm": 1.0,
+          "loss": "mean_pixel_MSE",
+          "mixed_precision": false
+        },
+        "computation": {
+          "cpu_threads": 4,
+          "cublas_workspace_config": ":4096:8",
+          "deterministic_algorithms": true,
+          "device": "cuda:0",
+          "dtype": "float64",
+          "tf32": false
+        },
+        "checkpoint_selection": {
+          "aggregation": "per_object_arithmetic_mean",
+          "checkpoints": {
+            "mse": "min",
+            "ssim": "max"
+          },
+          "early_stopping": "disabled_fixed_epoch_budget",
+          "legacy_best_alias": "mse",
+          "min_delta_scope": "early_stopping_only",
+          "split": "validation",
+          "ties": "retain_first"
+        }
+      },
+      "environment_packages": {
+        "SciPy": "1.11.4",
+        "numpy": "1.26.4",
+        "torch": "2.7.0"
+      },
+      "position": {
+        "bad_epochs": 29,
+        "best": {
+          "epoch": 30,
+          "mse": 0.00013389308332571414,
+          "ssim": 0.9636886418682621,
+          "step": 38750,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-013",
+            "sha256": "637d43bc034ca67b3a925ea5abdc5d6f3f55fa8db5824813e0be73203df439cb"
+          }
+        },
+        "best_mse": {
+          "epoch": 30,
+          "mse": 0.00013389308332571414,
+          "ssim": 0.9636886418682621,
+          "step": 38750,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-013",
+            "sha256": "637d43bc034ca67b3a925ea5abdc5d6f3f55fa8db5824813e0be73203df439cb"
+          }
+        },
+        "best_ssim": {
+          "epoch": 41,
+          "mse": 0.00013599738475217948,
+          "ssim": 0.9650609477348587,
+          "step": 52500,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-014",
+            "sha256": "8357a62295290cc133de037a6848692c476fe0d34c702b87da613da31348591a"
+          }
+        },
+        "cursor": 0,
+        "early_stopping_reference": 0.00013389308332571414,
+        "epoch": 60,
+        "order": null,
+        "phase": "done",
+        "step": 75000
+      }
+    },
+    {
+      "method": "RES",
+      "start": "tv",
+      "seed_index": 1,
+      "run_id": "20261105T035859Z_353e62e40904",
+      "configuration": {
+        "model": {
+          "architecture": "unet",
+          "bilinear": true,
+          "dropout": 0.0,
+          "in_channels": 1,
+          "initialization": "torch_default_seeded",
+          "method": "RES",
+          "out_channels": 1,
+          "width": null
+        },
+        "optimizer": {
+          "amsgrad": false,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "capturable": false,
+          "differentiable": false,
+          "eps": 1e-08,
+          "foreach": false,
+          "fused": false,
+          "lr": 0.0001,
+          "maximize": false,
+          "name": "Adam",
+          "weight_decay": 0.0
+        },
+        "scheduler": {
+          "gamma": 0.5,
+          "last_epoch": -1,
+          "name": "StepLR",
+          "step_size": 10
+        },
+        "training": {
+          "applicable": true,
+          "batch_size": 2,
+          "epochs": 60,
+          "gradient_accumulation": 1,
+          "gradient_clip_norm": 1.0,
+          "loss": "mean_pixel_MSE",
+          "mixed_precision": false
+        },
+        "computation": {
+          "cpu_threads": 4,
+          "cublas_workspace_config": ":4096:8",
+          "deterministic_algorithms": true,
+          "device": "cuda:0",
+          "dtype": "float64",
+          "tf32": false
+        },
+        "checkpoint_selection": {
+          "aggregation": "per_object_arithmetic_mean",
+          "checkpoints": {
+            "mse": "min",
+            "ssim": "max"
+          },
+          "early_stopping": "disabled_fixed_epoch_budget",
+          "legacy_best_alias": "mse",
+          "min_delta_scope": "early_stopping_only",
+          "split": "validation",
+          "ties": "retain_first"
+        }
+      },
+      "environment_packages": {
+        "SciPy": "1.11.4",
+        "numpy": "1.26.4",
+        "torch": "2.7.0"
+      },
+      "position": {
+        "bad_epochs": 19,
+        "best": {
+          "epoch": 40,
+          "mse": 0.00013552454943207236,
+          "ssim": 0.9645317233955858,
+          "step": 51250,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-015",
+            "sha256": "5f36778ad607a7a9515b7c7fe34d24ff9869cf74c667f1ecc04153502a6fb7c0"
+          }
+        },
+        "best_mse": {
+          "epoch": 40,
+          "mse": 0.00013552454943207236,
+          "ssim": 0.9645317233955858,
+          "step": 51250,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-015",
+            "sha256": "5f36778ad607a7a9515b7c7fe34d24ff9869cf74c667f1ecc04153502a6fb7c0"
+          }
+        },
+        "best_ssim": {
+          "epoch": 37,
+          "mse": 0.00013726729347380336,
+          "ssim": 0.9649870492375663,
+          "step": 47500,
+          "weights": {
+            "bytes": 138035111,
+            "path": "${DPNN_ARTIFACT_ROOT}/artifact-016",
+            "sha256": "5648f1ebec8674e02c5f1cf4f757fb68736273f4a07546c0cb3f67699c0ecd81"
+          }
+        },
+        "cursor": 0,
+        "early_stopping_reference": 0.00013552454943207236,
+        "epoch": 60,
+        "order": null,
+        "phase": "done",
+        "step": 75000
+      }
+    }
+  ]
+}

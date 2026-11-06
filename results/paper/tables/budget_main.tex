@@ -1,0 +1,17 @@
+\begingroup\small\setlength{\tabcolsep}{14pt}\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Method & Clipped & Max. $d/\delta$ & RES: $d>\delta$ \\ \midrule
+\multicolumn{4}{@{}l}{\textit{Tikhonov initialization}} \\
+RES & -- & 1.129\enspace/\enspace 1.095 & 2\enspace/\enspace 3 \\
+NSN & -- & $1.25\times10^{-13}$\enspace/\enspace $7.01\times10^{-14}$ & -- \\
+DP1 & 2\enspace/\enspace 2 & 1.000\enspace/\enspace 1.000 & -- \\
+DP2 & 500\enspace/\enspace 500 & 1.000\enspace/\enspace 1.000 & -- \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{TV initialization}} \\
+RES & -- & 8.081\enspace/\enspace 9.562 & 367\enspace/\enspace 385 \\
+NSN & -- & $1.11\times10^{-13}$\enspace/\enspace $6.71\times10^{-14}$ & -- \\
+DP1 & 258\enspace/\enspace 292 & 1.000\enspace/\enspace 1.000 & -- \\
+DP2 & 500\enspace/\enspace 500 & 1.000\enspace/\enspace 1.000 & -- \\
+\bottomrule
+\end{tabular}\endgroup

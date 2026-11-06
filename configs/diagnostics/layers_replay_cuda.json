@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "purpose": "A20.7 exact checkpoint and direction replay of the original failed U-Net gradient test, unchanged acceptance tolerances, smaller finite-difference steps and one-sided input slopes",
+  "mode": "replay",
+  "dataset": {
+    "split": "operator_development",
+    "split_ids": {
+      "operator_development": [
+        "unit_gaussian_physical",
+        "unit_circle_physical"
+      ]
+    },
+    "training": "not applicable; no optimizer, no dataset model selection",
+    "probes": {
+      "path": "runs/20261027T210815Z_56abc9f39b16/inputs.npz",
+      "sha256": "96099dd91c3aa0e0ef6d83a1b20c71501774f8004b8dce3a70814a36551e4e90"
+    }
+  },
+  "geometry": {
+    "size": 256,
+    "angles": 120,
+    "detectors": 363,
+    "angle_min_deg": -60.0,
+    "angle_max_deg": 60.0,
+    "half_width": 1.4142135623730951
+  },
+  "randomness": {
+    "seed": 20261027,
+    "generator": "Original stored inputs/directions/checkpoint; no new stochastic test directions"
+  },
+  "model_evaluation": {
+    "applicable": true,
+    "state": "random initialized diagnostic checkpoints, not trained",
+    "small_model": "SmoothCorrection: 9x9 affine map followed by tanh",
+    "large_models": [
+      "PointwiseCorrection 0.2*tanh(z)",
+      "src.unet.UNet(1,1,bilinear=True)"
+    ],
+    "checkpoint_manifest": "evaluated_checkpoints in manifest, recorded before first forward",
+    "optimizer": "none"
+  },
+  "computation": {
+    "device": "cuda:0",
+    "dtype": "float64",
+    "cpu_threads": 4,
+    "deterministic_algorithms": true,
+    "tf32": false,
+    "cublas_workspace_config": ":4096:8",
+    "timeout_seconds": 900,
+    "resource_sample_seconds": 10,
+    "proximity_atol": 1e-10,
+    "directional_epsilons": [
+      0.001,
+      0.0003,
+      0.0001
+    ],
+    "directional_atol": 1e-08,
+    "smooth_directional_rtol": 2e-05,
+    "relu_directional_rtol": 0.005,
+    "timing_repetitions": 3,
+    "beta_policy": "per-sample, shared U=V; beta0 has NSN derivative including at zero; positive kink uses unclipped branch",
+    "gradcheck": {
+      "eps": 1e-06,
+      "atol": 2e-07,
+      "rtol": 2e-05
+    },
+    "coordinates": "physical pixel values; weighted measurement norm",
+    "unet_directional_epsilons": [
+      0.0001,
+      1e-05,
+      1e-06
+    ],
+    "unet_gradient_domain": "Finite differences on Gaussian input; analytic layer-VJP check on Gaussian and piecewise-constant circle; positive MaxPool ties recorded",
+    "replay_epsilons": [
+      0.001,
+      0.0003,
+      0.0001,
+      1e-05,
+      1e-06,
+      1e-07
+    ]
+  },
+  "factors": {
+    "factor_run": "runs/20261027T213808Z_810bb2a69026",
+    "basis_sha256": "eaa7f0d11f7a5ce1bfe505cefa8944b0b518d35b6bced80b8dccead29d004bc6",
+    "operator_sha256": "e84e791dbdbcf0cb9ae4c8e25041f3d79f01b9073fd511a4af5c0cd8496fdc19",
+    "verification_run": "runs/20261027T214920Z_c1087696eac1",
+    "verification_summary_sha256": "be982fcbf772b8e5de6390fe306981efc6b0e9dea525779c784be08ad3f0c4af"
+  },
+  "replay_source": {
+    "path": "runs/20261027T221026Z_4fe01d7a93d5",
+    "artifacts_sha256": "bef130ebfe009a89bb5c304621677aa22e3c71d9bc525a64ac867a81296dfce2",
+    "files": {
+      "manifest.json": "10096e5c30553618be25329ae7ef2743a27db0618fb8bdf2cc07924ba66bd9cf",
+      "unet_initial_state.pt": "ac8995afd16dcaa04f8d6a490efd52e04ba985b7f0e6df03042a0953705c48d7",
+      "unet_dp_inputs.npz": "bde95726b6edf425ebbc6273ec18aebdeefc3efde0c11ab1c67dc3271647b889",
+      "unet_nsn_inputs.npz": "3a00dd90431dc64c202c6587a185ffc2ac525335f105289873abc5de89da6505",
+      "unet_dp_parameter_derivatives.pt": "8dc3b67ab825e88759bd8a46f7938d76e8f2be96507329331897f32cdedd43da",
+      "unet_nsn_parameter_derivatives.pt": "dadb55d5f626b395d28695958269adcd8893b1ef130790971ac13ac5c55a4766"
+    }
+  }
+}

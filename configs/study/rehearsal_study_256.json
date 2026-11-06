@@ -1,0 +1,51 @@
+{
+  "study_id": "dpnn-rehearsal-256-20261103-v2",
+  "pilot_plan": "configs/study/development_pilot_256.json",
+  "counts": {
+    "train": 4,
+    "validation": 4,
+    "test": 4
+  },
+  "epochs": 2,
+  "data_seeds": {
+    "seed": 20261101,
+    "geometry_seed": 110101,
+    "noise_seed": 110102
+  },
+  "training_seed_sets": [
+    {
+      "seed": 20261103,
+      "model_seed": 20261103,
+      "sampler_seed": 771103,
+      "python_seed": 991103,
+      "numpy_seed": 881103
+    }
+  ],
+  "tv_max_iterations": 200000,
+  "schema_version": 2,
+  "kind": "rehearsal",
+  "beta_multipliers": [
+    1.0
+  ],
+  "exercise_stop_resume": true,
+  "object_ids": {
+    "train": [
+      "dpnn-development-256-20261029-v1/train/000000",
+      "dpnn-development-256-20261029-v1/train/000001",
+      "dpnn-development-256-20261029-v1/train/000002",
+      "dpnn-development-256-20261029-v1/train/000003"
+    ],
+    "validation": [
+      "dpnn-development-256-20261029-v1/validation/000000",
+      "dpnn-development-256-20261029-v1/validation/000001",
+      "dpnn-development-256-20261029-v1/validation/000002",
+      "dpnn-development-256-20261029-v1/validation/000003"
+    ],
+    "test": [
+      "dpnn-development-256-20261029-v1/validation/000004",
+      "dpnn-development-256-20261029-v1/validation/000005",
+      "dpnn-development-256-20261029-v1/validation/000006",
+      "dpnn-development-256-20261029-v1/validation/000007"
+    ]
+  }
+}

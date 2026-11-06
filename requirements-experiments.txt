@@ -1,0 +1,3 @@
+# Preparation uses only NumPy in addition to the Python standard library.
+# Every run records the exact installed version in environment.json.
+numpy>=1.24,<3

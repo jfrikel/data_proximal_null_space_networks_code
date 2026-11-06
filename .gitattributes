@@ -1,0 +1,4 @@
+# Preserve the exact checksummed delivery bytes on every operating system.
+/results/** -text
+# Python's standard CSV dialect deliberately emits RFC-compatible CRLF.
+/results/**/*.csv whitespace=cr-at-eol

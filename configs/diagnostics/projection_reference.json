@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "mode": "reference",
+  "purpose": "A20.4/A20.11: SVD reference, LSQR validation, fixed Landweber polynomial and gradient tests",
+  "dataset": {
+    "split": "operator_development",
+    "split_ids": {
+      "operator_development": [
+        "controlled_rank_deficient",
+        "radon_16",
+        "radon_32",
+        "gradient_rank_deficient_5x7"
+      ]
+    },
+    "synthetic_singular_values": [
+      2.0,
+      1.0,
+      0.2,
+      0.001
+    ],
+    "generator": "PCG64 standard normal entries; orthogonal factors via NumPy QR; complete matrices and inputs saved"
+  },
+  "geometry": {
+    "references": [
+      {
+        "size": 16,
+        "angles": 8,
+        "detectors": 23
+      },
+      {
+        "size": 32,
+        "angles": 16,
+        "detectors": 46
+      }
+    ]
+  },
+  "randomness": {
+    "seed": 20261027,
+    "numpy_generator": "PCG64",
+    "torch_manual_seed": 20261027
+  },
+  "computation": {
+    "device": "cuda:0",
+    "dtype": "float64",
+    "cublas_workspace_config": ":4096:8",
+    "coordinates": "whitened Euclidean; M=sqrt(wY/wX)*A",
+    "operator": "pixel_line_intersections_v1",
+    "ray_tolerance": 1e-12,
+    "svd_rtol": 1e-12,
+    "positive_cutoff_fraction": 0.01,
+    "identity_tolerance": 1e-08,
+    "filter_tolerance": 1e-09,
+    "image_target": 1e-05,
+    "landweber_iterations": [
+      0,
+      1,
+      8,
+      64,
+      512,
+      4096
+    ],
+    "gradient_iterations": [
+      0,
+      1,
+      8,
+      32
+    ],
+    "gradcheck": {
+      "eps": 1e-06,
+      "atol": 1e-06,
+      "rtol": 0.0001,
+      "fast_mode": false
+    },
+    "beta_fractions": [
+      0.0,
+      0.01,
+      2.0
+    ],
+    "checkpoints": [
+      0,
+      16,
+      64,
+      256,
+      1024,
+      4096,
+      8192,
+      20000
+    ],
+    "lsqr": {
+      "max_iterations": 20000,
+      "normal_rtol": 1e-13,
+      "data_rtol": 1e-11,
+      "check_interval": 25,
+      "roundoff_factor": 32.0,
+      "condition_limit": 10000000000.0
+    },
+    "solver_contract": "zero start; no damping or preconditioning; true residual stopping; adaptive LSQR rejects autograd",
+    "landweber_contract": "fixed K and omega=0.95/(norm_1(M)*norm_inf(M)); backward is finite-polynomial adjoint",
+    "deterministic_algorithms": true,
+    "tf32": false,
+    "training": "not applicable; no model or optimizer"
+  }
+}

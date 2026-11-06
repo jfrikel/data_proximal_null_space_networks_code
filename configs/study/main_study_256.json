@@ -1,0 +1,38 @@
+{
+  "study_id": "dpnn-main-256-v1",
+  "pilot_plan": "configs/study/development_pilot_256.json",
+  "counts": {
+    "train": 2500,
+    "validation": 500,
+    "test": 500
+  },
+  "epochs": 30,
+  "data_seeds": {
+    "seed": 20261101,
+    "geometry_seed": 110101,
+    "noise_seed": 110102
+  },
+  "training_seed_sets": [
+    {
+      "seed": 20261101,
+      "model_seed": 20261101,
+      "sampler_seed": 771101,
+      "python_seed": 991101,
+      "numpy_seed": 881101
+    },
+    {
+      "seed": 20261102,
+      "model_seed": 20261102,
+      "sampler_seed": 771102,
+      "python_seed": 991102,
+      "numpy_seed": 881102
+    }
+  ],
+  "tv_max_iterations": 200000,
+  "schema_version": 2,
+  "kind": "main",
+  "beta_multipliers": [
+    1.0
+  ],
+  "exercise_stop_resume": false
+}

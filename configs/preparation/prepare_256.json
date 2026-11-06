@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "purpose": "A20.11/A20.12 development preparation; no training or final test",
+  "dataset": {
+    "namespace": "dpnn-diagnostic-v1",
+    "split": "development_control",
+    "circle": {
+      "center": [
+        0.0,
+        0.0
+      ],
+      "axes": [
+        0.6,
+        0.6
+      ],
+      "rotation_deg": 0.0,
+      "amplitude": 1.0
+    },
+    "probe_rotations_deg": [
+      0,
+      30,
+      60,
+      90,
+      120,
+      150
+    ],
+    "probe_ellipse": {
+      "center": [
+        0.03,
+        -0.02
+      ],
+      "axes": [
+        0.55,
+        0.07
+      ],
+      "amplitude": 1.0
+    },
+    "random_count": 5,
+    "random_ellipses": {
+      "count_min": 3,
+      "count_max": 9,
+      "major_axis_range": [
+        0.06,
+        0.55
+      ],
+      "axis_ratio_range": [
+        0.2,
+        1.0
+      ],
+      "support_radius": 0.9,
+      "dirichlet_alpha": 1.0,
+      "total_amplitude_range": [
+        0.6,
+        1.0
+      ],
+      "max_rejection_attempts": 10000
+    }
+  },
+  "geometry": {
+    "size": 256,
+    "angles": 120,
+    "detectors": 363,
+    "angle_min_deg": -60.0,
+    "angle_max_deg": 60.0,
+    "half_width": 1.4142135623730951
+  },
+  "randomness": {
+    "seed": 20261027,
+    "generator": "NumPy PCG64",
+    "derivation": "SHA256 of seed:object_id:purpose, first 16 bytes as big-endian integer"
+  },
+  "computation": {
+    "backend": "numpy_cpu",
+    "dtype": "float64",
+    "operator": "pixel_line_intersections_v1",
+    "pixel_domain": [
+      -1.0,
+      1.0
+    ],
+    "image_orientation": "rows increase with y; columns increase with x",
+    "measurement_order": "angle-major; detector-minor",
+    "detector_measurement": "central line integral",
+    "active_pixel_mask": "full_square",
+    "angle_endpoint": false,
+    "pixel_norm_weight": "(2/size)^2",
+    "data_norm_weight": "angular_step * detector_step",
+    "ray_tolerance": 1e-12,
+    "pixel_quadrature": 4,
+    "comparison_quadrature": 2,
+    "relative_noise_norm": 0.05,
+    "noise_model": "normalized independent Gaussian direction, fixed weighted L2 norm",
+    "boundary_points_per_ellipse": 128,
+    "direction_margin_deg": 5.0,
+    "profile_repetitions": 3,
+    "adjoint_tolerance": 1e-10,
+    "refinement_sizes": [
+      64,
+      128,
+      256
+    ]
+  }
+}
