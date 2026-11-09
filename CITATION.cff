@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper below and record the exact code commit used."
+type: software
+title: "Data-proximal null-space networks for inverse problems: companion code"
+authors:
+  - family-names: "Göppel"
+    given-names: "Simon"
+  - family-names: "Frikel"
+    given-names: "Jürgen"
+  - family-names: "Haltmeier"
+    given-names: "Markus"
+year: 2026
+version: "1.0"
+license: GPL-3.0-only
+repository-code: "https://github.com/jfrikel/data_proximal_null_space_networks_code"
+preferred-citation:
+  type: unpublished
+  title: "Data-proximal null-space networks for inverse problems"
+  authors:
+    - family-names: "Göppel"
+      given-names: "Simon"
+    - family-names: "Frikel"
+      given-names: "Jürgen"
+    - family-names: "Haltmeier"
+      given-names: "Markus"
+  year: 2026
+  notes: "Preprint; add the arXiv identifier or DOI when available."

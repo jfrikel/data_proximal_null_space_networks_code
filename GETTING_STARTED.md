@@ -112,5 +112,6 @@ Keep test objects out of training/model selection. The standalone evaluator is a
 - H200/four-device rejection: the original controller was selected; a new single-device experiment uses the lower-level trainer and its complete inputs.
 - CUDA unavailable / cuSOLVER not found: verify driver, wheel build, device visibility and library discovery; no automatic CPU substitution is made.
 - Memory exhaustion: the paper's dense Float64 factors are large. Requirements files cannot guarantee that another GPU can run this configuration.
+- Resume refused by `scripts/development_pilot.py` because the environment differs: the launcher requires the same Python interpreter path and identical values of `CUDA_VISIBLE_DEVICES`, `LD_LIBRARY_PATH`, `OMP_NUM_THREADS`, `OPENBLAS_NUM_THREADS`, `MKL_NUM_THREADS`, `CUBLAS_WORKSPACE_CONFIG` and `PYTHONHASHSEED` as at launch.
 
 Full local run archives include real machine paths and environment information. Keep them in ignored directories and publish only intentionally prepared scientific exports.

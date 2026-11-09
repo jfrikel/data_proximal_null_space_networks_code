@@ -56,7 +56,7 @@ Numerical tests are separate from the scientific implementation. Some qualificat
 | [dpnn_experiments/start_recovery.py](../dpnn_experiments/start_recovery.py) | Reuse only qualified objects from hash-bound, closed preparation archives. |
 | [dpnn_experiments/study_plan.py](../dpnn_experiments/study_plan.py) | Versioned single-noise study preparation. No numerical work at prepare time. |
 | [dpnn_experiments/study_queue.py](../dpnn_experiments/study_queue.py) | Exclusive device slots and a durable DAG queue. Never chains study phases. |
-| [dpnn_experiments/study_report.py](../dpnn_experiments/study_report.py) | Complete-case accounting and paired statistics with SVG/HTML and Pillow image output; reconstruction panels also require PyTorch. |
+| [dpnn_experiments/study_report.py](../dpnn_experiments/study_report.py) | Complete-case accounting and paired statistics with SVG/HTML and Pillow PNG output; importing the module requires PyTorch through `training_archive`. |
 | [dpnn_experiments/training.py](../dpnn_experiments/training.py) | Single-device Float64 training/evaluation with complete artifacts and resume. |
 | [dpnn_experiments/training_archive.py](../dpnn_experiments/training_archive.py) | Durable training segments, immutable manifests and linked atomic checkpoints. |
 

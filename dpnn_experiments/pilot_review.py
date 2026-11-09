@@ -187,10 +187,10 @@ def run(original, continuation, root, full=False):
             '<table>'+table+'</table><h2>Learning curves</h2>'+plots+
             '<h2>Fixed first four validation objects</h2><p>Display scale [0,1], clipped only for display; '
             'stored numerical reconstructions unchanged.</p>'+images)
-        write_json(archive.path/'summary.json',{'passed':True,'evaluation_jobs':16,'training_jobs':8,
+        write_json(archive.path/'summary.json',{'passed':True,'passed_meaning':'all archive and consistency checks completed without raising; not a scientific acceptance','evaluation_jobs':16,'training_jobs':8,
             'test_quality_evaluated':False,'full_hash_audit':full,'audited_archives':len(audited),
             'timings':timings,'report':'report.html','scientific_acceptance':'requires author review',
-            'findings':['TV NSN lowers MSE but has worse SSIM than the TV start; Tikhonov NSN slightly improves SSIM.',
+            'author_notes_from_original_pilot':['TV NSN lowers MSE but has worse SSIM than the TV start; Tikhonov NSN slightly improves SSIM.',
                         'DP_TWO trails shared DP at MSE-selected checkpoints for both starts.',
                         'These observations do not establish an implementation defect or a general ranking.']})
     return archive.path
