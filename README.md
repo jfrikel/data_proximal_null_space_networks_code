@@ -1,6 +1,6 @@
 # Data-proximal null-space networks for inverse problems
 
-Research code accompanying **Data-proximal null-space networks for inverse problems** by **Simon Göppel, Jürgen Frikel, and Markus Haltmeier**.
+Research code accompanying **Data-proximal null-space networks for inverse problems** by **Jürgen Frikel, Simon Göppel, and Markus Haltmeier**.
 
 The paper introduces data-proximal networks as an extension of null-space networks. Learned corrections explicitly control the additional change in predicted data relative to an initial reconstruction. The theoretical analysis establishes regularization and data-proximity guarantees under the stated assumptions; numerical experiments illustrate reconstruction quality and the implemented data-change control.
 
@@ -54,11 +54,11 @@ The checkout contains enough exported data to reproduce the paper tables and fig
 
 The recorded study used a 30-epoch phase followed by continuation to 60 epochs. `configs/paper/` documents the completed study; the executable historical starting profile is separate under `configs/study/`. Reorganized source files do not replace the original source snapshots for resuming historical runs.
 
-Please cite **Simon Göppel, Jürgen Frikel, and Markus Haltmeier, “Data-proximal null-space networks for inverse problems”**, and record the exact code commit used; [CITATION.cff](CITATION.cff) provides machine-readable citation metadata.
+Please cite **Jürgen Frikel, Simon Göppel, and Markus Haltmeier, “Data-proximal null-space networks for inverse problems”**, and record the exact code commit used; [CITATION.cff](CITATION.cff) provides machine-readable citation metadata.
 
 ## License
 
-Copyright (C) 2026 Simon Göppel, Jürgen Frikel, and Markus Haltmeier.
+Copyright (C) 2026 Jürgen Frikel, Simon Göppel, and Markus Haltmeier.
 
 The program code in this repository is licensed under the **GNU General Public License, version 3 only (SPDX: GPL-3.0-only)**. See [LICENSE](LICENSE) for the full terms. This covers the Python implementation, scripts, tests and tools. The scientific purpose stated above is not a restriction on uses permitted by the license.
 

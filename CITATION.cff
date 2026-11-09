@@ -3,10 +3,10 @@ message: "If you use this code, please cite the paper below and record the exact
 type: software
 title: "Data-proximal null-space networks for inverse problems: companion code"
 authors:
-  - family-names: "Göppel"
-    given-names: "Simon"
   - family-names: "Frikel"
     given-names: "Jürgen"
+  - family-names: "Göppel"
+    given-names: "Simon"
   - family-names: "Haltmeier"
     given-names: "Markus"
 year: 2026
@@ -17,10 +17,10 @@ preferred-citation:
   type: unpublished
   title: "Data-proximal null-space networks for inverse problems"
   authors:
-    - family-names: "Göppel"
-      given-names: "Simon"
     - family-names: "Frikel"
       given-names: "Jürgen"
+    - family-names: "Göppel"
+      given-names: "Simon"
     - family-names: "Haltmeier"
       given-names: "Markus"
   year: 2026
