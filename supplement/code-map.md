@@ -75,6 +75,7 @@ Numerical tests are separate from the scientific implementation. Some qualificat
 |---|---|
 | [scripts/build_paper.py](../scripts/build_paper.py) | Export native figure assets and compile a separate paper checkout with latexmk. |
 | [scripts/latex_figure_assets.py](../scripts/latex_figure_assets.py) | Full-precision PGFPlots data and lossless reconstruction fields, with round-trip and provenance checks. |
+| [scripts/assemble_release_artifacts.py](../scripts/assemble_release_artifacts.py) | Copy and hash-verify checkpoints, basis, operator and start caches from the study archives into the artifact layout of the inference template. |
 | [scripts/configure.py](../scripts/configure.py) | Create local configurations with explicit artifact paths; never start a run. |
 | [scripts/development_pilot.py](../scripts/development_pilot.py) | Detached, immutable-source development-pilot launcher (Linux/macOS). |
 | [scripts/main_study.py](../scripts/main_study.py) | Explicit preparation, validation, freeze, test, report; no phase autorun. |
