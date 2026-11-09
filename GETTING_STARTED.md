@@ -117,7 +117,7 @@ Keep test objects out of training/model selection. The standalone evaluator is a
   --output /path/to/artifacts/tikhonov/samples_index.json --copy-to /path/to/artifacts/tikhonov/samples
 ```
 
-2. Obtain the artifact directory: download and unpack the published data records into one directory, or, with access to the original study archives, assemble it with `python scripts/assemble_release_artifacts.py --output /path/to/artifacts --study-root ... --factor-run ... --tikhonov-dataset ... --tv-dataset ...`, which copies and hash-verifies the selected checkpoints (`weights/<start>_<method>_seed<k>_step<step>.pt`), `row_space_basis.npy`, `operator.npz`, `projection_contract.json` and the sample sets (`samples/<start_kind>/`), and writes `release_manifest.json`. Then render the template with `scripts/configure.py --artifact-root /path/to/artifacts`, or write a specification of the same form by hand.
+2. Obtain the artifact directory: with access to the original study archives, assemble it with `python scripts/assemble_release_artifacts.py --output /path/to/artifacts --study-root ... --factor-run ... --tikhonov-dataset ... --tv-dataset ...`, which copies and hash-verifies the selected checkpoints (`weights/<start>_<method>_seed<k>_step<step>.pt`), `row_space_basis.npy`, `operator.npz`, `projection_contract.json` and the sample sets (`samples/<start_kind>/`), and writes `release_manifest.json`. Then render the template with `scripts/configure.py --artifact-root /path/to/artifacts`, or write a specification of the same form by hand.
 
 3. Evaluate and compare with the published per-object metrics:
 

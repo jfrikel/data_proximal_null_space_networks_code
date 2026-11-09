@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "purpose": "Evaluate the published paper checkpoints on the exported test objects with python -m dpnn_experiments.inference run. DPNN_ARTIFACT_ROOT is the directory assembled by scripts/assemble_release_artifacts.py or downloaded from the data repository: weights/*.pt, row_space_basis.npy, operator.npz, projection_contract.json, samples/<start_kind>/samples_index.json and samples/<start_kind>/samples/*.npz.",
+  "purpose": "Evaluate the published paper checkpoints on the exported test objects with python -m dpnn_experiments.inference run. DPNN_ARTIFACT_ROOT is the directory assembled by scripts/assemble_release_artifacts.py: weights/*.pt, row_space_basis.npy, operator.npz, projection_contract.json, samples/<start_kind>/samples_index.json and samples/<start_kind>/samples/*.npz.",
   "device": "cuda:0",
   "cpu_threads": 4,
   "geometry": {

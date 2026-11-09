@@ -238,7 +238,7 @@
     }
   ],
   "inference_release_layout": {
-    "description": "configs/study/inference_paper_template.json does not use artifact IDs. Its DPNN_ARTIFACT_ROOT is the directory produced by scripts/assemble_release_artifacts.py (the published data record): the selected checkpoints under weights/ named <start>_<method>_seed<k>_step<step>.pt, row_space_basis.npy, operator.npz, projection_contract.json, and samples/<start_kind>/samples_index.json with samples/<start_kind>/samples/*.npz. The weight files are the same files as artifact-005 to artifact-035; release_manifest.json maps names to those IDs and hashes.",
+    "description": "configs/study/inference_paper_template.json does not use artifact IDs. Its DPNN_ARTIFACT_ROOT is the directory produced by scripts/assemble_release_artifacts.py: the selected checkpoints under weights/ named <start>_<method>_seed<k>_step<step>.pt, row_space_basis.npy, operator.npz, projection_contract.json, and samples/<start_kind>/samples_index.json with samples/<start_kind>/samples/*.npz. The weight files are the same files as artifact-005 to artifact-035; release_manifest.json maps names to those IDs and hashes.",
     "code_record_doi": "10.5281/zenodo.24080044"
   }
 }

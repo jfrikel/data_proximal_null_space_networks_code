@@ -7,7 +7,7 @@ caches into one directory with the layout expected by
 configs/study/inference_paper_template.json, verifying every file against the
 hashes recorded in configs/paper/verified-settings.json and in the projection
 contract of results/data/metadata/training_runs.json.xz. The directory, or the
-zip archives it can produce, is what gets uploaded to the data repository. No
+zip archives it can produce, can be uploaded to a data repository. No
 archive is modified and nothing is computed; files that fail their hash abort.
 """
 import argparse
