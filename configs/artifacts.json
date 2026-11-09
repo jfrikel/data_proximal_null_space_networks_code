@@ -1,5 +1,5 @@
 {
-  "description": "Artifact IDs used by configuration templates. Place the corresponding original artifact at ARTIFACT_ROOT/id (file or directory as required), or edit a generated configuration explicitly. Hash checks remain mandatory.",
+  "description": "Artifact IDs used by configuration templates. Place the corresponding original artifact at ARTIFACT_ROOT/id (file or directory as required), or edit a generated configuration explicitly. Hash checks remain mandatory. Artifacts 036-039 are the bare inference inputs (basis file, operator file, sample directories with a sanitized index) consumed by configs/study/inference_paper_template.json.",
   "artifacts": [
     {
       "id": "artifact-001",
@@ -35,78 +35,90 @@
       "id": "artifact-005",
       "used_by": [
         "configs/paper/verified-settings.json.runs[6].position.best.weights.path",
-        "configs/paper/verified-settings.json.runs[6].position.best_mse.weights.path"
+        "configs/paper/verified-settings.json.runs[6].position.best_mse.weights.path",
+        "configs/study/inference_paper_template.json.models[20].weights.path"
       ]
     },
     {
       "id": "artifact-006",
       "used_by": [
-        "configs/paper/verified-settings.json.runs[6].position.best_ssim.weights.path"
+        "configs/paper/verified-settings.json.runs[6].position.best_ssim.weights.path",
+        "configs/study/inference_paper_template.json.models[21].weights.path"
       ]
     },
     {
       "id": "artifact-007",
       "used_by": [
         "configs/paper/verified-settings.json.runs[7].position.best.weights.path",
-        "configs/paper/verified-settings.json.runs[7].position.best_mse.weights.path"
+        "configs/paper/verified-settings.json.runs[7].position.best_mse.weights.path",
+        "configs/study/inference_paper_template.json.models[28].weights.path"
       ]
     },
     {
       "id": "artifact-008",
       "used_by": [
-        "configs/paper/verified-settings.json.runs[7].position.best_ssim.weights.path"
+        "configs/paper/verified-settings.json.runs[7].position.best_ssim.weights.path",
+        "configs/study/inference_paper_template.json.models[29].weights.path"
       ]
     },
     {
       "id": "artifact-009",
       "used_by": [
         "configs/paper/verified-settings.json.runs[10].position.best.weights.path",
-        "configs/paper/verified-settings.json.runs[10].position.best_mse.weights.path"
+        "configs/paper/verified-settings.json.runs[10].position.best_mse.weights.path",
+        "configs/study/inference_paper_template.json.models[18].weights.path"
       ]
     },
     {
       "id": "artifact-010",
       "used_by": [
-        "configs/paper/verified-settings.json.runs[10].position.best_ssim.weights.path"
+        "configs/paper/verified-settings.json.runs[10].position.best_ssim.weights.path",
+        "configs/study/inference_paper_template.json.models[19].weights.path"
       ]
     },
     {
       "id": "artifact-011",
       "used_by": [
         "configs/paper/verified-settings.json.runs[11].position.best.weights.path",
-        "configs/paper/verified-settings.json.runs[11].position.best_mse.weights.path"
+        "configs/paper/verified-settings.json.runs[11].position.best_mse.weights.path",
+        "configs/study/inference_paper_template.json.models[26].weights.path"
       ]
     },
     {
       "id": "artifact-012",
       "used_by": [
-        "configs/paper/verified-settings.json.runs[11].position.best_ssim.weights.path"
+        "configs/paper/verified-settings.json.runs[11].position.best_ssim.weights.path",
+        "configs/study/inference_paper_template.json.models[27].weights.path"
       ]
     },
     {
       "id": "artifact-013",
       "used_by": [
         "configs/paper/verified-settings.json.runs[14].position.best.weights.path",
-        "configs/paper/verified-settings.json.runs[14].position.best_mse.weights.path"
+        "configs/paper/verified-settings.json.runs[14].position.best_mse.weights.path",
+        "configs/study/inference_paper_template.json.models[16].weights.path"
       ]
     },
     {
       "id": "artifact-014",
       "used_by": [
-        "configs/paper/verified-settings.json.runs[14].position.best_ssim.weights.path"
+        "configs/paper/verified-settings.json.runs[14].position.best_ssim.weights.path",
+        "configs/study/inference_paper_template.json.models[17].weights.path"
       ]
     },
     {
       "id": "artifact-015",
       "used_by": [
         "configs/paper/verified-settings.json.runs[15].position.best.weights.path",
-        "configs/paper/verified-settings.json.runs[15].position.best_mse.weights.path"
+        "configs/paper/verified-settings.json.runs[15].position.best_mse.weights.path",
+        "configs/study/inference_paper_template.json.models[24].weights.path"
       ]
     },
     {
       "id": "artifact-016",
       "used_by": [
-        "configs/paper/verified-settings.json.runs[15].position.best_ssim.weights.path"
+        "configs/paper/verified-settings.json.runs[15].position.best_ssim.weights.path",
+        "configs/study/inference_paper_template.json.models[25].weights.path"
       ]
     },
     {
@@ -126,20 +138,24 @@
       "used_by": [
         "configs/paper/verified-settings.json.runs[2].position.best.weights.path",
         "configs/paper/verified-settings.json.runs[2].position.best_mse.weights.path",
-        "configs/paper/verified-settings.json.runs[2].position.best_ssim.weights.path"
+        "configs/paper/verified-settings.json.runs[2].position.best_ssim.weights.path",
+        "configs/study/inference_paper_template.json.models[22].weights.path",
+        "configs/study/inference_paper_template.json.models[23].weights.path"
       ]
     },
     {
       "id": "artifact-020",
       "used_by": [
         "configs/paper/verified-settings.json.runs[3].position.best.weights.path",
-        "configs/paper/verified-settings.json.runs[3].position.best_mse.weights.path"
+        "configs/paper/verified-settings.json.runs[3].position.best_mse.weights.path",
+        "configs/study/inference_paper_template.json.models[30].weights.path"
       ]
     },
     {
       "id": "artifact-021",
       "used_by": [
-        "configs/paper/verified-settings.json.runs[3].position.best_ssim.weights.path"
+        "configs/paper/verified-settings.json.runs[3].position.best_ssim.weights.path",
+        "configs/study/inference_paper_template.json.models[31].weights.path"
       ]
     },
     {
@@ -147,85 +163,99 @@
       "used_by": [
         "configs/paper/verified-settings.json.runs[4].position.best.weights.path",
         "configs/paper/verified-settings.json.runs[4].position.best_mse.weights.path",
-        "configs/paper/verified-settings.json.runs[4].position.best_ssim.weights.path"
+        "configs/paper/verified-settings.json.runs[4].position.best_ssim.weights.path",
+        "configs/study/inference_paper_template.json.models[4].weights.path",
+        "configs/study/inference_paper_template.json.models[5].weights.path"
       ]
     },
     {
       "id": "artifact-023",
       "used_by": [
         "configs/paper/verified-settings.json.runs[5].position.best.weights.path",
-        "configs/paper/verified-settings.json.runs[5].position.best_mse.weights.path"
+        "configs/paper/verified-settings.json.runs[5].position.best_mse.weights.path",
+        "configs/study/inference_paper_template.json.models[12].weights.path"
       ]
     },
     {
       "id": "artifact-024",
       "used_by": [
-        "configs/paper/verified-settings.json.runs[5].position.best_ssim.weights.path"
+        "configs/paper/verified-settings.json.runs[5].position.best_ssim.weights.path",
+        "configs/study/inference_paper_template.json.models[13].weights.path"
       ]
     },
     {
       "id": "artifact-025",
       "used_by": [
         "configs/paper/verified-settings.json.runs[8].position.best.weights.path",
-        "configs/paper/verified-settings.json.runs[8].position.best_mse.weights.path"
+        "configs/paper/verified-settings.json.runs[8].position.best_mse.weights.path",
+        "configs/study/inference_paper_template.json.models[2].weights.path"
       ]
     },
     {
       "id": "artifact-026",
       "used_by": [
-        "configs/paper/verified-settings.json.runs[8].position.best_ssim.weights.path"
+        "configs/paper/verified-settings.json.runs[8].position.best_ssim.weights.path",
+        "configs/study/inference_paper_template.json.models[3].weights.path"
       ]
     },
     {
       "id": "artifact-027",
       "used_by": [
         "configs/paper/verified-settings.json.runs[9].position.best.weights.path",
-        "configs/paper/verified-settings.json.runs[9].position.best_mse.weights.path"
+        "configs/paper/verified-settings.json.runs[9].position.best_mse.weights.path",
+        "configs/study/inference_paper_template.json.models[10].weights.path"
       ]
     },
     {
       "id": "artifact-028",
       "used_by": [
-        "configs/paper/verified-settings.json.runs[9].position.best_ssim.weights.path"
+        "configs/paper/verified-settings.json.runs[9].position.best_ssim.weights.path",
+        "configs/study/inference_paper_template.json.models[11].weights.path"
       ]
     },
     {
       "id": "artifact-029",
       "used_by": [
         "configs/paper/verified-settings.json.runs[12].position.best.weights.path",
-        "configs/paper/verified-settings.json.runs[12].position.best_mse.weights.path"
+        "configs/paper/verified-settings.json.runs[12].position.best_mse.weights.path",
+        "configs/study/inference_paper_template.json.models[0].weights.path"
       ]
     },
     {
       "id": "artifact-030",
       "used_by": [
-        "configs/paper/verified-settings.json.runs[12].position.best_ssim.weights.path"
+        "configs/paper/verified-settings.json.runs[12].position.best_ssim.weights.path",
+        "configs/study/inference_paper_template.json.models[1].weights.path"
       ]
     },
     {
       "id": "artifact-031",
       "used_by": [
         "configs/paper/verified-settings.json.runs[13].position.best.weights.path",
-        "configs/paper/verified-settings.json.runs[13].position.best_mse.weights.path"
+        "configs/paper/verified-settings.json.runs[13].position.best_mse.weights.path",
+        "configs/study/inference_paper_template.json.models[8].weights.path"
       ]
     },
     {
       "id": "artifact-032",
       "used_by": [
-        "configs/paper/verified-settings.json.runs[13].position.best_ssim.weights.path"
+        "configs/paper/verified-settings.json.runs[13].position.best_ssim.weights.path",
+        "configs/study/inference_paper_template.json.models[9].weights.path"
       ]
     },
     {
       "id": "artifact-033",
       "used_by": [
         "configs/paper/verified-settings.json.runs[0].position.best.weights.path",
-        "configs/paper/verified-settings.json.runs[0].position.best_mse.weights.path"
+        "configs/paper/verified-settings.json.runs[0].position.best_mse.weights.path",
+        "configs/study/inference_paper_template.json.models[6].weights.path"
       ]
     },
     {
       "id": "artifact-034",
       "used_by": [
-        "configs/paper/verified-settings.json.runs[0].position.best_ssim.weights.path"
+        "configs/paper/verified-settings.json.runs[0].position.best_ssim.weights.path",
+        "configs/study/inference_paper_template.json.models[7].weights.path"
       ]
     },
     {
@@ -233,7 +263,39 @@
       "used_by": [
         "configs/paper/verified-settings.json.runs[1].position.best.weights.path",
         "configs/paper/verified-settings.json.runs[1].position.best_mse.weights.path",
-        "configs/paper/verified-settings.json.runs[1].position.best_ssim.weights.path"
+        "configs/paper/verified-settings.json.runs[1].position.best_ssim.weights.path",
+        "configs/study/inference_paper_template.json.models[14].weights.path",
+        "configs/study/inference_paper_template.json.models[15].weights.path"
+      ]
+    },
+    {
+      "id": "artifact-036",
+      "content": "row_space_basis.npy of the block factorization run (Float64, 65536 x 38597)",
+      "used_by": [
+        "configs/study/inference_paper_template.json.projection.basis.path"
+      ]
+    },
+    {
+      "id": "artifact-037",
+      "content": "operator.npz of the reference preparation run (sparse Radon matrix)",
+      "used_by": [
+        "configs/study/inference_paper_template.json.projection.operator.path"
+      ]
+    },
+    {
+      "id": "artifact-038",
+      "content": "Tikhonov start cache: samples_index.json from inference make-index plus samples/ directory",
+      "used_by": [
+        "configs/study/inference_paper_template.json.samples[0].index",
+        "configs/study/inference_paper_template.json.samples[0].directory"
+      ]
+    },
+    {
+      "id": "artifact-039",
+      "content": "TV start cache: samples_index.json from inference make-index plus samples/ directory",
+      "used_by": [
+        "configs/study/inference_paper_template.json.samples[1].index",
+        "configs/study/inference_paper_template.json.samples[1].directory"
       ]
     }
   ]

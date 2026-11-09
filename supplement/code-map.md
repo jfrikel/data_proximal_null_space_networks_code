@@ -14,11 +14,12 @@ See [Getting started](../GETTING_STARTED.md) for dependency profiles and the own
 | Study orchestration | `scripts/main_study.py`, `dpnn_experiments/study_plan.py`, `study_queue.py` |
 | Historical continuation | `dpnn_experiments/epoch_extension.py` |
 | Evaluation | `dpnn_experiments/evaluator.py`, `paired_statistics.py` |
+| Inference on published artifacts | `dpnn_experiments/inference.py` |
 | Paper reproduction | `scripts/reproduce_paper.py` |
 
 Paths in the workflow table are relative to the repository root unless a filename follows a module in the same directory. The main controller dynamically loads `scripts/development_pilot.py`. Operator-loading helpers in `gpu_benchmark.py`, the Tikhonov solver in `pilot_data.py`, and numerical helpers in `projection_diagnostics.py` are active dependencies despite their historical names.
 
-`configs/study/` holds execution templates; `configs/preparation/` holds operator/factorization settings; `configs/tests/` and `configs/diagnostics/` hold technical check settings. `configs/paper/` records completed-study settings and is descriptive rather than directly executable. See the [path configuration guide](reproducibility.md#local-path-configuration).
+`configs/study/` holds execution templates, including `inference_paper_template.json` with the paper checkpoints and projection contract for the inference entry point; `configs/preparation/` holds operator/factorization settings; `configs/tests/` and `configs/diagnostics/` hold technical check settings. `configs/paper/` records completed-study settings and is descriptive rather than directly executable. See the [path configuration guide](reproducibility.md#local-path-configuration).
 
 ## Python modules
 
@@ -39,6 +40,7 @@ Numerical tests are separate from the scientific implementation. Some qualificat
 | [dpnn_experiments/evaluator.py](../dpnn_experiments/evaluator.py) | Frozen validation/test evaluation with numerical start-solver acceptance checks. |
 | [dpnn_experiments/factor_verification.py](../dpnn_experiments/factor_verification.py) | Full-matrix residual checks and application benchmark of archived factors. |
 | [dpnn_experiments/gpu_benchmark.py](../dpnn_experiments/gpu_benchmark.py) | Logged CUDA checks of an archived Radon matrix, without training or inversion. |
+| [dpnn_experiments/inference.py](../dpnn_experiments/inference.py) | Evaluate published weights on bare basis/operator/sample artifacts; hash and contract checks, export comparison, sample index export. |
 | [dpnn_experiments/main_inputs.py](../dpnn_experiments/main_inputs.py) | Single-writer input preparation recovery without changing solver settings. |
 | [dpnn_experiments/main_integrity.py](../dpnn_experiments/main_integrity.py) | Fail-closed bindings for main-study approvals and validation selections. |
 | [dpnn_experiments/network_layers.py](../dpnn_experiments/network_layers.py) | Float64 NSN, shared-correction DP1 and independent-branch DP2 layers with fixed, hash-bound row-space factors. |
@@ -71,6 +73,8 @@ Numerical tests are separate from the scientific implementation. Some qualificat
 
 | File | Purpose |
 |---|---|
+| [scripts/build_paper.py](../scripts/build_paper.py) | Export native figure assets and compile a separate paper checkout with latexmk. |
+| [scripts/latex_figure_assets.py](../scripts/latex_figure_assets.py) | Full-precision PGFPlots data and lossless reconstruction fields, with round-trip and provenance checks. |
 | [scripts/configure.py](../scripts/configure.py) | Create local configurations with explicit artifact paths; never start a run. |
 | [scripts/development_pilot.py](../scripts/development_pilot.py) | Detached, immutable-source development-pilot launcher (Linux/macOS). |
 | [scripts/main_study.py](../scripts/main_study.py) | Explicit preparation, validation, freeze, test, report; no phase autorun. |
@@ -88,6 +92,7 @@ Numerical tests are separate from the scientific implementation. Some qualificat
 | [tests/epoch_extension_qualification.py](../tests/epoch_extension_qualification.py) | CPU-only epoch-extension, checkpoint selection, and four-worker replay tests. |
 | [tests/evaluator_qualification.py](../tests/evaluator_qualification.py) | Archived solver, projection and standalone evaluator qualification. |
 | [tests/h200_rehearsal.py](../tests/h200_rehearsal.py) | End-to-end fixed-TV, independent-U-Net, periodic-checkpoint rehearsal. |
+| [tests/inference_qualification.py](../tests/inference_qualification.py) | CPU qualification of the inference entry point: metric replay from bare weights, rejection of altered inputs, export comparison. |
 | [tests/retention_qualification.py](../tests/retention_qualification.py) | Periodic storage reduction and off-interval recovery, with complete archives. |
 | [tests/start_qualification.py](../tests/start_qualification.py) | Small Radon end-to-end qualification of immutable TV/Tikhonov start caches. |
 | [tests/start_recovery_qualification.py](../tests/start_recovery_qualification.py) | Archived recovery, exact replay and corruption rejection on small Radon data. |

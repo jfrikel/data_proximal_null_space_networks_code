@@ -105,6 +105,36 @@ The run directory printed by the trainer contains manifests, metrics, completion
 
 Keep test objects out of training/model selection. The standalone evaluator is a separate command (`python -m dpnn_experiments.evaluator --help`) and requires its own qualified, frozen configuration. The paper renderer expects the original paper export and its fixed split/seed counts; it is not a generic reporting tool for arbitrary new datasets.
 
+## Evaluate published checkpoints
+
+`python -m dpnn_experiments.inference` evaluates trained weights on the bare artifacts, without the hash-bound study archives that training resume and the frozen evaluator require. It needs the weight files (`.pt` state dictionaries), the row-space basis `row_space_basis.npy` and the sparse operator `operator.npz` of the block factorization, the recorded projection contract (identical for all 16 paper runs and included in `configs/study/inference_paper_template.json`), and one NPZ per object with `start`, `target`, `measurement` and `delta`, optionally `analytic_clean` and `raster_clean`. Every checkpoint carries the projection contract and is refused when it does not match the loaded basis and operator; SHA-256 values given in the specification or the contract are enforced. No model selection takes place.
+
+1. Create a sanitized sample index from the archive `dataset.json` of a Tikhonov or TV start cache, optionally copying the sample files next to it:
+
+```sh
+.venv/bin/python -m dpnn_experiments.inference make-index \
+  --dataset /path/to/start-cache/dataset.json --start-kind tikhonov \
+  --output /path/to/artifacts/tikhonov/samples_index.json --copy-to /path/to/artifacts/tikhonov/samples
+```
+
+2. Place the artifacts under the IDs listed in `configs/artifacts.json` (weights `artifact-005` to `artifact-035`, basis `artifact-036`, operator `artifact-037`, Tikhonov and TV sample sets `artifact-038` and `artifact-039`) and render the template with `scripts/configure.py`, or write a specification of the same form by hand.
+
+3. Evaluate and compare with the published per-object metrics:
+
+```sh
+.venv/bin/python -m dpnn_experiments.inference run \
+  --spec local/configs/study/inference_paper_template.json --output local/inference --compare-export results
+```
+
+The output directory receives `metrics.jsonl` and `metrics.csv` with the evaluator's per-object definitions (MSE, PSNR, SSIM, data change and residual, leakage, control factor, bound checks, error decomposition), `summary.json`, and with `--compare-export` a `comparison.json` with the largest deviations from `results/data/test/individual_values.csv.gz`; the command fails when a compared value deviates by more than the tolerance (relative 1e-8, absolute 1e-12 by default). Samples are matched to models by `start_kind`, and the budget is `beta_multipliers` times each object's `delta`, as in the paper. Restrict `ids` in a sample entry for spot checks: the Float64 basis of the paper study occupies 18.8 GiB and is loaded completely, so CPU evaluation needs that much memory and a full 256² evaluation of all checkpoints is a long CPU job. The entry point is qualified on the logger fixture by
+
+```sh
+.venv/bin/python -m tests.inference_qualification \
+  --config configs/tests/training_qualification.json --root local/inference-check
+```
+
+which trains each method briefly, replays the archived validation metrics from the bare weights, and checks the rejection of altered weights, contracts and samples.
+
 ## Common failures
 
 - Missing artifact or hash mismatch: supply the matching archive, or generate and bind genuinely new data for a new study; do not disable verification.

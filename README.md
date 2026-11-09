@@ -50,7 +50,7 @@ Local `runs/`, `local/`, `artifacts/` and `results/generated/` are ignored by Gi
 
 ## Artifact scope and citation
 
-The checkout contains enough exported data to reproduce the paper tables and figures, but not all training data, selected model weights or large projection factors. Re-running inference or training requires additional bound artifacts. No public download index is supplied yet.
+The checkout contains enough exported data to reproduce the paper tables and figures, but not all training data, selected model weights or large projection factors. Re-running inference or training requires additional bound artifacts. No public download index is supplied yet. Once weights, row-space basis, operator and sample files are published, `python -m dpnn_experiments.inference` evaluates them against the exported per-object metrics without the operational archives; see [Getting started](GETTING_STARTED.md#evaluate-published-checkpoints).
 
 The recorded study used a 30-epoch phase followed by continuation to 60 epochs. `configs/paper/` documents the completed study; the executable historical starting profile is separate under `configs/study/`. Reorganized source files do not replace the original source snapshots for resuming historical runs.
 
