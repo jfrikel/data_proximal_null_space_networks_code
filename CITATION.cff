@@ -13,6 +13,14 @@ year: 2026
 version: "1.0"
 license: GPL-3.0-only
 repository-code: "https://github.com/jfrikel/data_proximal_null_space_networks_code"
+doi: 10.5281/zenodo.24080044
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24080044
+    description: "Zenodo archive of release v1.0-paper"
+  - type: doi
+    value: 10.5281/zenodo.24080043
+    description: "Zenodo concept DOI resolving to the latest archived release"
 preferred-citation:
   type: unpublished
   title: "Data-proximal null-space networks for inverse problems"

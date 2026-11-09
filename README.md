@@ -1,5 +1,7 @@
 # Data-proximal null-space networks for inverse problems
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24080044.svg)](https://doi.org/10.5281/zenodo.24080044)
+
 Research code accompanying **Data-proximal null-space networks for inverse problems** by **Jürgen Frikel, Simon Göppel, and Markus Haltmeier**.
 
 The paper introduces data-proximal networks as an extension of null-space networks. Learned corrections explicitly control the additional change in predicted data relative to an initial reconstruction. The theoretical analysis establishes regularization and data-proximity guarantees under the stated assumptions; numerical experiments illustrate reconstruction quality and the implemented data-change control.
@@ -54,7 +56,7 @@ The checkout contains enough exported data to reproduce the paper tables and fig
 
 The recorded study used a 30-epoch phase followed by continuation to 60 epochs. `configs/paper/` documents the completed study; the executable historical starting profile is separate under `configs/study/`. Reorganized source files do not replace the original source snapshots for resuming historical runs.
 
-Please cite **Jürgen Frikel, Simon Göppel, and Markus Haltmeier, “Data-proximal null-space networks for inverse problems”**, and record the exact code commit used; [CITATION.cff](CITATION.cff) provides machine-readable citation metadata.
+Please cite **Jürgen Frikel, Simon Göppel, and Markus Haltmeier, “Data-proximal null-space networks for inverse problems”**, and record the exact code commit used; [CITATION.cff](CITATION.cff) provides machine-readable citation metadata. The release `v1.0-paper` is archived at Zenodo under DOI [10.5281/zenodo.24080044](https://doi.org/10.5281/zenodo.24080044); the concept DOI [10.5281/zenodo.24080043](https://doi.org/10.5281/zenodo.24080043) always resolves to the latest archived release.
 
 ## License
 
